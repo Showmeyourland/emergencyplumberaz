@@ -1,0 +1,188 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { SITE } from '../../config';
+import { SITUATIONS } from '../../data/situationContent';
+import { rotateCTA } from '../../utils/cta';
+
+export function getStaticPaths() {
+  return SITE.subVerticals.map((sv) => ({
+    params: { slug: sv.slug },
+    props: { sv },
+  }));
+}
+
+const { sv } = Astro.props;
+const content = SITUATIONS[sv.slug];
+const cta = rotateCTA(`situation-${sv.slug}`);
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": `${SITE.baseUrl}/situations/${sv.slug}/#service`,
+  "name": sv.name,
+  "description": content.metaDescription,
+  "provider": { "@id": `${SITE.baseUrl}/#org` },
+  "areaServed": { "@type": "State", "name": "Arizona" },
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": content.faqs.map(f => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a },
+  })),
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": SITE.baseUrl },
+    { "@type": "ListItem", "position": 2, "name": "Situations", "item": `${SITE.baseUrl}/situations/` },
+    { "@type": "ListItem", "position": 3, "name": sv.short, "item": `${SITE.baseUrl}/situations/${sv.slug}/` },
+  ],
+};
+---
+<BaseLayout
+  title={content.metaTitle}
+  description={content.metaDescription}
+  pageType="service"
+  schema={[serviceSchema, faqSchema, breadcrumbSchema]}
+  crumbs={[
+    { label: "Home", href: "/" },
+    { label: "Situations", href: "/situations/sell-fast-cash/" },
+    { label: sv.short },
+  ]}
+>
+  <section class="hero">
+    <div class="container">
+      <span class="hero__kicker">Arizona Cash Buyer · Direct Investor</span>
+      <h1>{content.h1}</h1>
+      <p class="hero__sub">{content.intro.substring(0, 180)}...</p>
+      <a href={`tel:${SITE.phone}`} class="btn btn--large">{cta}</a>
+    </div>
+  </section>
+
+  <section class="container container--narrow">
+    <h2>What this means in practice</h2>
+    <p>{content.intro}</p>
+    <div class="inline-disclaimer">
+      <strong>Cash buyer disclosure:</strong> {SITE.brandName} buys as a principal investor — not a broker or agent. Offers are typically below open-market value. Consult independent counsel before signing any agreement.
+    </div>
+  </section>
+
+  <section class="container container--narrow">
+    <h2>When this path makes sense</h2>
+    <ul>
+      {content.whenToCall.map((w) => <li>{w}</li>)}
+    </ul>
+  </section>
+
+  <section class="container container--narrow">
+    <h2>How the process goes</h2>
+    <ol>
+      {content.process.map((p) => (
+        <li>
+          <strong>{p.step}.</strong> {p.detail}
+        </li>
+      ))}
+    </ol>
+  </section>
+
+  <section class="container container--narrow">
+    <h2>What it costs</h2>
+    <p>{content.costs}</p>
+  </section>
+
+  {content.azContext && (
+    <section class="section--alt">
+      <div class="container container--narrow">
+        <span class="section-eyebrow">Arizona context</span>
+        <h2 style="margin-top:0;">The Arizona-specific legal + regulatory backdrop</h2>
+        <p>{content.azContext}</p>
+      </div>
+    </section>
+  )}
+
+  {content.realScenario && (
+    <section class="container container--narrow">
+      <span class="section-eyebrow">Real scenarios</span>
+      <h2 style="margin-top:0;">How this has played out for actual {sv.short.toLowerCase()} sellers</h2>
+      {content.realScenario.map((s) => (
+        <div class="case-card">
+          <p><strong>{s.title}</strong></p>
+          <p>{s.body}</p>
+        </div>
+      ))}
+      <p style="font-size: 0.88rem; color: #6a6a6a; margin-top: 1rem;">
+        Anonymized details. Identifying information changed; financial outcomes and timelines are accurate to actual transactions.
+      </p>
+    </section>
+  )}
+
+  {content.whatToWatchOut && (
+    <section class="section--alt">
+      <div class="container container--narrow">
+        <span class="section-eyebrow">Red flags</span>
+        <h2 style="margin-top:0;">What to watch out for in {sv.short.toLowerCase()} situations</h2>
+        <p>Some patterns to avoid regardless of which buyer you talk to:</p>
+        <ul>
+          {content.whatToWatchOut.map((w) => <li>{w}</li>)}
+        </ul>
+      </div>
+    </section>
+  )}
+
+  {content.comparison && (
+    <section class="container container--narrow">
+      <span class="section-eyebrow">Compared to other paths</span>
+      <h2 style="margin-top:0;">How this stacks up against the alternatives</h2>
+      <p>{content.comparison}</p>
+    </section>
+  )}
+
+  <section class="container container--narrow">
+    <h2>Questions we get</h2>
+    <div class="faq">
+      {content.faqs.map((f) => (
+        <div class="faq__item">
+          <p class="faq__q">{f.q}</p>
+          <p class="faq__a">{f.a}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="container container--narrow">
+    <h2>If it's the right fit</h2>
+    <p>{content.closingPara}</p>
+  </section>
+
+  <section class="container">
+    <h2>Other situations we work with</h2>
+    <div class="service-grid">
+      {SITE.subVerticals.filter((s) => s.slug !== sv.slug).slice(0, 4).map((s) => (
+        <a href={`/situations/${s.slug}/`} class="service-card">
+          <h3>{s.short}</h3>
+          <p>
+            {s.slug === "sell-fast-cash" && "Standard 7-21 day cash close. No fees."}
+            {s.slug === "foreclosure" && "Close before the trustee sale. Protect your credit."}
+            {s.slug === "inherited" && "Probate-friendly, multi-heir, remote signing."}
+            {s.slug === "divorce" && "Clean equity split. Both parties sign."}
+            {s.slug === "as-is" && "Any condition. We handle the cleanout."}
+          </p>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container container--narrow">
+      <h2>Ready to talk?</h2>
+      <p>Five-minute call. Same-day number. No obligation, no follow-up campaign.</p>
+      <a href={`tel:${SITE.phone}`} class="btn btn--large">Call {SITE.phoneDisplay}</a>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,172 @@
+---
+import { SITE } from '../config';
+import '../styles/brand.css';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  ogImage?: string;
+  pageType?: 'homepage' | 'city' | 'service' | 'blog' | 'trust';
+  schema?: Record<string, any> | Record<string, any>[];
+  crumbs?: { label: string; href?: string }[];
+}
+
+const { title, description, canonical, ogImage, schema, crumbs } = Astro.props;
+const finalCanonical = canonical ?? new URL(Astro.url.pathname, SITE.baseUrl).toString();
+const finalOg = ogImage ?? new URL(SITE.ogImage, SITE.baseUrl).toString();
+const year = new Date().getFullYear();
+
+// Always include the sitewide LocalBusiness schema
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": SITE.schemaSubtype,
+  "@id": `${SITE.baseUrl}/#org`,
+  name: SITE.brandName,
+  url: SITE.baseUrl,
+  telephone: SITE.phone,
+  description: SITE.metaDescription,
+  priceRange: "$$",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Phoenix",
+    addressRegion: "AZ",
+    addressCountry: "US",
+  },
+  areaServed: SITE.cities.map((c) => ({ "@type": "City", name: c.name, containedInPlace: { "@type": "State", name: "Arizona" } })),
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+      opens: "08:00",
+      closes: "20:00",
+    },
+  ],
+};
+
+const schemaArray = schema ? (Array.isArray(schema) ? schema : [schema]) : [];
+const allSchema = [localBusinessSchema, ...schemaArray];
+---
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="generator" content={Astro.generator} />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={finalCanonical} />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={finalCanonical} />
+  <meta property="og:image" content={finalOg} />
+  <meta property="og:site_name" content={SITE.brandName} />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={finalOg} />
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="sitemap" href="/sitemap-index.xml" />
+
+  {allSchema.map((s) => (
+    <script type="application/ld+json" set:html={JSON.stringify(s)} />
+  ))}
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a href="/" class="site-header__brand">{SITE.brandName}</a>
+      <nav class="site-header__nav">
+        <a href="/how-it-works/">How It Works</a>
+        <a href="/situations/sell-fast-cash/">Sell Fast</a>
+        <a href="/about/">About</a>
+        <a href={`tel:${SITE.phone}`} class="site-header__phone">{SITE.phoneDisplay}</a>
+      </nav>
+    </div>
+  </header>
+
+  {crumbs && crumbs.length > 0 && (
+    <nav class="crumbs container" aria-label="Breadcrumb">
+      {crumbs.map((c, i) => (
+        <span>
+          {c.href ? <a href={c.href}>{c.label}</a> : <span>{c.label}</span>}
+          {i < crumbs.length - 1 && <span> &rsaquo; </span>}
+        </span>
+      ))}
+    </nav>
+  )}
+
+  <main>
+    <slot />
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__grid">
+        <div>
+          <h4>{SITE.brandName}</h4>
+          <p>{SITE.tagline}</p>
+          <p><a href={`tel:${SITE.phone}`}>{SITE.phoneDisplay}</a></p>
+          <p>{SITE.hours}</p>
+        </div>
+        <div>
+          <h4>Common situations</h4>
+          {SITE.subVerticals.map((s) => (
+            <p><a href={`/situations/${s.slug}/`}>{s.short}</a></p>
+          ))}
+        </div>
+        <div>
+          <h4>Cities we work in</h4>
+          {SITE.cities.slice(0, 8).map((c) => (
+            <p><a href={`/${c.slug}/`}>{c.name}</a></p>
+          ))}
+        </div>
+        <div>
+          <h4>Company</h4>
+          <p><a href="/about/">About</a></p>
+          <p><a href="/contact/">Contact</a></p>
+          <p><a href="/privacy/">Privacy Policy</a></p>
+          <p><a href="/terms/">Terms of Service</a></p>
+        </div>
+      </div>
+
+      <div class="site-footer__legal">
+        <p>
+          <strong>Investor disclosure:</strong> {SITE.brandName} and its principals are real estate investors who purchase
+          properties for their own portfolio or for assignment to other investors. We are not licensed real estate brokers
+          or agents, and we do not represent sellers in any agency capacity. No fiduciary relationship is created by
+          contacting this website. Cash offers are made directly by {SITE.brandName} principals as buyers, not as brokers.
+        </p>
+        <p>
+          All transactions are conducted as arm's-length purchases between consenting parties. Offers are typically below
+          market value in exchange for speed of close, certainty of close, and the seller's release from typical listing
+          costs (commissions, repairs, staging). Closing costs, title work, and any required disclosures are itemized in
+          the written purchase agreement provided to each seller. Sellers are encouraged to consult independent legal
+          counsel before signing.
+        </p>
+        <p>
+          Arizona transactions: {SITE.brandName} complies with A.R.S. § 44-5101. Written wholesale buyer disclosures are
+          provided to all sellers prior to any purchase agreement and to all assignees prior to any assignment agreement.
+          All-cash purchases through limited liability companies or trusts may be subject to federal beneficial ownership
+          reporting requirements per the FinCEN Residential Real Estate Geographic Targeting Order.
+        </p>
+        <p>&copy; {year} {SITE.brandName}. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <a href={`tel:${SITE.phone}`} class="phone-bar">
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+    Call {SITE.phoneDisplay}
+  </a>
+</body>
+</html>

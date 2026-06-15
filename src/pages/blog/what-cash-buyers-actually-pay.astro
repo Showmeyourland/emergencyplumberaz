@@ -1,0 +1,229 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { SITE } from '../../config';
+const articleSchema = {
+  "@context": "https://schema.org", "@type": "Article",
+  "headline": "What 'We Buy Houses' Companies Actually Pay (With Real Ranges)",
+  "datePublished": "2026-05-15T08:00:00-07:00", "dateModified": "2026-05-28T08:00:00-07:00",
+  "author": { "@type": "Person", "name": "Nate", "url": `${SITE.baseUrl}/about/` },
+  "publisher": { "@id": `${SITE.baseUrl}/#org` },
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "What percentage of market value do cash buyers pay?", "acceptedAnswer": { "@type": "Answer", "text": "Independent investors typically pay 65-80% of after-repair value (ARV). iBuyers (Opendoor, Offerpad) pay 86-92% of ARV before fees — net is usually 78-86% after their 5% service fee and repair credits. National franchises pay 60-75% of ARV. The ranges are real — where you land depends on condition, rehab cost, and market." } },
+    { "@type": "Question", "name": "How do cash buyers calculate what to offer?", "acceptedAnswer": { "@type": "Answer", "text": "The standard formula: ARV minus rehab cost minus holding costs minus resale transaction costs minus investor return = maximum buy price. On a $400K ARV property with $45K rehab, $6K holding, $24K resale costs, and $45K target return, the math produces a $280K maximum buy price — 70% of ARV." } },
+    { "@type": "Question", "name": "Can I negotiate a higher cash offer?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, within limits. If you have comp data that supports a higher ARV than the buyer is using, you can dispute their ARV estimate and push the offer up. If you believe their repair estimate is too high, you can provide contractor quotes. The most negotiable factor is ARV — rehab cost and target return are harder for the seller to influence." } },
+    { "@type": "Question", "name": "Why do some cash buyers offer more than others?", "acceptedAnswer": { "@type": "Answer", "text": "Three main reasons: (1) different ARV estimates — one investor may see more value in the neighborhood than another, (2) different rehab cost estimates — investors with in-house crews pay less for labor and can afford higher offers, (3) different return targets — a buy-and-hold investor needs less spread than a fix-and-flip investor, enabling higher bids." } },
+    { "@type": "Question", "name": "Is a cash offer 'fair' if it's below market value?", "acceptedAnswer": { "@type": "Answer", "text": "A cash offer below market value isn't inherently unfair — it's a different product. You're selling certainty, speed, and as-is condition in exchange for a price discount. Fair means the buyer is pricing the deal honestly based on their actual economics, not manufacturing a high number they'll renegotiate down after signing. Our day-one quote holds 90%+ of the time — that's our version of fair." } },
+  ],
+};
+---
+<BaseLayout
+  title="What 'We Buy Houses' Companies Actually Pay (Real Ranges) | Cash Guy Nate"
+  description="The real math behind cash home buyer offers. 65-80% of ARV is the industry range. Here's what drives where in that range your offer lands — by condition, by market, by buyer type."
+  pageType="blog"
+  schema={[articleSchema, faqSchema]}
+  crumbs={[{ label: "Home", href: "/" }, { label: "Articles", href: "/blog/" }, { label: "What Cash Buyers Pay" }]}
+>
+  <article class="container container--narrow" style="padding-top: 2rem;">
+    <h1>What 'We Buy Houses' Companies Actually Pay (With Real Ranges)</h1>
+    <div class="article-meta">
+      <span>By Nate · Acquisitions Lead</span>
+      <span class="article-meta__dot"></span>
+      <span>Updated May 28, 2026</span>
+      <span class="article-meta__dot"></span>
+      <span>12-minute read</span>
+    </div>
+
+    <p style="font-size: 1.15rem; line-height: 1.6;">
+      The single most common question on a first call: "What percentage of market value will you actually offer?" The answer most companies dance around is straightforward — 65 to 80 percent of after-repair value (ARV). Where in that range you land depends on three factors: condition, rehab cost, and how the resale economics pencil out.
+    </p>
+
+    <h2>What ARV actually means</h2>
+    <p>
+      After-Repair Value is what a property would sell for if it were fully updated and listed conventionally — comparable to other recently-sold updated homes in the immediate area (typically within a 1-mile radius and 6 months of sale data). It's the same number an appraiser would reach for a refinance after a full renovation.
+    </p>
+    <p>
+      Cash buyers don't pay ARV. We can't — there's no margin between the buy price and the resale to cover the rehab cost, holding cost, transaction costs (twice, since we sell it later), and a return for the capital and risk.
+    </p>
+
+    <h2>The cash-buyer math</h2>
+    <p>
+      For a typical cash-buyer hold-and-resell, the math looks roughly like this:
+    </p>
+    <p>
+      <strong>Resale value (ARV): $400,000.</strong> Subtract rehab cost ($45,000), holding cost during rehab ($6,000), resale transaction costs ($24,000 including commissions on the resale side), and a target return for the investor ($45,000). That leaves about $280,000 as the maximum buy price — 70% of ARV.
+    </p>
+    <p>
+      Rehab cost is the variable that swings most. A house that needs paint, carpet, and a kitchen update — maybe $25K — supports a higher buy percentage. A house that needs new roof, new HVAC, new kitchen, new bathrooms, foundation work — maybe $85K — supports a much lower percentage.
+    </p>
+
+    <h2>The full breakdown of investor costs</h2>
+    <p>
+      Sellers sometimes think cash buyers have simple economics — they pay X and sell for ARV and pocket the spread. The actual economics are more complex. Here's what a typical flip budget looks like on a $400K ARV Phoenix property we buy at $280K:
+    </p>
+    <table style="width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.9rem;">
+      <thead>
+        <tr style="background: #f3efea;">
+          <th style="text-align: left; padding: 0.6rem; border-bottom: 1px solid #ddd;">Cost Item</th>
+          <th style="text-align: right; padding: 0.6rem; border-bottom: 1px solid #ddd;">Typical Amount</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td style="padding: 0.5rem; border-bottom: 1px solid #eee;">Purchase price</td><td style="text-align: right; padding: 0.5rem; border-bottom: 1px solid #eee;">$280,000</td></tr>
+        <tr><td style="padding: 0.5rem; border-bottom: 1px solid #eee;">Acquisition closing costs (title, recording)</td><td style="text-align: right; padding: 0.5rem; border-bottom: 1px solid #eee;">$2,200</td></tr>
+        <tr><td style="padding: 0.5rem; border-bottom: 1px solid #eee;">Rehab/renovation cost</td><td style="text-align: right; padding: 0.5rem; border-bottom: 1px solid #eee;">$45,000</td></tr>
+        <tr><td style="padding: 0.5rem; border-bottom: 1px solid #eee;">Holding costs (4 months: taxes, insurance, utilities)</td><td style="text-align: right; padding: 0.5rem; border-bottom: 1px solid #eee;">$5,800</td></tr>
+        <tr><td style="padding: 0.5rem; border-bottom: 1px solid #eee;">Hard money financing costs (if applicable)</td><td style="text-align: right; padding: 0.5rem; border-bottom: 1px solid #eee;">$11,200</td></tr>
+        <tr><td style="padding: 0.5rem; border-bottom: 1px solid #eee;">Resale agent commission (5-6%)</td><td style="text-align: right; padding: 0.5rem; border-bottom: 1px solid #eee;">$22,000</td></tr>
+        <tr><td style="padding: 0.5rem; border-bottom: 1px solid #eee;">Resale closing costs (title, etc.)</td><td style="text-align: right; padding: 0.5rem; border-bottom: 1px solid #eee;">$2,400</td></tr>
+        <tr><td style="padding: 0.5rem; border-bottom: 1px solid #eee;">Misc (HOA, permits, unexpected repairs)</td><td style="text-align: right; padding: 0.5rem; border-bottom: 1px solid #eee;">$4,000</td></tr>
+        <tr style="background: #f3efea;"><td style="padding: 0.6rem; font-weight: 700;">Total all-in cost</td><td style="text-align: right; padding: 0.6rem; font-weight: 700;">$372,600</td></tr>
+        <tr><td style="padding: 0.5rem; border-bottom: 1px solid #eee;">Resale at ARV</td><td style="text-align: right; padding: 0.5rem; border-bottom: 1px solid #eee;">$400,000</td></tr>
+        <tr style="background: #f3efea;"><td style="padding: 0.6rem; font-weight: 700;">Gross return</td><td style="text-align: right; padding: 0.6rem; font-weight: 700;">$27,400 (7% gross on capital deployed)</td></tr>
+      </tbody>
+    </table>
+    <p>
+      That $27,400 gross return on $280K+ of deployed capital over 4-6 months is a 7% return — modest. Deals work because of volume and because not every deal has $11K of hard money financing costs (many investors use their own capital). But this is why the offer can't be 90% of ARV — there's no math that works at that level.
+    </p>
+
+    <h2>Where 65-80% breaks down by condition</h2>
+    <p>
+      <strong>78-80% of ARV: nearly move-in ready.</strong> Updated within the last 10 years, current HVAC, current roof, no significant deferred maintenance. The cash-buyer offer here is at the top of the range because rehab cost is minimal — typically paint, carpet, and minor cosmetic fixes.
+    </p>
+    <p>
+      <strong>72-77% of ARV: dated but functional.</strong> Original 1990s-2000s finishes, kitchens and baths that look their age but work fine, HVAC and roof getting older but not failing. This is the most common condition we buy. Rehab budget runs $30K-$50K.
+    </p>
+    <p>
+      <strong>67-72% of ARV: significant deferred maintenance.</strong> Original kitchens 30+ years old, roof at end of life, HVAC failing or recently replaced, window single-pane, plumbing issues. Rehab budget $55K-$80K.
+    </p>
+    <p>
+      <strong>60-67% of ARV: distressed condition.</strong> Foundation issues, fire damage, hoarder situations, severe deferred maintenance across all systems. Rehab budget $80K-$150K.
+    </p>
+    <p>
+      <strong>Below 60%: extreme distress.</strong> Major structural problems, missing systems (plumbing or HVAC stripped), partial demolition, severe code violations. The math here is harder and depends on whether the property is salvageable at all.
+    </p>
+
+    <h2>What doesn't affect our offer</h2>
+    <p>
+      Some things sellers expect to lower their offer don't, in practice:
+    </p>
+    <ul>
+      <li><strong>Personal property left in the house.</strong> Furniture, appliances, contents — we deal with it. Doesn't change our offer.</li>
+      <li><strong>Cleanliness.</strong> A messy house is a cosmetic issue, not a value issue.</li>
+      <li><strong>Dated style.</strong> Style doesn't matter; functional condition does.</li>
+      <li><strong>Pet odors or smoking.</strong> Standard remediation cost, already factored into rehab budget.</li>
+    </ul>
+
+    <h2>What does affect our offer beyond condition</h2>
+    <ul>
+      <li><strong>Market velocity in your specific neighborhood.</strong> Slower-selling neighborhoods carry higher holding-cost assumptions, which reduces our offer.</li>
+      <li><strong>Comparable sales availability.</strong> If your house is unusual (atypical size, unique architecture, oddly-shaped lot), our ARV estimate has more uncertainty and we discount for that.</li>
+      <li><strong>HOA dues.</strong> High HOA properties have higher holding costs during our hold-and-resell period.</li>
+      <li><strong>Title complications.</strong> Probate, judgment liens, IRS liens, mechanic's liens, easement disputes — anything that requires extra title work adds time and cost.</li>
+      <li><strong>Tenants.</strong> Buying with tenants in place is fine, but it constrains our resale options (we have to honor the lease or wait for it to end), which affects our offer.</li>
+    </ul>
+
+    <h2>AZ neighborhood-specific ARV factors</h2>
+    <p>
+      ARV in Arizona is highly neighborhood-specific. Two houses with identical square footage and condition can have ARVs $80K apart based on zip code. A few patterns from Phoenix-metro 2026 data:
+    </p>
+    <ul>
+      <li><strong>Scottsdale, Paradise Valley:</strong> ARV premiums well above regional averages. Cash buyers active but limited — the luxury segment doesn't follow standard ARV-based formulas.</li>
+      <li><strong>Mesa/Chandler/Gilbert (east Valley):</strong> Strong ARV reliability. Consistent comps available. Most of our deals happen here.</li>
+      <li><strong>Glendale/Peoria/Surprise (west Valley):</strong> Slightly lower ARVs than east Valley equivalents but strong demand and reliable comps.</li>
+      <li><strong>South Phoenix/Laveen:</strong> Higher cap rates on rentals; buy-and-hold investors sometimes more competitive than flip buyers here.</li>
+      <li><strong>Apache Junction/Gold Canyon:</strong> Less liquid market; fewer comps; wider ARV uncertainty leads to more conservative offers.</li>
+      <li><strong>Rural Maricopa County (Wickenburg, Buckeye outskirts):</strong> Very thin comp data. ARV uncertainty high. Expect conservative offers or possible declines.</li>
+    </ul>
+
+    <h2>What "fair offer" means in this market</h2>
+    <p>
+      Some companies advertise "fair cash offer" without ever defining what "fair" means. Fair, in our framing, means: a number that reflects honest underwriting on the resale, the rehab, and the carrying cost — not a lowball designed to be renegotiated later. We aim for our day-one quote to hold through closing 90%+ of the time. We don't manufacture reasons to drop the offer after signing.
+    </p>
+    <p>
+      That said: fair to a cash buyer is not the same as fair to a listing agent's seller. The cash-buyer model only works because of the percentage discount to ARV. If you want to be paid market price, list with an agent.
+    </p>
+
+    <h2>Why some "we buy houses" offers look higher than ours</h2>
+    <p>
+      You'll sometimes see a competing offer that's noticeably higher than ours. Three common reasons:
+    </p>
+    <ol>
+      <li><strong>Bait-and-switch.</strong> Offer high, then renegotiate down at inspection. Happens regularly with high-volume franchise operations.</li>
+      <li><strong>Wholesale.</strong> Some "buyers" are actually wholesalers — they sign the contract intending to assign it to another investor. They go high to lock you up, then try to assign for a fee. If they can't assign, they walk and you lose 14 days.</li>
+      <li><strong>Aggressive underwriting.</strong> Some cash buyers genuinely underprice rehab or overestimate ARV — they pay too much, then either renegotiate or eat the loss. As a seller this can work in your favor short-term but creates closing risk.</li>
+    </ol>
+    <p>
+      The way to spot these: ask for proof of funds (real cash buyer can show you a bank statement or letter), ask if they assign contracts (clean cash buyers don't), and look at whether their offer includes inspection contingencies that would let them renegotiate (ours doesn't).
+    </p>
+
+    <h2>FAQ</h2>
+    <div class="faq">
+      <div class="faq__item">
+        <p class="faq__q">What percentage of market value do cash buyers pay?</p>
+        <p class="faq__a">Independent investors typically pay 65-80% of after-repair value (ARV). iBuyers (Opendoor, Offerpad) pay 86-92% of ARV before fees — net is usually 78-86% after their 5% service fee and repair credits. National franchises pay 60-75% of ARV. The ranges are real — where you land depends on condition, rehab cost, and market.</p>
+      </div>
+      <div class="faq__item">
+        <p class="faq__q">How do cash buyers calculate what to offer?</p>
+        <p class="faq__a">The standard formula: ARV minus rehab cost minus holding costs minus resale transaction costs minus investor return = maximum buy price. On a $400K ARV property with $45K rehab, $6K holding, $24K resale costs, and $45K target return, the math produces a $280K maximum buy price — 70% of ARV.</p>
+      </div>
+      <div class="faq__item">
+        <p class="faq__q">Can I negotiate a higher cash offer?</p>
+        <p class="faq__a">Yes, within limits. If you have comp data that supports a higher ARV than the buyer is using, you can dispute their ARV estimate and push the offer up. If you believe their repair estimate is too high, you can provide contractor quotes. The most negotiable factor is ARV — rehab cost and target return are harder for the seller to influence.</p>
+      </div>
+      <div class="faq__item">
+        <p class="faq__q">Why do some cash buyers offer more than others?</p>
+        <p class="faq__a">Three main reasons: (1) different ARV estimates, (2) different rehab cost estimates — investors with in-house crews pay less for labor and can afford higher offers, (3) different return targets — a buy-and-hold investor needs less spread than a fix-and-flip investor, enabling higher bids.</p>
+      </div>
+      <div class="faq__item">
+        <p class="faq__q">Is a cash offer 'fair' if it's below market value?</p>
+        <p class="faq__a">A cash offer below market value isn't inherently unfair — it's a different product. You're selling certainty, speed, and as-is condition in exchange for a price discount. Fair means the buyer is pricing the deal honestly based on their actual economics, not manufacturing a high number they'll renegotiate down after signing.</p>
+      </div>
+    </div>
+
+    <h2>How to get an accurate range from us</h2>
+    <p>
+      Call {SITE.phoneDisplay}. We'll give you an initial range on the call based on what you tell us about condition. After the walk-through, we'll narrow it to a specific number. If the walk-through reveals the house is significantly worse than described, our offer adjusts. If it's significantly better, our offer adjusts up.
+    </p>
+    <p>
+      We don't sandbag, we don't bait-and-switch, and our day-one quote holds 90%+ of the time through closing.
+    </p>
+
+    <h2>Why % of ARV varies by Arizona market segment</h2>
+    <p>
+      Cash-buyer offers vary by Arizona market for several real reasons, not arbitrarily. Phoenix metro core (85003-85021) supports the top of our 65-80% range because resale velocity is strong — we expect a 60-90 day hold from buy to flip. Slower-velocity outer markets (Coolidge, Florence, Kingman) push us toward the bottom of the range because our hold-cost assumption stretches to 120-180 days. Tucson midtown sits around 70-75% because resale on rehabbed 1950s adobe is steady but slower than Phoenix.
+    </p>
+    <p>
+      Within Phoenix metro, the highest cash-buyer offers (78-82% of ARV) typically go to clean-condition Gilbert and Chandler properties because the conventional resale velocity is fastest there. South Phoenix, Maryvale, and West Valley properties typically run 68-74% because the rehab is heavier and the buyer pool is more cost-sensitive.
+    </p>
+    <p>
+      The ARV percentage is mostly a function of resale velocity + rehab cost, not a function of how aggressive the buyer is. Two reputable cash buyers in the same market should be within 3-5% of each other on the same property. If you're getting offers spread 15%+ apart, the high one is probably either a wholesaler who won't actually close, or a buyer who plans to renegotiate after inspection.
+    </p>
+
+    <h2>The "iBuyer arbitrage" — why our percentage is lower</h2>
+    <p>
+      Opendoor and Offerpad headline offers at 85-92% of ARV — meaningfully above our 65-80%. The difference isn't market mispricing; it's <strong>fee structure</strong>. iBuyer offers carry:
+    </p>
+    <ul>
+      <li>Service fee: 5-8% of sale price ($20K-$40K on a $400K property)</li>
+      <li>Repair credit at closing: typically 2-5% of price ($8K-$20K)</li>
+      <li>Closing costs charged to the seller: 1-2% ($4K-$8K)</li>
+    </ul>
+    <p>
+      Net: a 90% headline offer becomes 78-82% after fees and credits — almost exactly our top-of-range cash offer. Add the iBuyer's longer close timeline (often 30-60 days) and post-inspection renegotiation risk (Opendoor and Offerpad both renegotiate roughly 35-45% of accepted offers after inspection), and the apparent premium often evaporates. We <a href="/blog/opendoor-vs-cash-buyer-arizona/">break this down in detail</a> in the iBuyer vs. cash-buyer comparison.
+    </p>
+
+    <h2 style="margin-top: 3rem;">Related</h2>
+    <ul>
+      <li><a href="/blog/cash-offer-vs-listing-math/">Cash Offer vs. Listing: The Math in 2026</a></li>
+      <li><a href="/blog/4-step-cash-sale-process/">The 4-Step Cash Sale Process</a></li>
+      <li><a href="/blog/sell-as-is-or-fix-and-list/">Sell As-Is or Fix-and-List?</a></li>
+      <li><a href="/blog/companies-that-buy-houses-for-cash-arizona/">Companies That Buy Houses for Cash in Arizona</a></li>
+      <li><a href="/situations/as-is/">Sell Distressed As-Is</a></li>
+    </ul>
+  </article>
+</BaseLayout>

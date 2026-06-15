@@ -1,0 +1,191 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { SITE } from '../../config';
+const articleSchema = {
+  "@context": "https://schema.org", "@type": "Article",
+  "headline": "FinCEN's 2026 All-Cash LLC Reporting Rule (What Sellers Need to Know)",
+  "datePublished": "2026-04-20T08:00:00-07:00", "dateModified": "2026-05-28T08:00:00-07:00",
+  "author": { "@type": "Person", "name": "Nate", "url": `${SITE.baseUrl}/about/` },
+  "publisher": { "@id": `${SITE.baseUrl}/#org` },
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Does the FinCEN LLC reporting rule affect me as a home seller in Arizona?", "acceptedAnswer": { "@type": "Answer", "text": "No. The reporting obligation falls on the buyer — specifically the title company or closing attorney who files the Beneficial Ownership Report on behalf of the purchasing entity. As a seller, you have no new paperwork requirements under the rule. You may notice the title company asking the buyer additional questions at closing, but this doesn't affect your proceeds or timeline." } },
+    { "@type": "Question", "name": "Which Arizona metro areas are covered by the FinCEN geographic targeting order?", "acceptedAnswer": { "@type": "Answer", "text": "The 2024-2026 FinCEN GTOs cover all 50 states for entity purchases above applicable thresholds. Arizona (including Maricopa, Pima, Pinal, Mohave, and Yavapai counties) is fully covered. The reporting threshold in Arizona is $300,000 for covered metro areas." } },
+    { "@type": "Question", "name": "What is the Corporate Transparency Act and how is it related?", "acceptedAnswer": { "@type": "Answer", "text": "The Corporate Transparency Act (CTA), effective January 2024, requires most U.S. legal entities (LLCs, corporations, partnerships) to register their beneficial owners with FinCEN. The residential real estate reporting rule (GTO) builds on this by requiring that beneficial ownership information be reported to FinCEN on all-cash residential purchases by entities. Legitimate investors operating since 2024 have already completed their CTA registration." } },
+    { "@type": "Question", "name": "Can an investor buy my house in cash through an LLC in Arizona?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, and this is standard practice. The vast majority of institutional and individual real estate investors in Arizona operate through LLCs for liability protection and business structure reasons. The FinCEN reporting rules don't prohibit this — they just require the beneficial owners of those LLCs to be disclosed to FinCEN at closing." } },
+  ],
+};
+---
+<BaseLayout
+  title="FinCEN's 2026 All-Cash LLC Reporting Rule | Cash Guy Nate"
+  description="The new federal reporting requirement on all-cash residential real estate purchases through LLCs. What it means for AZ sellers in 2026 — and what you need to verify about the buyer."
+  pageType="blog"
+  schema={[articleSchema, faqSchema]}
+  crumbs={[{ label: "Home", href: "/" }, { label: "Articles", href: "/blog/" }, { label: "FinCEN Rule" }]}
+>
+  <article class="container container--narrow" style="padding-top: 2rem;">
+    <h1>FinCEN's 2026 All-Cash LLC Reporting Rule (What Sellers Need to Know)</h1>
+    <div class="article-meta">
+      <span>By Nate · Acquisitions Lead</span>
+      <span class="article-meta__dot"></span>
+      <span>Updated May 28, 2026</span>
+      <span class="article-meta__dot"></span>
+      <span>10-minute read</span>
+    </div>
+
+    <p style="font-size: 1.15rem; line-height: 1.6;">
+      A federal rule that took effect in March 2026 changes the reporting landscape for residential real estate purchases conducted through limited liability companies (LLCs), trusts, and similar entities — including the cash-buyer purchases that make up most of our business. This is a buyer-side compliance burden, not a seller-side burden. But sellers should understand what's happening so they're not surprised when paperwork shows up at closing.
+    </p>
+
+    <div class="inline-disclaimer">
+      <strong>Not legal advice.</strong> This article is for general informational purposes only. FinCEN rules, the Corporate Transparency Act, and related federal regulations evolve. Consult your own legal or tax counsel about how these rules apply to your specific transaction.
+    </div>
+
+    <h2>What the rule is</h2>
+    <p>
+      The Financial Crimes Enforcement Network (FinCEN), part of the U.S. Treasury, issued a Residential Real Estate Geographic Targeting Order that — combined with the Corporate Transparency Act's beneficial-ownership reporting requirements — requires certain all-cash residential purchases by legal entities to be reported to FinCEN.
+    </p>
+    <p>
+      Specifically, when a residential property is purchased:
+    </p>
+    <ul>
+      <li>By a legal entity (LLC, partnership, trust, corporation) — not by an individual</li>
+      <li>With no third-party financing (no bank loan)</li>
+      <li>For above a certain dollar threshold (varies by region; in covered metro areas the threshold runs $300K-$2M depending on metro)</li>
+    </ul>
+    <p>
+      ...the reporting entity (typically the title company or the closing attorney) must file a Beneficial Ownership Report identifying the individuals behind the purchasing entity within 30 days of closing.
+    </p>
+
+    <h2>Why the rule exists</h2>
+    <p>
+      Treasury's concern is money laundering through residential real estate. The pattern they're targeting: anonymous shell companies (often offshore) buying high-value residential properties in cash to convert questionable funds into real estate. The reporting requirement makes the beneficial owners traceable.
+    </p>
+    <p>
+      For legitimate domestic investors — which is the bulk of the all-cash buyer market — the rule is a compliance burden, not a substantive obstacle. We file the report; the report is held by FinCEN; nothing happens unless and until law enforcement queries it.
+    </p>
+    <p>
+      Phoenix was specifically named in earlier FinCEN Geographic Targeting Orders (GTOs) going back to 2018, when FinCEN first started targeting cash real estate purchases in high-activity metros. Arizona was identified as a priority market because of its volume of out-of-state and foreign investment in residential real estate. The current 2026 rule is the permanent expansion of what those earlier GTOs required.
+    </p>
+
+    <h2>What it means for sellers</h2>
+    <p>
+      Directly, very little. The reporting requirement is a buyer-side filing. As a seller, you'll see:
+    </p>
+    <ul>
+      <li>Title company or closing attorney asking the buyer for beneficial ownership information at closing</li>
+      <li>Potentially a 1-2 day delay if the buyer hasn't pre-prepared the beneficial ownership documentation</li>
+      <li>An additional disclosure in your closing documents acknowledging the buyer's entity status</li>
+    </ul>
+    <p>
+      What you don't see: no additional cost to you, no additional disclosure obligations on your end, no impact on your sale proceeds.
+    </p>
+
+    <h2>What it means for Cash Guy Nate</h2>
+    <p>
+      We're a domestic AZ-based investor. Most of our purchases are conducted through an Arizona LLC we own and operate. Under the new rule, our beneficial ownership has been registered with FinCEN since the Corporate Transparency Act took effect in 2024 (separate from the residential real estate rule).
+    </p>
+    <p>
+      When we close on your house, the title company files the beneficial ownership report based on our pre-filed CTA registration. No delay, no surprises, no additional ask of you. We've been operating under this framework throughout 2025 and through 2026.
+    </p>
+
+    <h2>The two-part compliance framework: CTA + GTO</h2>
+    <p>
+      Sellers sometimes confuse the two related federal requirements:
+    </p>
+    <p>
+      <strong>Corporate Transparency Act (CTA) — effective January 1, 2024:</strong> All existing U.S. LLCs and corporations had until January 1, 2025 to file their initial Beneficial Ownership Information (BOI) report with FinCEN. New entities formed after January 2024 must file within 90 days of formation. Any cash-buying investor operating as an LLC should have completed this filing over a year ago.
+    </p>
+    <p>
+      <strong>Geographic Targeting Order (GTO) — expanded nationwide in 2026:</strong> On top of the CTA registration, the GTO requires the title company to submit a specific report at the time of each covered cash real estate purchase. This is the transaction-level reporting — distinct from the entity-level CTA registration.
+    </p>
+    <p>
+      A compliant investor has done both. Their entity is registered under CTA, and their title company files the GTO report at each closing. If a buyer can't confirm both of these, their compliance posture is questionable.
+    </p>
+
+    <h2>What sellers should know about the buyer they're working with</h2>
+    <p>
+      When evaluating cash-buyer offers, ask:
+    </p>
+    <ul>
+      <li><strong>Are you a U.S.-domiciled entity?</strong> Legitimate cash buyers will say yes plainly.</li>
+      <li><strong>Are you registered under the Corporate Transparency Act?</strong> Yes, again — any compliant entity has been registered since 2024.</li>
+      <li><strong>Have you closed transactions under the new FinCEN rule?</strong> Yes — anyone actively buying since March 2026 has navigated this.</li>
+    </ul>
+    <p>
+      A buyer who can't answer these clearly or who claims the rule doesn't apply to them is a red flag. Walk away.
+    </p>
+
+    <h2>What it means for out-of-state and foreign buyers</h2>
+    <p>
+      The FinCEN rule has the most friction for offshore or opaque-structure buyers. Foreign nationals purchasing through multi-layered LLCs or shell structures face the most scrutiny. For domestic investors operating transparent, properly-registered entities, the compliance burden is minimal.
+    </p>
+    <p>
+      As an Arizona seller, this matters to you because: if you're selling to an entity that's operating through an opaque or improperly registered structure, the closing may face delays or complications that surface at the worst possible time — right before your scheduled close date. Vetting your buyer's compliance posture before contract reduces that risk.
+    </p>
+
+    <h2>The penalty side</h2>
+    <p>
+      Civil penalties for non-compliance with FinCEN reporting can be significant — up to $500/day for inaccurate or missing Beneficial Ownership Reports under the Corporate Transparency Act, plus possible criminal penalties for willful violations. These penalties fall on the entity that failed to report, not on the seller.
+    </p>
+    <p>
+      That said: working with a buyer who isn't compliant means working with an entity that may face enforcement action. Best practice is to verify the buyer is in good standing with FinCEN compliance before closing — your title company can do this verification as part of standard due diligence.
+    </p>
+
+    <h2>The bigger picture</h2>
+    <p>
+      The FinCEN rule is one of several federal-level changes affecting residential real estate in 2026. Others include continued IRS scrutiny on 1031 exchanges, evolving 1099-S reporting requirements, and state-level transfer-tax changes in some jurisdictions (though not Arizona — AZ has no real estate transfer tax).
+    </p>
+    <p>
+      For sellers, the practical implication is to work with title companies and buyers who are demonstrably compliant. The reporting infrastructure is now mature; legitimate buyers have integrated it. If you're getting offers that seem to dodge the question, that's a signal to look elsewhere.
+    </p>
+
+    <h2>What we do to make this easy on sellers</h2>
+    <ul>
+      <li>Our Arizona LLC is registered under the Corporate Transparency Act with current beneficial ownership on file</li>
+      <li>We use title companies experienced with FinCEN reporting (most reputable AZ title companies now are)</li>
+      <li>We pre-coordinate the reporting timeline so it doesn't affect your closing date</li>
+      <li>We disclose our entity structure clearly in the purchase agreement</li>
+    </ul>
+
+    <h2>FAQ</h2>
+    <div class="faq">
+      <div class="faq__item">
+        <p class="faq__q">Does the FinCEN LLC reporting rule affect me as a home seller in Arizona?</p>
+        <p class="faq__a">No. The reporting obligation falls on the buyer — specifically the title company or closing attorney who files the Beneficial Ownership Report on behalf of the purchasing entity. As a seller, you have no new paperwork requirements under the rule. You may notice the title company asking the buyer additional questions at closing, but this doesn't affect your proceeds or timeline.</p>
+      </div>
+      <div class="faq__item">
+        <p class="faq__q">Which Arizona metro areas are covered by the FinCEN geographic targeting order?</p>
+        <p class="faq__a">The 2024-2026 FinCEN GTOs cover all 50 states for entity purchases above applicable thresholds. Arizona (including Maricopa, Pima, Pinal, Mohave, and Yavapai counties) is fully covered. The reporting threshold in Arizona is $300,000 for covered metro areas.</p>
+      </div>
+      <div class="faq__item">
+        <p class="faq__q">What is the Corporate Transparency Act and how is it related?</p>
+        <p class="faq__a">The Corporate Transparency Act (CTA), effective January 2024, requires most U.S. legal entities to register their beneficial owners with FinCEN. The residential real estate reporting rule (GTO) builds on this by requiring that beneficial ownership information be reported to FinCEN on all-cash residential purchases by entities. Legitimate investors operating since 2024 have already completed their CTA registration.</p>
+      </div>
+      <div class="faq__item">
+        <p class="faq__q">Can an investor buy my house in cash through an LLC in Arizona?</p>
+        <p class="faq__a">Yes, and this is standard practice. The vast majority of institutional and individual real estate investors in Arizona operate through LLCs for liability protection and business structure reasons. The FinCEN reporting rules don't prohibit this — they just require the beneficial owners of those LLCs to be disclosed to FinCEN at closing.</p>
+      </div>
+    </div>
+
+    <h2>Bottom line</h2>
+    <p>
+      The FinCEN rule is a buyer compliance issue, not a seller compliance issue. As a seller, you should be aware that legitimate cash buyers in 2026 are operating under this framework and have integrated it into their closing processes. If a cash buyer can't explain how they handle FinCEN reporting or claims it doesn't apply, treat that as a warning sign and move on.
+    </p>
+    <p>
+      We're happy to walk through our compliance setup with anyone who wants details. Call {SITE.phoneDisplay}.
+    </p>
+
+    <h2 style="margin-top: 3rem;">Related</h2>
+    <ul>
+      <li><a href="/about/">About Cash Guy Nate — Our Entity Structure</a></li>
+      <li><a href="/blog/arizona-wholesale-buyer-disclosure-ars-44-5101/">ARS § 44-5101 — Wholesale Buyer Disclosure</a></li>
+      <li><a href="/blog/companies-that-buy-houses-for-cash-arizona/">Companies That Buy Houses for Cash in Arizona</a></li>
+      <li><a href="/blog/4-step-cash-sale-process/">The 4-Step Process Explained</a></li>
+    </ul>
+  </article>
+</BaseLayout>

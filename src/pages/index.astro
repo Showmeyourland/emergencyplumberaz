@@ -1,0 +1,244 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE } from '../config';
+import { rotateCTA } from '../utils/cta';
+
+const cta = rotateCTA('home');
+
+const faqs = [
+  {
+    question: "How does this work — what's the catch?",
+    answer: "There's no catch, but there is a tradeoff. Our offer will be 65-80% of what your house would sell for fully repaired and listed with an agent. That gap is what pays for closing in 7-21 days with no commissions, no repairs, no showings, and zero risk of a buyer's financing falling apart. If maximum price is what you want and you can wait 60-90 days plus repairs, we're not the right fit. If speed and certainty are what you want, we are.",
+  },
+  {
+    question: "What kind of houses do you actually buy?",
+    answer: "Single-family homes, townhouses, and small multifamily across Arizona. We buy in any condition — inherited properties with deferred maintenance, fire-damaged, hoarder situations, houses needing major foundation or roof work, properties tied up in probate. Condition isn't a problem. The only houses we pass on are ones with severe title defects we can't resolve in escrow, or in HOAs with sale restrictions that don't make economic sense.",
+  },
+  {
+    question: "How fast can you actually close?",
+    answer: "Seven business days is our fastest. Fourteen to twenty-one days is typical, mostly driven by title work — clearing liens, satisfying HOA dues, getting payoffs from the lender. If a probate is still open, we can either wait for it to close or have a probate attorney expedite. Tell us your ideal close date when you call and we'll work to it.",
+  },
+  {
+    question: "Are you the same people as those ugly yellow billboards?",
+    answer: "No. Those are mostly franchise operations. We're an independent investor team based in Phoenix. The person who answers when you call is the same person who walks the property and writes the offer. We don't have a call center and we don't farm out leads to other investors.",
+  },
+  {
+    question: "Do I pay anything?",
+    answer: "Nothing. No commissions, no listing fees, no inspection fees, no closing costs (we pay them). What you sign for at the title company is what you walk out with. The only exception is liens or mortgages against the property — those get paid off from the sale proceeds, same as any sale.",
+  },
+  {
+    question: "What if I owe more on the house than it's worth?",
+    answer: "Call us anyway. Sometimes a short sale makes sense — we can write an offer contingent on lender approval and your lender accepts less than the full balance. We've done short sales in Maricopa, Pima, and Pinal counties. Not every situation works, but enough do that it's worth a 10-minute conversation.",
+  },
+  {
+    question: "Can I sell with tenants in the house?",
+    answer: "Yes. We buy occupied properties regularly. The tenant doesn't move; only the deed changes hands. We honor existing leases. If you want to deliver vacant, that's also fine — we can structure either way.",
+  },
+];
+
+const homeSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "url": SITE.baseUrl,
+  "name": SITE.brandName,
+  "publisher": { "@id": `${SITE.baseUrl}/#org` },
+  "inLanguage": "en-US",
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(f => ({
+    "@type": "Question",
+    "name": f.question,
+    "acceptedAnswer": { "@type": "Answer", "text": f.answer },
+  })),
+};
+
+// Service icons map (inline SVG, no external request)
+const subVerticalDetails = [
+  { slug: "sell-fast-cash", copy: "Cash in your account, fast. 7-21 day closes. Standard transaction, no surprises.", icon: "lightning" },
+  { slug: "foreclosure", copy: "Pre-foreclosure timing matters. We close before the trustee sale and protect your credit.", icon: "shield" },
+  { slug: "inherited", copy: "Probate, multiple heirs, deferred maintenance. We've handled it. We'll talk you through it.", icon: "scroll" },
+  { slug: "divorce", copy: "Clean sale, no agent commissions, fast cash split. One conversation can settle the property piece.", icon: "split" },
+  { slug: "as-is", copy: "Fire damage, hoarder houses, foundation issues. Condition isn't a problem. Don't fix anything.", icon: "wrench" },
+];
+---
+<BaseLayout
+  title="Cash Guy Nate — Cash Offers on Arizona Houses in 24 Hours"
+  description="Get a cash offer on your Arizona house in 24 hours. No fees, no commissions, no repairs. Close on your timeline. Phoenix, Tucson, Mesa, statewide."
+  pageType="homepage"
+  schema={[homeSchema, faqSchema]}
+>
+  <section class="hero">
+    <div class="container">
+      <span class="hero__kicker">Arizona-Based · Cash Buyers Since 2018</span>
+      <h1>Cash offers on Arizona houses. No commissions. No repairs. No theater.</h1>
+      <p class="hero__sub">
+        Tell us about the property in a 5-minute call. Get a cash number same day. Close on your timeline — 7 days, 30 days, 90 days. Phoenix metro, Tucson, and statewide AZ.
+      </p>
+      <a href={`tel:${SITE.phone}`} class="btn btn--large">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+        {cta}
+      </a>
+    </div>
+  </section>
+
+  <section class="container">
+    <div class="trust-strip">
+      <div class="trust-strip__item">
+        <div class="trust-strip__icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+        </div>
+        <div>
+          <p class="trust-strip__label">7-21 day close</p>
+          <p class="trust-strip__copy">7-day minimum, 14-21 typical, longer if you need.</p>
+        </div>
+      </div>
+      <div class="trust-strip__item">
+        <div class="trust-strip__icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+        </div>
+        <div>
+          <p class="trust-strip__label">$0 in fees</p>
+          <p class="trust-strip__copy">No commission, no closing costs, no junk fees.</p>
+        </div>
+      </div>
+      <div class="trust-strip__item">
+        <div class="trust-strip__icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+        </div>
+        <div>
+          <p class="trust-strip__label">Any condition</p>
+          <p class="trust-strip__copy">Fire, hoarder, foundation — we still buy.</p>
+        </div>
+      </div>
+      <div class="trust-strip__item">
+        <div class="trust-strip__icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+        </div>
+        <div>
+          <p class="trust-strip__label">Talk to the buyer</p>
+          <p class="trust-strip__copy">No call centers, no leads farmed elsewhere.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container">
+    <span class="section-eyebrow">How this works</span>
+    <h2 style="margin-top:0;">Real numbers, real timeline, no fluff</h2>
+    <p>
+      If you sell a house to us, you'll get an all-cash offer in 24 hours, typically <strong>65-80% of what it'd fetch fully repaired and listed</strong>. That gap is the trade for closing in 7-21 days, with no commissions, no repairs, no showings, and no risk of buyer financing falling through.
+    </p>
+    <p>
+      We're investors — not agents, not a brokerage — and the price you see is what we pay. There are no junk fees, no last-minute renegotiations after the inspection, and no surprise closing costs charged back to you. When the title company hands you a check at closing, that's the number we agreed to.
+    </p>
+
+    <div class="stat-row">
+      <div class="stat-cell">
+        <span class="stat-cell__number">24h</span>
+        <p class="stat-cell__label">From first call to written offer</p>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-cell__number stat-cell__number--accent">$0</span>
+        <p class="stat-cell__label">Closing costs to you. We pay everything.</p>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-cell__number">7-21</span>
+        <p class="stat-cell__label">Days to close, depending on title work</p>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-cell__number stat-cell__number--accent">37</span>
+        <p class="stat-cell__label">AZ cities + neighborhoods we work in</p>
+      </div>
+    </div>
+
+    <div class="inline-disclaimer">
+      <strong>Investor identity, upfront:</strong> {SITE.brandName} buys houses as a principal — we're not a broker, not an agent. Offers are typically below open-market list price. Sellers should consult independent counsel before signing any agreement.
+    </div>
+  </section>
+
+  <section class="section--alt">
+    <div class="container">
+      <span class="section-eyebrow">Common situations</span>
+      <h2 style="margin-top:0;">Every house has a story. Here are the ones we work with most.</h2>
+      <div class="service-grid">
+        {subVerticalDetails.map((s) => {
+          const sv = SITE.subVerticals.find(x => x.slug === s.slug);
+          return (
+            <a href={`/situations/${s.slug}/`} class="service-card">
+              <div class="service-card__icon">
+                {s.icon === "lightning" && <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>}
+                {s.icon === "shield" && <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>}
+                {s.icon === "scroll" && <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>}
+                {s.icon === "split" && <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3h5v5"></path><path d="M8 3H3v5"></path><path d="M12 22V3"></path><path d="M21 3l-9 9-9-9"></path></svg>}
+                {s.icon === "wrench" && <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>}
+              </div>
+              <h3>{sv?.short}</h3>
+              <p>{s.copy}</p>
+            </a>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+
+  <section class="container">
+    <span class="section-eyebrow">Where we work</span>
+    <h2 style="margin-top:0;">Arizona cities + neighborhoods</h2>
+    <p>We buy single-family homes, townhouses, and small multifamily across most of populated AZ. From Phoenix to Tucson to the outlying mountain and river towns.</p>
+    <div class="city-grid">
+      {SITE.cities.map((c) => (
+        <a href={`/${c.slug}/`} class="city-tile">{c.name}</a>
+      ))}
+    </div>
+  </section>
+
+  <section class="section--alt">
+    <div class="container container--narrow">
+      <span class="section-eyebrow">Why us</span>
+      <h2 style="margin-top:0;">Why people pick us over the billboard outfits</h2>
+
+      <div class="pull-quote">
+        <strong>You talk to the person who writes your offer.</strong> Not a call center, not a salaried screener whose job is to qualify you out. The same person who picks up at {SITE.phoneDisplay} is the one who walks the property and signs the purchase agreement.
+      </div>
+
+      <div class="pull-quote">
+        <strong>We don't renegotiate after inspection.</strong> The price we quote on day one is the price we pay at closing. The number changes only if something material we didn't know about surfaces — a septic system we thought was sewer, a roof permit issue. Those are rare. We don't manufacture reasons to drop our offer.
+      </div>
+
+      <div class="pull-quote">
+        <strong>We close on your timeline.</strong> If you need 60 days to move, we wait 60 days. If you need 5 days, we close in 5. We've sat on closings for 9 months for sellers in probate. Speed cuts both ways.
+      </div>
+
+      <div class="pull-quote">
+        <strong>Independent operator, not a national franchise.</strong> We're a small Phoenix-based investor team. Every deal we do, we hold or assign — no opaque corporate parent, no out-of-state ownership.
+      </div>
+    </div>
+  </section>
+
+  <section class="container container--narrow">
+    <span class="section-eyebrow">FAQ</span>
+    <h2 style="margin-top:0;">Common questions</h2>
+    <div class="faq">
+      {faqs.map((f) => (
+        <div class="faq__item">
+          <p class="faq__q">{f.question}</p>
+          <p class="faq__a">{f.answer}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container container--narrow">
+      <h2>Ready for a number?</h2>
+      <p>Five minutes on the phone. We do the rest. No obligation, no pressure, no follow-up campaign if you decide it's not the right move for you.</p>
+      <a href={`tel:${SITE.phone}`} class="btn btn--large">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+        Call {SITE.phoneDisplay}
+      </a>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,103 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE } from '../config';
+import { rotateCTA } from '../utils/cta';
+const cta = rotateCTA('how-it-works');
+---
+<BaseLayout
+  title="How Cash Guy Nate Works — Our 5-Step Cash Sale Process"
+  description="Our cash home buying process explained: 5 minute call, same-day offer, 7-21 day close. No fees, no commissions, no repairs."
+  pageType="service"
+  crumbs={[{ label: "Home", href: "/" }, { label: "How It Works" }]}
+>
+  <section class="hero">
+    <div class="container">
+      <span class="hero__kicker">The 5-Step Process</span>
+      <h1>How Cash Guy Nate Works</h1>
+      <p class="hero__sub">From first call to wired funds in your account. Most deals close in 7-21 days.</p>
+      <a href={`tel:${SITE.phone}`} class="btn btn--large">{cta}</a>
+    </div>
+  </section>
+
+  <section class="container container--narrow">
+    <h2>Step 1: Call us — five minutes</h2>
+    <p>
+      Call {SITE.phoneDisplay}. The person who answers is one of three of us; we don't route through a phone tree or a screening service. Tell us the property address, rough year of build, approximate condition, and what's going on (estate, foreclosure, divorce, relocation, etc.). We'll know within the call whether the property fits our buying parameters.
+    </p>
+    <p>
+      On that same call, you'll get a rough offer range. Not a precise number yet — we haven't walked the property — but a defensible range that survives the walk-through 90%+ of the time.
+    </p>
+
+    <h2>Step 2: Property walk-through — 30 minutes, on your schedule</h2>
+    <p>
+      Within 24-72 hours of the call, one of us comes out and walks the property. We need 30 minutes inside (less if it's a smaller home). You don't have to be there — many of our sellers are out of state and we coordinate access with a neighbor, family member, or property manager.
+    </p>
+    <p>
+      We're checking: structural condition, roof, HVAC, plumbing, electrical, foundation, signs of pest or water damage, any obvious code issues. We don't drag inspectors through this — it's a visual walk. The point is to confirm what you told us on the call and adjust our offer if needed.
+    </p>
+
+    <h2>Step 3: Written offer — 24 hours after walk</h2>
+    <p>
+      We issue a written purchase agreement. The price reflects the walk-through. Important: we don't reduce offers below what we said on the initial call unless we found something material that wasn't disclosed (e.g., structural foundation issue that wasn't mentioned). Routine condition variations are factored into our initial quote.
+    </p>
+    <p>
+      The purchase agreement is a standard Arizona purchase contract — we use the same forms you'd see in a conventional sale, with a few investor-specific provisions clearly marked.
+    </p>
+
+    <h2>Step 4: Open escrow, title work begins</h2>
+    <p>
+      You sign the agreement (electronically or in person, your choice). We open escrow at a title company — yours or ours, no preference. The title company orders a title commitment, identifies any liens or clouds, and starts clearing them.
+    </p>
+    <p>
+      Most of the timeline from contract to close is title work, not buyer work. Typical title clearance: 7-14 business days. If there's a probate, payoff demand from a difficult lender, or open lien you didn't know about, add time.
+    </p>
+
+    <h2>Step 5: Close, funds wire same day</h2>
+    <p>
+      You sign closing docs at the title office (or remotely via mobile notary if you're out of state). Funds wire to your account the day of closing or the next business day. Existing mortgage gets paid off from sale proceeds. The keys come to us at closing.
+    </p>
+    <p>
+      That's it. No follow-up showings, no contingent repairs to chase, no buyer's-financing renegotiation, no inspection report to negotiate against. The deal is done.
+    </p>
+
+    <h2>Total typical timeline</h2>
+    <ul>
+      <li><strong>Fastest possible: 7 business days.</strong> No liens, no HOA, clean title.</li>
+      <li><strong>Standard: 14-21 days.</strong> Normal title work, lender payoff, HOA transfer.</li>
+      <li><strong>Probate involved: 30-90 days.</strong> Court approval process.</li>
+      <li><strong>Short sale: 60-120 days.</strong> Lender approval bottleneck.</li>
+    </ul>
+
+    <h2>What you don't do</h2>
+    <ul>
+      <li>You don't repair anything</li>
+      <li>You don't clean it out</li>
+      <li>You don't pay any commissions</li>
+      <li>You don't pay closing costs</li>
+      <li>You don't host showings</li>
+      <li>You don't deal with inspectors or appraisers</li>
+      <li>You don't field offers, counter-offers, or buyer's-agent negotiations</li>
+    </ul>
+
+    <h2>What we don't do</h2>
+    <ul>
+      <li>We don't bait-and-switch our offer after signing</li>
+      <li>We don't use the inspection to renegotiate (we already walked it)</li>
+      <li>We don't add junk fees at closing</li>
+      <li>We don't tie up your house with contingencies we can't perform on</li>
+      <li>We don't refer leads to other investors</li>
+    </ul>
+
+    <div class="inline-disclaimer">
+      <strong>Cash buyer disclosure:</strong> {SITE.brandName} purchases properties as a principal investor — not a broker or agent. Cash offers are typically below open-market value in exchange for speed, certainty, and elimination of seller costs. Consult independent counsel before signing any agreement.
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container container--narrow">
+      <h2>Ready to start?</h2>
+      <p>Five minutes is all the first call takes.</p>
+      <a href={`tel:${SITE.phone}`} class="btn btn--large">Call {SITE.phoneDisplay}</a>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,99 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE } from '../config';
+const year = new Date().getFullYear();
+---
+<BaseLayout
+  title="Terms of Service | Cash Guy Nate"
+  description="Terms of Service for Cash Guy Nate. Investor identity, transaction terms, FinCEN compliance, and arbitration."
+  pageType="trust"
+  crumbs={[{ label: "Home", href: "/" }, { label: "Terms" }]}
+>
+  <section class="container container--narrow">
+    <h1>Terms of Service</h1>
+    <p><em>Effective date: January 1, {year}.</em></p>
+
+    <p>
+      These Terms of Service ("Terms") govern your use of azhomecashguy.com and your interactions with {SITE.brandName} ("we," "us," "our"). By using the website or contacting us, you agree to these Terms.
+    </p>
+
+    <h2>1. Marketing service; investor identity</h2>
+    <p>
+      {SITE.brandName} is a real estate investor and operates this website as a marketing presence. We are not a licensed real estate broker, agent, or brokerage. We do not represent sellers in any agency capacity. We do not provide legal, financial, tax, or real estate advice. Information on this website is provided for general informational purposes and is not a substitute for professional advice tailored to your situation.
+    </p>
+
+    <h2>2. No agency relationship</h2>
+    <p>
+      Contacting us, calling our phone line, or submitting information through this website does not create an agency relationship between {SITE.brandName} and you. We act solely as a principal buyer when we make offers to purchase property.
+    </p>
+
+    <h2>3. Offers are non-binding until written agreement</h2>
+    <p>
+      Any cash offer discussed by phone, email, or in any preliminary written form is a non-binding indication of interest. A binding agreement exists only when both parties sign a written purchase agreement that has been delivered to all parties.
+    </p>
+
+    <h2>4. Arizona transactions — A.R.S. § 44-5101 compliance</h2>
+    <p>
+      For Arizona properties, {SITE.brandName} complies with Arizona Revised Statutes § 44-5101. Where {SITE.brandName} acts as a wholesale buyer (purchasing with intent to assign), written disclosure is provided to sellers prior to signing the purchase agreement, and written disclosure is provided to assignees prior to signing any assignment agreement. These disclosures are transactional documents and not part of these website Terms.
+    </p>
+
+    <h2>5. Multi-state operations; state-specific disclaimers</h2>
+    <p>
+      <strong>Texas:</strong> {SITE.brandName} is not a licensed Texas real estate broker, sales agent, or brokerage as defined by Texas Real Estate Commission rules.
+    </p>
+    <p>
+      <strong>California:</strong> {SITE.brandName} is not a licensed California real estate agent, broker, or brokerage as defined by the California Department of Real Estate.
+    </p>
+    <p>
+      For transactions in any state, {SITE.brandName} operates only as a principal buyer.
+    </p>
+
+    <h2>6. FinCEN beneficial ownership reporting</h2>
+    <p>
+      All-cash residential real estate purchases conducted through limited liability companies, trusts, or similar entities may be subject to federal beneficial ownership reporting requirements under the Financial Crimes Enforcement Network (FinCEN) Residential Real Estate Geographic Targeting Order and the Corporate Transparency Act. {SITE.brandName} complies with applicable FinCEN reporting requirements. Sellers should consult with their own tax and legal advisors regarding the reporting implications of their specific transaction.
+    </p>
+
+    <h2>7. No warranty</h2>
+    <p>
+      The website and any information provided through it are offered "as is" without warranties of any kind, either express or implied. {SITE.brandName} does not warrant that the website will be uninterrupted, error-free, or free of harmful components.
+    </p>
+
+    <h2>8. Limitation of liability</h2>
+    <p>
+      To the maximum extent permitted by law, {SITE.brandName}'s total liability for any claim arising from your use of this website is limited to $100. {SITE.brandName} is not liable for indirect, incidental, consequential, special, or punitive damages.
+    </p>
+
+    <h2>9. Indemnification</h2>
+    <p>
+      You agree to indemnify and hold harmless {SITE.brandName}, its principals, and affiliates from any claims arising out of your violation of these Terms, your violation of applicable law, or your use of this website.
+    </p>
+
+    <h2>10. Dispute resolution; arbitration</h2>
+    <p>
+      Any dispute arising out of these Terms or your use of this website shall be resolved by binding arbitration administered by the American Arbitration Association under its Consumer Arbitration Rules. Arbitration shall be conducted in Maricopa County, Arizona. Each party shall bear its own costs of arbitration, except as required by AAA rules. You agree to arbitrate disputes on an individual basis only and waive any right to class arbitration.
+    </p>
+    <p>
+      Notwithstanding the arbitration requirement, either party may bring an action in small claims court for disputes within that court's jurisdiction.
+    </p>
+
+    <h2>11. Governing law</h2>
+    <p>
+      These Terms are governed by Arizona law without regard to conflict-of-law principles. Venue for any non-arbitrable dispute lies exclusively in Maricopa County, Arizona.
+    </p>
+
+    <h2>12. Severability</h2>
+    <p>
+      If any provision of these Terms is held to be unenforceable, the remaining provisions remain in full force and effect.
+    </p>
+
+    <h2>13. Changes</h2>
+    <p>
+      We may update these Terms from time to time. Material changes will be posted with an updated effective date.
+    </p>
+
+    <h2>Contact</h2>
+    <p>
+      For questions about these Terms, call {SITE.phoneDisplay} or use the contact page.
+    </p>
+  </section>
+</BaseLayout>

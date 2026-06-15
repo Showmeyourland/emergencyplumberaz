@@ -1,0 +1,125 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE } from '../config';
+import { rotateCTA } from '../utils/cta';
+const cta = rotateCTA('cash-offer-for-home');
+---
+<BaseLayout
+  title="Get a Cash Offer for Your Arizona Home — 24-Hour Turnaround | Cash Guy Nate"
+  description="Get a written cash offer on your Arizona home in 24 hours. No obligation, no fees, no repairs. Phoenix, Tucson, Mesa, statewide AZ. Call (602) 555-0100."
+  pageType="service"
+  crumbs={[{ label: "Home", href: "/" }, { label: "Cash Offer for Home" }]}
+>
+  <section class="hero">
+    <div class="container">
+      <span class="hero__kicker">24-Hour Written Cash Offer</span>
+      <h1>Get a Cash Offer for Your Arizona Home</h1>
+      <p class="hero__sub">Tell us about the property in a 5-minute call. We deliver a written cash offer within 24 hours, with a number that holds at closing. No buyer financing risk, no repair credits, no service fees.</p>
+      <a href={`tel:${SITE.phone}`} class="btn btn--large">{cta}</a>
+    </div>
+  </section>
+
+  <section class="container container--narrow">
+    <h2>What a real cash offer looks like</h2>
+    <p>
+      "Cash offer" gets used loosely in the real estate market. Some operators quote a number, then renegotiate after inspection. Some quote conservatively then bid higher. Some are wholesalers who can't actually close. Our offers are simple: one written purchase agreement, one number, no inspection-based reductions, no last-minute changes.
+    </p>
+    <p>
+      Our typical offer falls between 65-80% of after-repair value depending on property condition. The percentage is higher for clean-condition properties (less rehab cost for us) and lower for distressed ones (more rehab cost). The math is consistent and explainable.
+    </p>
+
+    <h2>How the offer is built</h2>
+    <p>
+      We start with comparable sales in the immediate area (typically 1-mile radius, 6 months). We adjust for your property's specific characteristics (square footage, bed/bath count, lot size, condition).
+    </p>
+    <p>
+      We then estimate rehab cost — what we'd need to spend to bring the property to market-ready condition for resale. Higher rehab cost = lower buy price; lower rehab cost = higher buy price.
+    </p>
+    <p>
+      We factor in holding cost (taxes, insurance, utilities, HOA) for the 4-8 months we'd own the property during rehab and resale.
+    </p>
+    <p>
+      We factor in resale transaction costs — commissions on the resale side, title fees, etc.
+    </p>
+    <p>
+      The remaining number, after a target return on capital, is our buy price. It's underwriting, not a guess.
+    </p>
+
+    <h2>What our offer includes</h2>
+    <ul>
+      <li>Specific dollar amount in writing</li>
+      <li>No buyer financing contingency (we close cash)</li>
+      <li>Closing timeline you choose (7 days minimum, no maximum)</li>
+      <li>All standard closing costs paid by us</li>
+      <li>No service fees, no listing fees, no repair credits</li>
+      <li>Standard Arizona purchase agreement language</li>
+    </ul>
+
+    <h2>What our offer doesn't include</h2>
+    <ul>
+      <li>Inspection contingencies that let us renegotiate later</li>
+      <li>Appraisal contingencies (we don't need an appraisal)</li>
+      <li>"Right of assignment" — we close ourselves, we don't sign and shop the deal</li>
+      <li>Hidden fees deducted at closing</li>
+    </ul>
+
+    <h2>Three ways to compare our offer to alternatives</h2>
+    <p>
+      <strong>Vs. listing with an agent.</strong> Listing typically nets 15-25% more in dollars but adds 60-90 days, pre-list repairs, commissions, showings, financing risk, and inspection renegotiation. <a href="/blog/cash-offer-vs-listing-math/">We've written the math here.</a>
+    </p>
+    <p>
+      <strong>Vs. iBuyer offer (Opendoor / Offerpad).</strong> iBuyers typically headline 10-15% higher than us but charge 5% service fees plus repair credits, narrowing the gap. They also decline 30-50% of properties they're shown. <a href="/blog/opendoor-vs-cash-buyer-arizona/">Detailed comparison here.</a>
+    </p>
+    <p>
+      <strong>Vs. other independent cash buyers.</strong> Pricing across the independent investor category typically varies 5-15%. We're competitive but not always the highest. <a href="/blog/best-cash-home-buyers-phoenix/">Honest review of competitors here.</a>
+    </p>
+
+    <h2>Real cash offers we've made — example math</h2>
+    <p>
+      Three anonymized examples from 2024-2025 to give you a sense of how the numbers work:
+    </p>
+    <p>
+      <strong>Example 1 — Phoenix 1980s ranch.</strong> ARV: $415,000. Condition: dated kitchen and master bath, original carpet, 5-year-old HVAC, roof at 7-year remaining life. Estimated rehab: $42,000. Our offer: $295,000 (71% of ARV). Closed in 18 days.
+    </p>
+    <p>
+      <strong>Example 2 — Mesa 2005 production build.</strong> ARV: $445,000. Condition: well-maintained, updated within last 3 years, current HVAC. Estimated rehab: $14,000 (paint, carpet, minor cosmetic). Our offer: $355,000 (80% of ARV). Closed in 12 days. The cleaner condition pulled the buy price toward the high end of our range.
+    </p>
+    <p>
+      <strong>Example 3 — Tucson 1965 mid-century.</strong> ARV: $310,000. Condition: knob-and-tube electrical, single-pane windows, evaporative-cooler-only HVAC, original kitchen and bath. Estimated rehab: $58,000. Our offer: $198,000 (64% of ARV). Closed in 24 days. The heavy rehab cost pulled the buy price below our typical range floor.
+    </p>
+
+    <h2>What changes the offer up or down</h2>
+    <p>Within the 65-80% ARV band, the specific percentage depends on several factors:</p>
+    <ul>
+      <li><strong>Condition.</strong> Cleaner properties = higher percentage. We're paying for less rehab.</li>
+      <li><strong>Neighborhood velocity.</strong> Fast-moving neighborhoods (Gilbert, Chandler, parts of Phoenix) support higher buy prices because our holding time is shorter. Slower-moving areas (rural AZ, some older Phoenix zips) get a slightly lower buy price.</li>
+      <li><strong>Property type.</strong> Single-family typically pays higher than condos (lower HOA risk) or mobile-on-land (different exit market).</li>
+      <li><strong>Title complexity.</strong> Probate, lis pendens, judgment liens, IRS liens — anything that adds title work or risk to our underwriting moves the number down.</li>
+      <li><strong>Tenant situation.</strong> Owner-occupied is the simplest. Properties with leases require honoring the lease through term or negotiating an early termination, which affects our resale options.</li>
+    </ul>
+
+    <h2>Why our day-one offer holds 90%+ of the time</h2>
+    <p>
+      The most common complaint sellers have about cash buyers is the post-inspection price drop. A buyer quotes $300K, then after their inspection comes back with "we need to reduce to $282K because of the roof." That pattern has burned a lot of sellers and built widespread skepticism.
+    </p>
+    <p>
+      We avoid it by doing the inspection ourselves before contract — that's what the walk-through is for. By the time we put a number in writing, we've already seen the property's actual condition. The only times our day-one number moves is when something material was hidden or undisclosed: a foundation problem under carpet that we couldn't see, a permitting issue surfaced by title work, or seller-claimed updates that weren't actually completed. Those situations are rare; we estimate they affect 5-8% of our deals.
+    </p>
+
+    <h2>How to get your cash offer started</h2>
+    <p>
+      Call (602) 555-0100. We answer Mon-Sat 8am-8pm. Tell us about your property in 5 minutes. We'll quote a range on the call, schedule a walk-through within 24-72 hours, and deliver a written offer within 24 hours of the walk.
+    </p>
+    <div class="inline-disclaimer">
+      <strong>Cash buyer disclosure:</strong> {SITE.brandName} buys as a principal investor — not a broker or agent. Offers are typically below open-market value. Consult independent counsel before signing any agreement.
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container container--narrow">
+      <h2>Ready for your cash offer?</h2>
+      <p>Written cash offer within 24 hours. No fees, no obligation, no follow-up campaign.</p>
+      <a href={`tel:${SITE.phone}`} class="btn btn--large">Call {SITE.phoneDisplay}</a>
+    </div>
+  </section>
+</BaseLayout>

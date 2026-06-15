@@ -1,0 +1,127 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { SITE } from '../../config';
+
+const posts = [
+  {
+    slug: "arizona-wholesale-buyer-disclosure-ars-44-5101",
+    title: "Arizona's Wholesale Buyer Disclosure Law (ARS § 44-5101) Explained",
+    excerpt: "What AZ's 2022 wholesale-buyer disclosure law actually requires. For homeowners selling to investors — protects both sides if you know it.",
+    date: "2026-05-27",
+  },
+  {
+    slug: "closing-cost-breakdown-arizona-cash-sale",
+    title: "Closing Cost Breakdown for an Arizona Cash Sale (Every Line Item)",
+    excerpt: "Every fee, every deduction, every line on the closing statement. Title fees, escrow, recording, prorations, HOA — and which ones we pay.",
+    date: "2026-05-26",
+  },
+  {
+    slug: "best-cash-home-buyers-phoenix",
+    title: "9 Best Cash Home Buyers in Phoenix, Arizona (2026 Honest Review)",
+    excerpt: "An honest comparison of every active Phoenix cash home buyer in 2026. iBuyers, franchises, local investors. Real pros, cons, offer ranges.",
+    date: "2026-05-25",
+  },
+  {
+    slug: "cash-sale-glossary-arizona-real-estate-terms",
+    title: "Cash Home Sale Glossary — 40 Arizona Real Estate Terms Explained",
+    excerpt: "Every cash-sale and AZ real estate term you'll hear during a sale. ARV, FSBO, iBuyer, equitable interest, lis pendens, trustee sale, more.",
+    date: "2026-05-24",
+  },
+  {
+    slug: "opendoor-vs-cash-buyer-arizona",
+    title: "Opendoor vs Independent Cash Buyer in Arizona — The Real Comparison",
+    excerpt: "iBuyer (Opendoor/Offerpad) vs local independent investor. Real fee breakdowns, real timelines, who's right for which seller.",
+    date: "2026-05-23",
+  },
+  {
+    slug: "zillow-cash-offers-explained",
+    title: "Zillow Cash Offers Explained — Where the Program Went (2026)",
+    excerpt: "Zillow Offers shut down in 2021. Redfin Now exited too. Here's where the iBuyer market actually stands in 2026.",
+    date: "2026-05-21",
+  },
+  {
+    slug: "cash-offer-vs-listing-math",
+    title: "Cash Offer vs. Listing: The Math in 2026",
+    excerpt: "What a cash sale actually nets you after closing costs, commissions, repairs, and carrying costs vs. a typical AZ listing.",
+    date: "2026-05-20",
+  },
+  {
+    slug: "i-need-to-sell-my-house-fast",
+    title: "I Need to Sell My House Fast in Arizona — What Are Your Real Options?",
+    excerpt: "Realistic fast-sale options for AZ. Cash buyers, iBuyers, FSBO with flat-fee MLS, traditional listing. What works for which timeline.",
+    date: "2026-05-19",
+  },
+  {
+    slug: "companies-that-buy-houses-for-cash-arizona",
+    title: "Companies That Buy Houses for Cash in Arizona — The 2026 Landscape",
+    excerpt: "The complete 2026 directory of AZ cash home buying companies. iBuyers, franchises, local investors, aggregators. Who's real, who pays best.",
+    date: "2026-05-17",
+  },
+  {
+    slug: "sell-house-during-probate-arizona",
+    title: "Selling a House in Probate in Arizona — Complete 2026 Guide",
+    excerpt: "How to sell an inherited or estate property through probate court in AZ. Timeline, costs, executor authority, cash sale options.",
+    date: "2026-05-16",
+  },
+  {
+    slug: "what-cash-buyers-actually-pay",
+    title: "What 'We Buy Houses' Companies Actually Pay (With Real Ranges)",
+    excerpt: "65-80% of after-repair-value is the industry standard. Here's how that math works on a typical AZ house.",
+    date: "2026-05-15",
+  },
+  {
+    slug: "4-step-cash-sale-process",
+    title: "The 4-Step Cash Sale Process in Arizona",
+    excerpt: "From the first call to the wire transfer. What happens, who does what, what takes time, what doesn't.",
+    date: "2026-05-08",
+  },
+  {
+    slug: "sell-as-is-or-fix-and-list",
+    title: "Sell As-Is or Fix-and-List? An Honest Breakdown",
+    excerpt: "When repairing first makes sense, when it doesn't, and the cash-buyer threshold most AZ houses hit.",
+    date: "2026-04-29",
+  },
+  {
+    slug: "fincen-2026-llc-purchase-rule",
+    title: "FinCEN's 2026 All-Cash LLC Reporting Rule (What Sellers Need to Know)",
+    excerpt: "The new federal beneficial-ownership reporting requirement on cash residential purchases — what it means for AZ sellers.",
+    date: "2026-04-20",
+  },
+];
+---
+<BaseLayout
+  title="Cash Home Sale Resources & Articles | Cash Guy Nate"
+  description="Articles and resources on cash home sales in Arizona. The math, the process, the legal landscape, the honest tradeoffs."
+  pageType="trust"
+  crumbs={[{ label: "Home", href: "/" }, { label: "Articles" }]}
+>
+  <section class="container container--narrow">
+    <h1>Articles & Resources</h1>
+    <p style="font-size: 1.15rem; line-height: 1.6;">
+      Honest writing on how the cash-buyer market actually works in Arizona. No fluff, no sales pitches inside the articles — we save the pitch for the call.
+    </p>
+    <p>
+      Most of what gets written about cash home buyers online is either thinly-veiled marketing or generic advice that doesn't account for Arizona's specific legal and market context. The articles below are different: real Arizona Revised Statute references, real Phoenix-metro and Tucson market data, real anonymized scenarios from deals we've actually closed, and honest tradeoffs about when cash buyers are the right call and when they aren't.
+    </p>
+    <p>A few articles to start with depending on your situation:</p>
+    <ul>
+      <li><strong>Deciding between cash and listing:</strong> Start with <a href="/blog/cash-offer-vs-listing-math/">Cash Offer vs. Listing: The Math</a> for a full breakdown of what each path actually nets you in 2026.</li>
+      <li><strong>Comparing cash buyers:</strong> Read <a href="/blog/best-cash-home-buyers-phoenix/">9 Best Cash Home Buyers in Phoenix</a> for an honest review of every active operator in the Phoenix market, including us.</li>
+      <li><strong>Behind on payments or pre-foreclosure:</strong> <a href="/blog/i-need-to-sell-my-house-fast/">I Need to Sell My House Fast</a> covers the realistic options under tight timelines.</li>
+      <li><strong>Executor managing an estate:</strong> <a href="/blog/sell-house-during-probate-arizona/">Selling a House in Probate in Arizona</a> walks through A.R.S. Title 14 specifics.</li>
+      <li><strong>Curious about the numbers:</strong> <a href="/blog/what-cash-buyers-actually-pay/">What Cash Buyers Actually Pay</a> breaks down the 65-80% of ARV math with neighborhood-specific factors.</li>
+    </ul>
+    <p>
+      All articles are updated to reflect the 2026 market. Comments and corrections welcome — call (602) 555-0100.
+    </p>
+    <hr style="margin: 2.5rem 0 1.5rem; border: none; border-top: 1px solid #e8e4dc;" />
+    <h2 style="margin-top: 0;">All articles</h2>
+    {posts.map((p) => (
+      <article style="border-bottom: 1px solid #e5e3dd; padding: 1.4rem 0;">
+        <h2 style="margin-top: 0;"><a href={`/blog/${p.slug}/`} style="text-decoration: none; color: var(--color-primary);">{p.title}</a></h2>
+        <p style="color: #6a6a6a; font-size: 0.88rem; margin: 0 0 0.5em;">{new Date(p.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+        <p style="margin: 0;">{p.excerpt}</p>
+      </article>
+    ))}
+  </section>
+</BaseLayout>

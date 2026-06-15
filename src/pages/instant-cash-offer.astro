@@ -1,0 +1,122 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE } from '../config';
+import { rotateCTA } from '../utils/cta';
+const cta = rotateCTA('instant-cash-offer');
+---
+<BaseLayout
+  title="Instant Cash Offer on Your Arizona House — Same-Day Quote | Cash Guy Nate"
+  description="Get a same-day cash offer range on your Arizona house. Specific written offer within 24 hours of walk-through. Close in 7-21 days. (602) 555-0100."
+  pageType="service"
+  crumbs={[{ label: "Home", href: "/" }, { label: "Instant Cash Offer" }]}
+>
+  <section class="hero">
+    <div class="container">
+      <span class="hero__kicker">Same-Day Range · 24-Hour Written Offer</span>
+      <h1>Instant Cash Offer on Your Arizona House</h1>
+      <p class="hero__sub">"Instant" is honest only to a point. Here's what we mean: a defensible quote range on the first call (today). A specific written offer within 24 hours of walking the property. Close in 7-21 days.</p>
+      <a href={`tel:${SITE.phone}`} class="btn btn--large">{cta}</a>
+    </div>
+  </section>
+
+  <section class="container container--narrow">
+    <h2>"Instant" in real estate — what it actually means</h2>
+    <p>
+      You'll see "instant cash offer" advertised constantly. The honest version: every cash buyer can give you a quick number on the phone or via online form. The number is usually a range or an algorithmic estimate. To turn that into a binding offer requires a property walk-through, which takes 24-72 hours to schedule.
+    </p>
+    <p>
+      The companies that advertise "instant" most aggressively (iBuyers like Opendoor and Offerpad) do give you a fast headline number — usually within minutes of submitting your address. But that headline number gets adjusted after inspection, often by $5K-$30K downward. Our approach is to quote a conservative range upfront, then deliver a written number that holds.
+    </p>
+
+    <h2>Our timeline, honest version</h2>
+    <p>
+      <strong>Within 5 minutes of your call:</strong> Quote range based on your property description. This is our "instant" — a defensible range, not a precise number.
+    </p>
+    <p>
+      <strong>Within 24-72 hours of your call:</strong> Property walk-through. 20-45 minutes on site. We confirm condition.
+    </p>
+    <p>
+      <strong>Within 24 hours of the walk:</strong> Written purchase agreement with a specific number. Typically falls in the middle of the initially-quoted range (sometimes higher if condition was better than described).
+    </p>
+    <p>
+      <strong>From contract to close:</strong> 7-21 business days, driven primarily by title work.
+    </p>
+    <p>
+      Total from "I call" to "money in account": typically 14-28 days.
+    </p>
+
+    <h2>Why not actually instant</h2>
+    <p>
+      A few hard physics:
+    </p>
+    <ul>
+      <li><strong>Walk-throughs need a person on site.</strong> No remote tool gives us enough condition data to underwrite a binding price.</li>
+      <li><strong>Title work needs days.</strong> Researching the chain of title, identifying liens, getting lender payoffs — all involve third parties (county recorder, lender, HOA) with their own timelines.</li>
+      <li><strong>Funds wires require business days.</strong> Wire transfers are not instant; they clear during banking business hours.</li>
+    </ul>
+    <p>
+      Anyone advertising "instant cash in your account" is either using "instant" loosely (meaning same-day or same-week) or running a structure that should make you cautious. Real cash sales involve title companies; title companies do not move instantly.
+    </p>
+
+    <h2>What you get instantly</h2>
+    <ul>
+      <li>Conservative quote range on the first call</li>
+      <li>Same-day callback if you leave voicemail</li>
+      <li>Clear walk-through scheduling (most are 24-72 hours out)</li>
+      <li>Specific written offer within 24 hours of the walk</li>
+      <li>Decision authority on the same call (no committee approval needed)</li>
+      <li>Honest answer about whether your property fits our buying parameters</li>
+    </ul>
+
+    <h2>What you don't get</h2>
+    <ul>
+      <li>Funds wired to your account within hours of a click</li>
+      <li>A binding price commitment without us walking the property</li>
+      <li>A close completed in days when title issues exist</li>
+    </ul>
+
+    <h2>If "instant" is what you genuinely need</h2>
+    <p>
+      Some scenarios truly need maximum speed:
+    </p>
+    <p>
+      <strong>Pre-foreclosure with the trustee sale within 14 days.</strong> Call us immediately. We've closed as late as 5 business days before scheduled sales. The earlier the call, the safer the timeline.
+    </p>
+    <p>
+      <strong>Military PCS with a hard report date.</strong> 21-30 day notice is normal. We can close within those windows on clean-title owner-occupied properties.
+    </p>
+    <p>
+      <strong>Estate sale with creditor pressure or HOA action.</strong> Probate complications add time, but in some scenarios we can close pending probate completion. Tell us the timeline.
+    </p>
+    <p>
+      <strong>Divorce decree with court-ordered sale deadline.</strong> We close to court-ordered timelines regularly.
+    </p>
+
+    <h2>Comparison: us vs. iBuyer "instant" claims</h2>
+    <p>
+      iBuyers (Opendoor, Offerpad) deliver the fastest headline numbers — often within 24 hours of submission. Our process is slightly slower on the headline (24-48 hours) but our number is a binding offer, not a pre-inspection estimate.
+    </p>
+    <p>
+      iBuyer headline is typically 86-92% of ARV; after fees and post-inspection adjustments, net to seller is 78-86%. Our offer headline is 65-80% of ARV; that's also our net to seller (no service fees, no adjustments). On many properties, the net dollars are closer than the headlines suggest.
+    </p>
+    <p>
+      <a href="/blog/opendoor-vs-cash-buyer-arizona/">Full comparison here.</a>
+    </p>
+
+    <h2>If you want to start</h2>
+    <p>
+      Call (602) 555-0100. Five minutes. Same-day quote range. Within 24-72 hours, on-site walk. Written offer within 24 hours of that.
+    </p>
+    <div class="inline-disclaimer">
+      <strong>Cash buyer disclosure:</strong> {SITE.brandName} buys as a principal investor. Offers are typically below open-market value in exchange for speed and certainty.
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container container--narrow">
+      <h2>Real "instant" — within the limits of real estate</h2>
+      <p>Same-day quote. 24-hour written offer. 7-21 day close.</p>
+      <a href={`tel:${SITE.phone}`} class="btn btn--large">Call {SITE.phoneDisplay}</a>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,8 @@
+:root {
+  --color-primary: #0d5c8a;
+  --color-accent: #e63946;
+  --color-bg: #f5f8fa;
+  --color-text: #1a1a1a;
+  --font-heading: 'Roboto Slab', Georgia, serif;
+  --font-body: system-ui, -apple-system, sans-serif;
+}

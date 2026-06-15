@@ -1,0 +1,204 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { SITE } from '../../config';
+import { CITY_CONTENT } from '../../data/cityContent';
+import { rotateCTA } from '../../utils/cta';
+import { buildCityMetaDescription } from '../../utils/meta';
+
+export function getStaticPaths() {
+  return SITE.cities.map((c) => ({
+    params: { city: c.slug },
+    props: { city: c },
+  }));
+}
+
+const { city } = Astro.props;
+const content = CITY_CONTENT[city.slug];
+const cta = rotateCTA(city.slug);
+
+const cityFaqsForSchema = content.cityFaqs.concat([
+  { q: "How fast can you actually close?", a: "Typically 7-21 days. The driver of timing is title work — clearing liens, satisfying HOA dues, getting lender payoffs. If you're flexible, we'll match your ideal close date." },
+  { q: "Do I pay any fees?", a: "No. We pay normal closing costs (title fees, recording, escrow). What you sign for at closing is what you walk out with, minus any existing liens or mortgages against the property." },
+]);
+
+const cityPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "RealEstateBusiness",
+  "@id": `${SITE.baseUrl}/${city.slug}/#service`,
+  "name": `${SITE.brandName} — ${city.name}, AZ`,
+  "areaServed": { "@type": "City", "name": city.name, "containedInPlace": { "@type": "State", "name": "Arizona" } },
+  "provider": { "@id": `${SITE.baseUrl}/#org` },
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": cityFaqsForSchema.map(f => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a },
+  })),
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": SITE.baseUrl },
+    { "@type": "ListItem", "position": 2, "name": city.name, "item": `${SITE.baseUrl}/${city.slug}/` },
+  ],
+};
+
+const otherCities = SITE.cities.filter((c) => c.slug !== city.slug).slice(0, 8);
+---
+<BaseLayout
+  title={`We Buy Houses ${city.name}, AZ — Cash Offers in 24 Hours | ${SITE.brandName}`}
+  description={buildCityMetaDescription(city.name, content.marketNote)}
+  pageType="city"
+  schema={[cityPageSchema, faqSchema, breadcrumbSchema]}
+  crumbs={[
+    { label: "Home", href: "/" },
+    { label: city.name },
+  ]}
+>
+  <section class="hero">
+    <div class="container">
+      <span class="hero__kicker">{city.county} County · Pop. {city.pop}</span>
+      <h1>We Buy Houses {city.name}, Arizona — Cash Offers in 24 Hours</h1>
+      <p class="hero__sub">
+        Cash offers on {city.name} houses. No commissions, no repairs, no contingencies. Close in 7-21 days, or on your timeline.
+      </p>
+      <a href={`tel:${SITE.phone}`} class="btn btn--large">{cta}</a>
+    </div>
+  </section>
+
+  <section class="container container--narrow">
+    <span class="section-eyebrow">{city.name} cash buying</span>
+    <h2 style="margin-top:0;">{city.name} is one of our regular markets</h2>
+    <p>{content.opener}</p>
+    <p><strong>Market context:</strong> {content.marketNote}</p>
+  </section>
+
+  {content.marketStats && (
+    <section class="container">
+      <div class="stat-row">
+        <div class="stat-cell">
+          <span class="stat-cell__number" style="font-size: 1.5rem;">{content.marketStats.medianPrice}</span>
+          <p class="stat-cell__label">Median home price</p>
+        </div>
+        <div class="stat-cell">
+          <span class="stat-cell__number stat-cell__number--accent" style="font-size: 1.5rem;">{content.marketStats.avgDOM}</span>
+          <p class="stat-cell__label">Average days on market</p>
+        </div>
+        <div class="stat-cell">
+          <span class="stat-cell__number" style="font-size: 1.5rem;">{content.marketStats.ourClosesPerYear}</span>
+          <p class="stat-cell__label">Our annual closes here</p>
+        </div>
+        <div class="stat-cell">
+          <span class="stat-cell__number stat-cell__number--accent" style="font-size: 1.5rem;">{content.marketStats.commonProperty.split(' ').slice(0,3).join(' ')}</span>
+          <p class="stat-cell__label">{content.marketStats.commonProperty}</p>
+        </div>
+      </div>
+    </section>
+  )}
+
+  <section class="container">
+    <span class="section-eyebrow">Coverage</span>
+    <h2 style="margin-top:0;">Neighborhoods we work in {city.name}</h2>
+    <p>We've closed deals in most of {city.name}'s residential areas. The neighborhoods we see most often:</p>
+    <ul>
+      {content.neighborhoods.map((n) => <li>{n}</li>)}
+    </ul>
+    <p>If your area isn't listed, call anyway — odds are we work there too.</p>
+    {content.commonZips && (
+      <p style="font-size: 0.92rem; color: #6a7080; margin-top: 1rem;">
+        <strong>Zip codes we close in:</strong> {content.commonZips.join(", ")}
+      </p>
+    )}
+  </section>
+
+  {content.processDetail && (
+    <section class="section--alt">
+      <div class="container container--narrow">
+        <span class="section-eyebrow">How it works in {city.name}</span>
+        <h2 style="margin-top:0;">The process — {city.name}-specific details</h2>
+        <p>{content.processDetail}</p>
+      </div>
+    </section>
+  )}
+
+  {content.whyCallUs && (
+    <section class="container container--narrow">
+      <span class="section-eyebrow">Why people call us</span>
+      <h2 style="margin-top:0;">Who calls us in {city.name}, and why</h2>
+      <p>{content.whyCallUs}</p>
+    </section>
+  )}
+
+  <section class="section--alt">
+    <div class="container container--narrow">
+      <span class="section-eyebrow">Recent jobs</span>
+      <h2 style="margin-top:0;">Real {city.name} deals we closed</h2>
+      {content.caseStudies.map((cs) => (
+        <div class="case-card">
+          <p><strong>Situation:</strong> {cs.situation}</p>
+          <p><strong>What happened:</strong> {cs.outcome}</p>
+        </div>
+      ))}
+      <p style="font-size: 0.88rem; color: #6a6a6a; margin-top: 1.2rem;">
+        Anonymized details. Identifying information changed; situations and outcomes are accurate to the deal pattern.
+      </p>
+    </div>
+  </section>
+
+  <section class="container">
+    <h2>Common situations</h2>
+    <p>The most common reasons {city.name} sellers call us:</p>
+    <div class="service-grid">
+      {SITE.subVerticals.map((s) => (
+        <a href={`/situations/${s.slug}/`} class="service-card">
+          <h3>{s.short}</h3>
+          <p>
+            {s.slug === "sell-fast-cash" && "Cash in your account, fast. Standard transaction."}
+            {s.slug === "foreclosure" && "Close before the trustee sale, protect your credit."}
+            {s.slug === "inherited" && "Probate, multiple heirs, deferred maintenance — we've done it."}
+            {s.slug === "divorce" && "Clean split, no agent commissions, fast cash to both parties."}
+            {s.slug === "as-is" && "Any condition. Fire, hoarder, foundation — call us anyway."}
+          </p>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <section class="container container--narrow">
+    <h2>Questions from {city.name} sellers</h2>
+    <div class="faq">
+      {cityFaqsForSchema.map((f) => (
+        <div class="faq__item">
+          <p class="faq__q">{f.q}</p>
+          <p class="faq__a">{f.a}</p>
+        </div>
+      ))}
+    </div>
+    <div class="inline-disclaimer">
+      <strong>Investor identity:</strong> {SITE.brandName} buys houses as a principal investor — not a broker or agent. Offers are typically below open-market list price in exchange for speed and certainty.
+    </div>
+  </section>
+
+  <section class="container">
+    <h2>Other Arizona cities we work in</h2>
+    <div class="city-grid">
+      {otherCities.map((c) => (
+        <a href={`/${c.slug}/`} class="city-tile">{c.name}</a>
+      ))}
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container container--narrow">
+      <h2>Ready for a {city.name} cash offer?</h2>
+      <p>Tell us about the property in a 5-minute call. We'll have a cash number to you the same day.</p>
+      <a href={`tel:${SITE.phone}`} class="btn btn--large">Call {SITE.phoneDisplay}</a>
+    </div>
+  </section>
+</BaseLayout>

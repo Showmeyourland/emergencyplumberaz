@@ -1,0 +1,29 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE } from '../config';
+---
+<BaseLayout
+  title="Page Not Found | Cash Guy Nate"
+  description="The page you're looking for isn't here. Try the homepage or call us directly."
+  pageType="trust"
+>
+  <section class="container container--narrow" style="padding: 4rem 1.5rem; text-align: center;">
+    <h1>That page isn't here</h1>
+    <p style="font-size: 1.15rem;">The page you were looking for moved or never existed. No worries — you can find what you need from one of these:</p>
+    <p style="margin: 2rem 0;">
+      <a href="/" class="btn btn--large">Back to Home</a>
+    </p>
+    <p>
+      Or call us directly at <a href={`tel:${SITE.phone}`}><strong>{SITE.phoneDisplay}</strong></a>
+    </p>
+    <p style="margin-top: 2rem; color: #6a6a6a;">Common pages:</p>
+    <ul style="list-style: none; padding: 0;">
+      <li><a href="/how-it-works/">How It Works</a></li>
+      <li><a href="/situations/sell-fast-cash/">Sell My House Fast for Cash</a></li>
+      <li><a href="/phoenix/">We Buy Houses in Phoenix</a></li>
+      <li><a href="/blog/">Articles & Resources</a></li>
+      <li><a href="/about/">About</a></li>
+      <li><a href="/contact/">Contact</a></li>
+    </ul>
+  </section>
+</BaseLayout>

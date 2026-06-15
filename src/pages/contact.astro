@@ -1,0 +1,85 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE } from '../config';
+---
+<BaseLayout
+  title={`Contact ${SITE.brandName} — Call (602) 555-0100`}
+  description={`Reach ${SITE.brandName}. Phone: (602) 555-0100. Mon-Sat 8am-8pm. Arizona-wide cash home buyers.`}
+  pageType="trust"
+  crumbs={[{ label: "Home", href: "/" }, { label: "Contact" }]}
+>
+  <section class="container container--narrow">
+    <h1>Contact {SITE.brandName}</h1>
+
+    <p>
+      The fastest way to get a cash offer on your Arizona house is to call. A five-minute conversation gives us everything we need to quote a number same day.
+    </p>
+
+    <h2>Phone</h2>
+    <p>
+      <a href={`tel:${SITE.phone}`} class="btn btn--large">Call {SITE.phoneDisplay}</a>
+    </p>
+    <p>
+      Hours: Mon-Sat 8am-8pm Arizona time. We do not observe daylight saving — Arizona is on Mountain Standard Time year-round, which aligns with Pacific Time in summer and Mountain Time in winter.
+    </p>
+
+    <h2>Where we work</h2>
+    <p>
+      Arizona statewide, with primary service in the Phoenix metro, Tucson, and the I-10 corridor between them. See the <a href="/">homepage</a> for a full city list.
+    </p>
+
+    <h2>What to have ready when you call</h2>
+    <p>
+      Nothing required, but these speed things up:
+    </p>
+    <ul>
+      <li>The property address</li>
+      <li>Rough year of construction (close is fine — "1990s" is enough)</li>
+      <li>Approximate square footage (if you know)</li>
+      <li>What's going on (estate, foreclosure, relocation, divorce, deferred maintenance, etc.)</li>
+      <li>Your ideal close timing — fast as possible, or a specific target date</li>
+    </ul>
+
+    <h2>If we miss your call</h2>
+    <p>
+      Voicemail goes to Nate's mobile. We return calls within an hour during business hours, by 9am next day if you call after 8pm. There's no phone tree, no auto-attendant, no "Press 1 for sales" theater — you reach a real person who can quote your property.
+    </p>
+
+    <h2>When the best time to call is</h2>
+    <p>
+      Practical answer: Mon-Fri mornings between 9am and 11am Arizona time tend to be the calmest, which means the longest unhurried conversation. Mid-afternoon (1-3pm) is also good. Saturdays we answer but typically have a property walk or two scheduled, so callbacks may run an extra 30-60 minutes.
+    </p>
+    <p>
+      If you're dealing with a hard deadline — a foreclosure trustee sale, a court-ordered sale date, a military reporting date — say so when you call. We rearrange our day to fit your timeline rather than the other way around.
+    </p>
+
+    <h2>What you can expect on the first call</h2>
+    <p>
+      A five- to ten-minute conversation. We'll ask about: the property's address, rough year of construction, condition (move-in / dated / deferred / distressed), what's going on with the situation, and your ideal close timeline. With that information, we pull comparable sales data live during the call and quote a range — typically a 10% band like "$285K to $315K" — before we hang up.
+    </p>
+    <p>
+      If you want to proceed from there, we schedule a property walk-through (typically within 24-72 hours). The walk takes 20-45 minutes and you don't have to be there if you're out of state — we coordinate access with a neighbor, family member, or property manager. Within 24 hours of the walk, we deliver a written purchase agreement with a specific dollar amount.
+    </p>
+    <p>
+      No part of that process costs you anything. If you decide it's not the right move for you, we don't follow up with a nurture sequence.
+    </p>
+
+    <h2>What we won't do</h2>
+    <ul>
+      <li>Spam you with follow-up emails or texts if you decide not to move forward</li>
+      <li>Share your information with other investors or marketers</li>
+      <li>Pressure you to sign anything on the first call</li>
+      <li>Quote a number we can't honor at closing</li>
+    </ul>
+
+    <h2>Business address</h2>
+    <p>
+      We operate out of Phoenix. Site visits are coordinated to your property — we come to you, not the other way around. If you want to meet at our office, we have shared workspace in central Phoenix and can arrange it by appointment.
+    </p>
+
+    <h2>Investor disclosure</h2>
+    <p>
+      {SITE.brandName} purchases properties as a principal real estate investor — we are not a licensed real estate broker, agent, or brokerage. We do not represent sellers in any agency capacity. All offers are made directly as a buyer.
+    </p>
+  </section>
+</BaseLayout>
