@@ -52,13 +52,13 @@ const breadcrumbSchema = {
   schema={[serviceSchema, faqSchema, breadcrumbSchema]}
   crumbs={[
     { label: "Home", href: "/" },
-    { label: "Situations", href: "/situations/sell-fast-cash/" },
+    { label: "Services" },
     { label: sv.short },
   ]}
 >
   <section class="hero">
     <div class="container">
-      <span class="hero__kicker">Arizona Cash Buyer · Direct Investor</span>
+      <span class="hero__kicker">24-Hour Emergency Plumbing · AZ ROC Licensed</span>
       <h1>{content.h1}</h1>
       <p class="hero__sub">{content.intro.substring(0, 180)}...</p>
       <a href={`tel:${SITE.phone}`} class="btn btn--large">{cta}</a>
@@ -69,7 +69,7 @@ const breadcrumbSchema = {
     <h2>What this means in practice</h2>
     <p>{content.intro}</p>
     <div class="inline-disclaimer">
-      <strong>Cash buyer disclosure:</strong> {SITE.brandName} buys as a principal investor — not a broker or agent. Offers are typically below open-market value. Consult independent counsel before signing any agreement.
+      <strong>Licensing:</strong> {SITE.brandName} is an AZ ROC-licensed and bonded plumbing contractor — verify at roc.az.gov. Estimates are non-binding until work is authorized on site; flat-rate pricing is provided in writing before any work begins.
     </div>
   </section>
 

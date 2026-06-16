@@ -7,32 +7,32 @@ const cta = rotateCTA('home');
 
 const faqs = [
   {
-    question: "How does this work — what's the catch?",
-    answer: "There's no catch, but there is a tradeoff. Our offer will be 65-80% of what your house would sell for fully repaired and listed with an agent. That gap is what pays for closing in 7-21 days with no commissions, no repairs, no showings, and zero risk of a buyer's financing falling apart. If maximum price is what you want and you can wait 60-90 days plus repairs, we're not the right fit. If speed and certainty are what you want, we are.",
+    question: "Do you actually answer at 3am?",
+    answer: "Yes. Mike or a licensed tech on our crew picks up. Not an answering service, not a voicemail — a real person who can take your address and get a truck moving. If a burst pipe or gas smell can't wait until morning, neither can we.",
   },
   {
-    question: "What kind of houses do you actually buy?",
-    answer: "Single-family homes, townhouses, and small multifamily across Arizona. We buy in any condition — inherited properties with deferred maintenance, fire-damaged, hoarder situations, houses needing major foundation or roof work, properties tied up in probate. Condition isn't a problem. The only houses we pass on are ones with severe title defects we can't resolve in escrow, or in HOAs with sale restrictions that don't make economic sense.",
+    question: "What does 'emergency plumbing' cost at 2am?",
+    answer: "We charge a flat dispatch fee, then time and materials once we're on-site. We quote the repair before we start work. You approve it before we touch anything. No surprises on the invoice. We'd rather lose a job than chase someone through collections over a number they didn't agree to.",
   },
   {
-    question: "How fast can you actually close?",
-    answer: "Seven business days is our fastest. Fourteen to twenty-one days is typical, mostly driven by title work — clearing liens, satisfying HOA dues, getting payoffs from the lender. If a probate is still open, we can either wait for it to close or have a probate attorney expedite. Tell us your ideal close date when you call and we'll work to it.",
+    question: "How fast does a tech actually arrive?",
+    answer: "Phoenix metro: typically 45-90 minutes. Outer cities like Surprise, Queen Creek, or Buckeye run 60-120 minutes depending on traffic and crew location. We give you an honest arrival window on the call, not a three-hour range.",
   },
   {
-    question: "Are you the same people as those ugly yellow billboards?",
-    answer: "No. Those are mostly franchise operations. We're an independent investor team based in Phoenix. The person who answers when you call is the same person who walks the property and writes the offer. We don't have a call center and we don't farm out leads to other investors.",
+    question: "Are you licensed and insured in Arizona?",
+    answer: "Yes. AZ ROC-licensed, bonded, and insured. You can verify our license number at roc.az.gov before we arrive. We're happy to give you the number when you call.",
   },
   {
-    question: "Do I pay anything?",
-    answer: "Nothing. No commissions, no listing fees, no inspection fees, no closing costs (we pay them). What you sign for at the title company is what you walk out with. The only exception is liens or mortgages against the property — those get paid off from the sale proceeds, same as any sale.",
+    question: "What's a slab leak and how do I know if I have one?",
+    answer: "A slab leak is a break in the supply or drain line running under your concrete foundation. Signs: warm or wet spots on the floor, unexplained spike in your water bill, water meter spinning when everything is off, or the sound of running water with nothing turned on. Call us — we use electronic leak detection to pinpoint the break without jackhammering the entire floor.",
   },
   {
-    question: "What if I owe more on the house than it's worth?",
-    answer: "Call us anyway. Sometimes a short sale makes sense — we can write an offer contingent on lender approval and your lender accepts less than the full balance. We've done short sales in Maricopa, Pima, and Pinal counties. Not every situation works, but enough do that it's worth a 10-minute conversation.",
+    question: "My water heater isn't heating. Is that an emergency?",
+    answer: "Not always. First check the pilot light (gas) or circuit breaker (electric). If relighting the pilot or resetting the breaker doesn't fix it within 30 minutes, call us. No hot water with a family in the house, a failing pressure-relief valve, or visible water around the base are all situations we'll prioritize same day.",
   },
   {
-    question: "Can I sell with tenants in the house?",
-    answer: "Yes. We buy occupied properties regularly. The tenant doesn't move; only the deed changes hands. We honor existing leases. If you want to deliver vacant, that's also fine — we can structure either way.",
+    question: "Do you work in Tucson or just Phoenix?",
+    answer: "Both, plus the cities in between. Phoenix metro, Tucson, and most of populated Arizona. See the city list below. If you're not sure whether you're in our range, call — we'll tell you straight.",
   },
 ];
 
@@ -45,6 +45,22 @@ const homeSchema = {
   "inLanguage": "en-US",
 };
 
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "Plumber",
+  "@id": `${SITE.baseUrl}/#org`,
+  "name": SITE.brandName,
+  "url": SITE.baseUrl,
+  "telephone": SITE.phone,
+  "description": SITE.tagline,
+  "areaServed": {
+    "@type": "State",
+    "name": "Arizona",
+  },
+  "openingHours": "Mo-Sa 08:00-20:00",
+  "priceRange": "$$",
+};
+
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
@@ -55,27 +71,27 @@ const faqSchema = {
   })),
 };
 
-// Service icons map (inline SVG, no external request)
 const subVerticalDetails = [
-  { slug: "sell-fast-cash", copy: "Cash in your account, fast. 7-21 day closes. Standard transaction, no surprises.", icon: "lightning" },
-  { slug: "foreclosure", copy: "Pre-foreclosure timing matters. We close before the trustee sale and protect your credit.", icon: "shield" },
-  { slug: "inherited", copy: "Probate, multiple heirs, deferred maintenance. We've handled it. We'll talk you through it.", icon: "scroll" },
-  { slug: "divorce", copy: "Clean sale, no agent commissions, fast cash split. One conversation can settle the property piece.", icon: "split" },
-  { slug: "as-is", copy: "Fire damage, hoarder houses, foundation issues. Condition isn't a problem. Don't fix anything.", icon: "wrench" },
+  { slug: "burst-pipe", copy: "Burst pipe flooding your house. Shut the main, call us. We stop the damage and repair the line.", icon: "lightning" },
+  { slug: "water-heater", copy: "No hot water, leaking tank, failing pressure-relief valve. Repair or full replacement, same day.", icon: "flame" },
+  { slug: "drain-clog", copy: "Backed-up sink, slow shower drain, sewer line stoppage. Camera inspection and hydro-jet clearing.", icon: "drop" },
+  { slug: "leak-detection", copy: "Warm floors, high water bill, meter spinning with nothing on. Electronic detection pinpoints the break.", icon: "search" },
+  { slug: "gas-line", copy: "Gas smell, hissing near appliances, pilot that won't stay lit. We're certified for AZ gas-line work.", icon: "shield" },
+  { slug: "garbage-disposal", copy: "Humming but not spinning, won't turn on, leaking at the flange. Quick diagnosis and repair or replace.", icon: "wrench" },
 ];
 ---
 <BaseLayout
-  title="Cash Guy Nate — Cash Offers on Arizona Houses in 24 Hours"
-  description="Get a cash offer on your Arizona house in 24 hours. No fees, no commissions, no repairs. Close on your timeline. Phoenix, Tucson, Mesa, statewide."
+  title={`${SITE.brandName} — 24-Hour Emergency Plumber in Arizona`}
+  description="24-hour emergency plumbing in Arizona. Burst pipes, water heaters, slab leaks, gas lines. Real plumbers, real trucks, real pricing. Call (602) 555-0100."
   pageType="homepage"
-  schema={[homeSchema, faqSchema]}
+  schema={[homeSchema, localBusinessSchema, faqSchema]}
 >
   <section class="hero">
     <div class="container">
-      <span class="hero__kicker">Arizona-Based · Cash Buyers Since 2018</span>
-      <h1>Cash offers on Arizona houses. No commissions. No repairs. No theater.</h1>
+      <span class="hero__kicker">AZ ROC-Licensed · Bonded · Insured · Since {SITE.founded}</span>
+      <h1>24-hour emergency plumber in Arizona. Real plumbers. Real trucks. Real pricing.</h1>
       <p class="hero__sub">
-        Tell us about the property in a 5-minute call. Get a cash number same day. Close on your timeline — 7 days, 30 days, 90 days. Phoenix metro, Tucson, and statewide AZ.
+        Burst pipe at midnight. Water heater out on a Sunday. Slab leak under your foundation. Call us — Mike and our licensed crew serve Phoenix metro, Tucson, and statewide AZ.
       </p>
       <a href={`tel:${SITE.phone}`} class="btn btn--large">
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
@@ -91,8 +107,17 @@ const subVerticalDetails = [
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
         </div>
         <div>
-          <p class="trust-strip__label">7-21 day close</p>
-          <p class="trust-strip__copy">7-day minimum, 14-21 typical, longer if you need.</p>
+          <p class="trust-strip__label">45-90 min arrival</p>
+          <p class="trust-strip__copy">Phoenix metro. We give you a real window, not a 4-hour range.</p>
+        </div>
+      </div>
+      <div class="trust-strip__item">
+        <div class="trust-strip__icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+        </div>
+        <div>
+          <p class="trust-strip__label">AZ ROC-licensed</p>
+          <p class="trust-strip__copy">Bonded and insured. Verify at roc.az.gov before we arrive.</p>
         </div>
       </div>
       <div class="trust-strip__item">
@@ -100,17 +125,8 @@ const subVerticalDetails = [
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
         </div>
         <div>
-          <p class="trust-strip__label">$0 in fees</p>
-          <p class="trust-strip__copy">No commission, no closing costs, no junk fees.</p>
-        </div>
-      </div>
-      <div class="trust-strip__item">
-        <div class="trust-strip__icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
-        </div>
-        <div>
-          <p class="trust-strip__label">Any condition</p>
-          <p class="trust-strip__copy">Fire, hoarder, foundation — we still buy.</p>
+          <p class="trust-strip__label">Upfront pricing</p>
+          <p class="trust-strip__copy">We quote before we work. You approve before we start.</p>
         </div>
       </div>
       <div class="trust-strip__item">
@@ -118,8 +134,8 @@ const subVerticalDetails = [
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
         </div>
         <div>
-          <p class="trust-strip__label">Talk to the buyer</p>
-          <p class="trust-strip__copy">No call centers, no leads farmed elsewhere.</p>
+          <p class="trust-strip__label">Talk to a plumber</p>
+          <p class="trust-strip__copy">No call centers. Mike or a licensed tech picks up.</p>
         </div>
       </div>
     </div>
@@ -127,52 +143,53 @@ const subVerticalDetails = [
 
   <section class="container">
     <span class="section-eyebrow">How this works</span>
-    <h2 style="margin-top:0;">Real numbers, real timeline, no fluff</h2>
+    <h2 style="margin-top:0;">Call, dispatch, diagnose, fix. That's it.</h2>
     <p>
-      If you sell a house to us, you'll get an all-cash offer in 24 hours, typically <strong>65-80% of what it'd fetch fully repaired and listed</strong>. That gap is the trade for closing in 7-21 days, with no commissions, no repairs, no showings, and no risk of buyer financing falling through.
+      You call {SITE.phoneDisplay}. A real plumber picks up, asks where you are and what's happening. We dispatch the closest available tech and give you an arrival window. When the truck arrives, the tech diagnoses the problem and quotes the repair before touching anything. You say yes, we fix it.
     </p>
     <p>
-      We're investors — not agents, not a brokerage — and the price you see is what we pay. There are no junk fees, no last-minute renegotiations after the inspection, and no surprise closing costs charged back to you. When the title company hands you a check at closing, that's the number we agreed to.
+      Arizona's hard water, caliche soil, and monsoon seasons create specific plumbing failure patterns that differ from other states. We've worked this market since {SITE.founded}. We know what breaks and why, and we carry the parts for the most common jobs on the truck.
     </p>
 
     <div class="stat-row">
       <div class="stat-cell">
-        <span class="stat-cell__number">24h</span>
-        <p class="stat-cell__label">From first call to written offer</p>
+        <span class="stat-cell__number">24/7</span>
+        <p class="stat-cell__label">Emergency dispatch, every day of the year</p>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-cell__number stat-cell__number--accent">6</span>
+        <p class="stat-cell__label">Core service categories we handle</p>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-cell__number">{SITE.cities.length}+</span>
+        <p class="stat-cell__label">Arizona cities in our service area</p>
       </div>
       <div class="stat-cell">
         <span class="stat-cell__number stat-cell__number--accent">$0</span>
-        <p class="stat-cell__label">Closing costs to you. We pay everything.</p>
-      </div>
-      <div class="stat-cell">
-        <span class="stat-cell__number">7-21</span>
-        <p class="stat-cell__label">Days to close, depending on title work</p>
-      </div>
-      <div class="stat-cell">
-        <span class="stat-cell__number stat-cell__number--accent">37</span>
-        <p class="stat-cell__label">AZ cities + neighborhoods we work in</p>
+        <p class="stat-cell__label">Surprise charges. Quote first, work second.</p>
       </div>
     </div>
 
     <div class="inline-disclaimer">
-      <strong>Investor identity, upfront:</strong> {SITE.brandName} buys houses as a principal — we're not a broker, not an agent. Offers are typically below open-market list price. Sellers should consult independent counsel before signing any agreement.
+      <strong>Pricing transparency:</strong> {SITE.brandName} charges a dispatch fee plus time and materials, quoted on-site before work begins. After-hours and weekend jobs carry a service premium — we tell you the rate when you call. AZ ROC-licensed, bonded, and insured. Verify at roc.az.gov.
     </div>
   </section>
 
   <section class="section--alt">
     <div class="container">
-      <span class="section-eyebrow">Common situations</span>
-      <h2 style="margin-top:0;">Every house has a story. Here are the ones we work with most.</h2>
+      <span class="section-eyebrow">Services</span>
+      <h2 style="margin-top:0;">Six emergency plumbing situations we handle every day.</h2>
       <div class="service-grid">
         {subVerticalDetails.map((s) => {
           const sv = SITE.subVerticals.find(x => x.slug === s.slug);
           return (
-            <a href={`/situations/${s.slug}/`} class="service-card">
+            <a href={`/services/${s.slug}/`} class="service-card">
               <div class="service-card__icon">
                 {s.icon === "lightning" && <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>}
+                {s.icon === "flame" && <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"></path></svg>}
+                {s.icon === "drop" && <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path></svg>}
+                {s.icon === "search" && <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>}
                 {s.icon === "shield" && <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>}
-                {s.icon === "scroll" && <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>}
-                {s.icon === "split" && <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3h5v5"></path><path d="M8 3H3v5"></path><path d="M12 22V3"></path><path d="M21 3l-9 9-9-9"></path></svg>}
                 {s.icon === "wrench" && <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>}
               </div>
               <h3>{sv?.short}</h3>
@@ -186,8 +203,8 @@ const subVerticalDetails = [
 
   <section class="container">
     <span class="section-eyebrow">Where we work</span>
-    <h2 style="margin-top:0;">Arizona cities + neighborhoods</h2>
-    <p>We buy single-family homes, townhouses, and small multifamily across most of populated AZ. From Phoenix to Tucson to the outlying mountain and river towns.</p>
+    <h2 style="margin-top:0;">Arizona cities we serve</h2>
+    <p>Phoenix metro, Tucson, and the populated cities in between. If you're in any of these areas, we can get a truck to you.</p>
     <div class="city-grid">
       {SITE.cities.map((c) => (
         <a href={`/${c.slug}/`} class="city-tile">{c.name}</a>
@@ -198,22 +215,22 @@ const subVerticalDetails = [
   <section class="section--alt">
     <div class="container container--narrow">
       <span class="section-eyebrow">Why us</span>
-      <h2 style="margin-top:0;">Why people pick us over the billboard outfits</h2>
+      <h2 style="margin-top:0;">What makes Coyote 24 different from the franchise operations</h2>
 
       <div class="pull-quote">
-        <strong>You talk to the person who writes your offer.</strong> Not a call center, not a salaried screener whose job is to qualify you out. The same person who picks up at {SITE.phoneDisplay} is the one who walks the property and signs the purchase agreement.
+        <strong>Mike answers.</strong> Not a dispatcher reading from a script. When you call {SITE.phoneDisplay}, you're talking to a master plumber who can tell you in 60 seconds whether you need to shut your main valve, whether the situation is genuinely urgent, and when a truck will arrive. That matters at 2am when water is coming through your ceiling.
       </div>
 
       <div class="pull-quote">
-        <strong>We don't renegotiate after inspection.</strong> The price we quote on day one is the price we pay at closing. The number changes only if something material we didn't know about surfaces — a septic system we thought was sewer, a roof permit issue. Those are rare. We don't manufacture reasons to drop our offer.
+        <strong>No bait dispatch fees.</strong> Some plumbers quote a $49 dispatch fee, then tag on inflated labor rates once the tech is in your house. Our dispatch fee is flat and we tell you the hourly rate on the call before we send anyone. The repair estimate you see on-site is the estimate you pay.
       </div>
 
       <div class="pull-quote">
-        <strong>We close on your timeline.</strong> If you need 60 days to move, we wait 60 days. If you need 5 days, we close in 5. We've sat on closings for 9 months for sellers in probate. Speed cuts both ways.
+        <strong>Arizona-specific experience.</strong> Caliche soil causes slab movement that breaks supply lines differently than frost heave does in northern states. Hard water calcifies water heater elements fast — Phoenix averages 22+ grains per gallon. Monsoon backflow is a real issue in September. We know this market because we've worked it since {SITE.founded}.
       </div>
 
       <div class="pull-quote">
-        <strong>Independent operator, not a national franchise.</strong> We're a small Phoenix-based investor team. Every deal we do, we hold or assign — no opaque corporate parent, no out-of-state ownership.
+        <strong>Licensed, bonded, and insured — verifiable.</strong> We're AZ ROC-licensed. You can look us up at roc.az.gov before we pull into your driveway. Bonded means your property is protected if something goes sideways. Insured means our work is covered if a repair fails. These aren't talking points — they're the minimum floor for anyone touching your plumbing.
       </div>
     </div>
   </section>
@@ -233,8 +250,8 @@ const subVerticalDetails = [
 
   <section class="cta-section">
     <div class="container container--narrow">
-      <h2>Ready for a number?</h2>
-      <p>Five minutes on the phone. We do the rest. No obligation, no pressure, no follow-up campaign if you decide it's not the right move for you.</p>
+      <h2>Water's not waiting. Neither are we.</h2>
+      <p>Call {SITE.phoneDisplay}. A real plumber picks up. We'll tell you what to do right now and get a truck on the way.</p>
       <a href={`tel:${SITE.phone}`} class="btn btn--large">
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
         Call {SITE.phoneDisplay}

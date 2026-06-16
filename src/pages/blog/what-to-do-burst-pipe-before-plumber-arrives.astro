@@ -1,0 +1,231 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { SITE } from '../../config';
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "What to Do When a Pipe Bursts Before the Plumber Arrives",
+  "datePublished": "2026-06-15T08:00:00-07:00",
+  "dateModified": "2026-06-15T08:00:00-07:00",
+  "author": { "@type": "Person", "name": "Mike", "url": `${SITE.baseUrl}/about/` },
+  "publisher": { "@id": `${SITE.baseUrl}/#org` },
+  "mainEntityOfPage": `${SITE.baseUrl}/blog/what-to-do-burst-pipe-before-plumber-arrives/`,
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Where is the main water shutoff in an Arizona home?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In most Arizona single-family homes, the main shutoff is at the water meter box near the street or sidewalk. The meter box is typically a rectangular plastic or concrete lid flush with the ground, marked 'WATER.' Use a meter key or large adjustable wrench to turn the valve clockwise to close. Many AZ homes also have a secondary shutoff at the point where the main supply enters the house — often inside the garage, in a utility closet, or near the water heater."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What do I do if water is still flooding after I shut off the main?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "If water continues after the main shutoff, the source may be a backflow from a pressure tank, a solar hot water system with its own supply, or a situation where the main valve didn't fully close (older gate valves corrode and lose sealing ability). Call the water utility immediately to shut off at the street-side meter connection, which only they can access. Meanwhile, use mops, towels, and buckets to limit spread, and turn off electrical breakers if water is near any outlets, panels, or fixtures."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should I turn off electricity if a pipe bursts near my walls or ceiling?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. If water is near any electrical outlet, panel, or wiring — or if you're not sure — shut off the breakers for the affected area at the main panel before entering the space. Water and live electricity is a life-threatening combination. Don't use electrical tools or appliances in a flooded area. If the panel itself is flooded, do not touch it — call an electrician and the utility."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much damage can a burst pipe cause in one hour?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A burst half-inch pipe under typical residential pressure (60–80 psi) can release 50–100 gallons per minute. In one hour, that's potentially thousands of gallons — enough to saturate drywall, flooring, and insulation throughout an entire room and into adjacent rooms. Water damage restoration costs in AZ typically run $3,000–$15,000 for a single-room event. Fast shutoff is the single most effective thing you can do to limit damage."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use a temporary pipe repair clamp to stop a burst pipe?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pipe repair clamps and pipe repair tape (sold at hardware stores) can slow or stop a minor leak on an accessible pipe as a very short-term measure — hours, not days. They are not rated for full supply-line pressure and are not a substitute for professional repair. If you use one, treat it as a temporary stop-gap while waiting for a plumber, and do not restore full supply pressure until the plumber arrives."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What causes pipes to burst in Arizona?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Despite the heat, Arizona does see pipe failures. Common causes include: hard water corrosion of copper supply lines (especially in homes built before 2000), slab movement from clay soil stressing buried pipes, pinhole leaks that finally fail under pressure, water hammer (pressure spikes from sudden valve closure), and — in northern Arizona or high-elevation areas — freezing in Flagstaff, Prescott, or Sedona winters. Phoenix pipes rarely freeze but can fail from corrosion, age, and movement."
+      }
+    }
+  ],
+};
+---
+<BaseLayout
+  title="What to Do When a Pipe Bursts Before the Plumber Arrives | Coyote 24 Plumbing"
+  description="Step-by-step: shut off the water, limit electrical risk, triage the damage. What to do in the first 20 minutes after a pipe bursts in an AZ home."
+  pageType="blog"
+  schema={[articleSchema, faqSchema]}
+  crumbs={[{ label: "Home", href: "/" }, { label: "Blog", href: "/blog/" }, { label: "What to Do Burst Pipe Before Plumber Arrives" }]}
+>
+  <article class="container container--narrow" style="padding-top: 2rem;">
+    <h1>What to Do When a Pipe Bursts Before the Plumber Arrives</h1>
+    <p style="color: #6a6a6a; font-size: 0.92rem;">By Mike · Master Plumber &amp; Owner · Published June 15, 2026 · 9-minute read</p>
+
+    <p style="font-size: 1.15rem; line-height: 1.6;">
+      A burst pipe gives you a narrow window to limit damage. The difference between a $2,000 repair and a $20,000 restoration often comes down to how fast the water gets shut off and how well you protect the space while the plumber is on the way. This guide walks through exactly what to do, in order, from the moment you discover the break.
+    </p>
+    <p>
+      Read through this now, before you need it. Print it and put it on your water heater or in a kitchen drawer with your emergency numbers.
+    </p>
+
+    <h2>Step 1: Shut off the water immediately</h2>
+    <p>
+      This is the only thing that actually stops the damage. Everything else is damage control after the fact.
+    </p>
+
+    <h3>Option A: Fixture shutoff (if the leak is at one fixture)</h3>
+    <p>
+      If water is coming from under a sink, behind a toilet, or from a washing machine supply line, the fastest shutoff is right at the fixture. Look for an oval-handled valve on the supply line coming out of the wall. Turn it clockwise until it stops. This shuts off only that fixture and leaves the rest of the house with water.
+    </p>
+
+    <h3>Option B: Main shutoff inside the house</h3>
+    <p>
+      Most Arizona single-family homes have a secondary main shutoff where the supply line enters the house. Common locations:
+    </p>
+    <ul>
+      <li>Inside the garage, on the wall shared with the house</li>
+      <li>In a utility closet near the water heater</li>
+      <li>Behind an access panel in a bathroom or laundry room</li>
+    </ul>
+    <p>
+      This valve shuts off water to the entire house. Turn it clockwise to close. If it's a gate valve (older, round wheel handle) and won't fully close, move to Option C.
+    </p>
+
+    <h3>Option C: Street meter shutoff</h3>
+    <p>
+      The water meter for your home is in a box near the street or sidewalk — typically a rectangular lid flush with the ground marked "WATER." Lift the lid. You'll see the meter and, on the house side of the meter, a shutoff valve.
+    </p>
+    <p>
+      To close it: turn the valve clockwise with a meter key (a T-shaped tool available at hardware stores for under $10) or an adjustable wrench. If the valve is a ball valve, a quarter turn closes it. If it's a gate valve, turn clockwise until fully stopped.
+    </p>
+    <p>
+      Every homeowner in Arizona should know where their meter box is and have a meter key. Buy one now, tape it near your water heater, and walk out to your meter so you know where it is before an emergency.
+    </p>
+
+    <h3>What if you can't get it to shut off?</h3>
+    <p>
+      Call the water utility immediately. They can close the street-side connection upstream of your meter — but this may take 30–60 minutes for them to arrive. While waiting, move to Steps 2 and 3 and mitigate as much damage as possible.
+    </p>
+
+    <h2>Step 2: Protect electrical safety</h2>
+    <p>
+      Water and live electricity is a lethal combination. Before you start mopping, moving things, or trying to contain the flood:
+    </p>
+    <ul>
+      <li>Is water near any outlets, light fixtures, or electrical panels? If yes, shut off the breakers for those areas at the main panel.</li>
+      <li>Is the main electrical panel itself in the path of water? Do not touch it. Get out and call the utility.</li>
+      <li>Do not use extension cords, shop vacs, or power tools in standing water until the area is confirmed safe by an electrician.</li>
+    </ul>
+    <p>
+      In Arizona slab-on-grade construction, electrical runs are commonly in walls and ceilings — not floors — so water on the floor is less likely to contact wiring than water in a ceiling cavity. But don't assume. If in doubt, breaker first.
+    </p>
+
+    <h2>Step 3: Call the plumber</h2>
+    <p>
+      Once the water is off and the electrical situation is assessed, call us: <a href={`tel:${SITE.phone}`}>{SITE.phoneDisplay}</a>. We answer Mon–Sat 8am–8pm and can typically dispatch same day.
+    </p>
+    <p>
+      Tell us: where the break is (if you can see it), what you shut off and where, whether there's visible water damage, and whether the leak is in a wall, ceiling, or slab. This helps us show up with the right materials and tools for your specific situation.
+    </p>
+
+    <h2>Step 4: Start damage triage</h2>
+    <p>
+      While waiting for the plumber, limit secondary damage. Do this in roughly this order:
+    </p>
+
+    <h3>Remove standing water</h3>
+    <p>
+      Mop, towels, buckets, or a wet-dry shop vac (once electrical safety is confirmed). Every gallon of water you remove now is water that isn't soaking into your subfloor, drywall, or insulation. AZ drywall doesn't have the mold resistance of humid-climate products because most builders don't spec it here — it saturates quickly.
+    </p>
+
+    <h3>Move furniture and belongings</h3>
+    <p>
+      Get rugs, upholstered furniture, boxes, and anything absorptive out of the wet area. Wet wood furniture on wet flooring can permanently stain both within hours. Electronics, documents, and valuables should be moved immediately.
+    </p>
+
+    <h3>Dry the area as much as possible</h3>
+    <p>
+      Open windows if the outside air is drier than inside (in AZ summers, it usually isn't — outside air is hot and humid during monsoon). Turn on ceiling fans. If you have a dehumidifier, run it. The goal is to start drying before the plumber even arrives, because the longer moisture sits in walls and subfloor, the higher the remediation cost.
+    </p>
+
+    <h3>Document everything with photos and video</h3>
+    <p>
+      Before cleaning anything, photograph the source of the break, the extent of water spread, the condition of flooring and walls, and the shutoff you used. Walk the entire affected area on video. This documentation is critical for an insurance claim. Take it before any cleanup changes the scene.
+    </p>
+
+    <h2>Step 5: Notify your insurance company</h2>
+    <p>
+      Call your homeowners insurance company and report the loss. Do this on the same day, even if you don't know the full extent of damage yet. Most policies have prompt-notification requirements. Waiting a week to report a pipe burst you discovered today can complicate your claim.
+    </p>
+    <p>
+      When you call, they'll typically open a claim number, potentially dispatch an adjuster, and advise you on which emergency mitigation steps are covered. Keep all receipts for any emergency cleanup supplies, temporary repairs, or hotel stays if the home is uninhabitable.
+    </p>
+
+    <h2>What the plumber will do when they arrive</h2>
+    <p>
+      A licensed plumber will: assess the break, determine the scope (isolated failure vs. larger pipe deterioration), give you repair options with pricing before starting work, and either complete the repair that day or stage it if materials need to be ordered. We give you a written quote before any tools come out.
+    </p>
+    <p>
+      Common burst-pipe repairs in Arizona:
+    </p>
+    <ul>
+      <li><strong>Pinhole leak or small section failure:</strong> Cut and replace the damaged segment. Most copper repairs run $300–$800 for an accessible pipe. PEX replacement is similar.</li>
+      <li><strong>Larger section failure or multiple leaks in aging copper:</strong> Partial or full repipe may be the better long-term answer. We'll tell you honestly which makes sense.</li>
+      <li><strong>Slab-buried pipe failure:</strong> See our <a href="/blog/signs-of-a-slab-leak-arizona/">guide to slab leaks</a> for the specific options and cost ranges.</li>
+    </ul>
+
+    <h2>Why Arizona pipes fail</h2>
+    <p>
+      Most Phoenix metro and Tucson pipe failures come from one of these sources:
+    </p>
+    <ul>
+      <li><strong>Hard water corrosion on copper.</strong> 200–300 ppm water gradually pits copper from both the inside (scale deposits) and outside (soil chemistry on buried pipe). Homes built 1960–1995 are highest-risk.</li>
+      <li><strong>Slab movement.</strong> Arizona's expansive clay soils shift seasonally, stressing buried supply and drain lines. See our <a href="/situations/leak-detection/">slab leak detection service page</a>.</li>
+      <li><strong>Water hammer.</strong> Fast-closing solenoid valves (dishwashers, washing machines, irrigation systems) create pressure spikes that stress pipe joints and fittings over time.</li>
+      <li><strong>Freeze damage in northern AZ.</strong> Flagstaff, Prescott, Sedona, and Show Low see hard winters. Pipes in exterior walls or uninsulated crawl spaces can freeze and burst. Phoenix pipes virtually never freeze, but AZ as a state is not a freeze-free zone.</li>
+    </ul>
+
+    <h2>Prevention: the realistic checklist</h2>
+    <p>
+      You can't prevent all pipe failures, but these steps significantly reduce the risk:
+    </p>
+    <ul>
+      <li>Know where your main shutoff is. Test it once a year to make sure it still closes fully.</li>
+      <li>Have a meter key. Cost: under $10. Location: next to your water heater.</li>
+      <li>If your home has original copper supply lines and was built before 1990, ask a plumber to assess its condition. A $200 inspection can prevent a $15,000 flood.</li>
+      <li>Consider a smart leak detector at the main supply or under sinks. Units from brands like Moen Flo or Phyn can automatically shut off water when they detect unusual flow patterns. Particularly useful for vacation or investment properties.</li>
+      <li>Replace washing machine supply hoses every 5 years. Rubber braided hoses are a common failure point — upgrade to stainless-braided hoses.</li>
+    </ul>
+
+    <h2>Call us now if you have an active break</h2>
+    <p>
+      If you're reading this mid-emergency: shut off the water first (meter box, street side), then call <a href={`tel:${SITE.phone}`}>{SITE.phoneDisplay}</a>. We dispatch same-day Mon–Sat. If it's outside those hours, call anyway — we can advise on triage and schedule first-available.
+    </p>
+
+    <h2 style="margin-top: 3rem;">Related</h2>
+    <ul>
+      <li><a href="/situations/burst-pipe/">Burst Pipe Emergency — Service Page</a></li>
+      <li><a href="/situations/leak-detection/">Slab Leak Detection — Service Page</a></li>
+      <li><a href="/blog/signs-of-a-slab-leak-arizona/">Signs of a Slab Leak in Arizona</a></li>
+      <li><a href="/blog/emergency-plumber-cost-arizona/">Emergency Plumber Cost in Arizona — Honest Pricing Guide</a></li>
+    </ul>
+  </article>
+</BaseLayout>

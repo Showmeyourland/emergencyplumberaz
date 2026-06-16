@@ -3,82 +3,91 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { SITE } from '../config';
 ---
 <BaseLayout
-  title={`About ${SITE.brandName} — Arizona Cash Home Buyers Since 2018`}
-  description={`Meet the team behind ${SITE.brandName}. Arizona-based real estate investors buying houses for cash since 2018. No franchise, no call center.`}
+  title={`About ${SITE.brandName} — Arizona Master Plumber Since ${SITE.founded}`}
+  description={`Meet Mike and the crew behind ${SITE.brandName}. AZ ROC-licensed master plumber. 24-hour emergency plumbing across Arizona since ${SITE.founded}.`}
   pageType="trust"
   crumbs={[{ label: "Home", href: "/" }, { label: "About" }]}
 >
   <section class="container container--narrow">
     <h1>About {SITE.brandName}</h1>
     <p>
-      {SITE.brandName} is run by Nate and a small acquisitions team based in Phoenix. We started in 2018 buying single-family homes in the Maricopa County market — eventually expanding throughout Arizona as our operation grew.
+      {SITE.brandName} is a licensed plumbing company based in Phoenix, Arizona. We run emergency and non-emergency residential plumbing across Phoenix metro, Tucson, and most of populated AZ. The phone number routes directly to a licensed plumber — not a dispatch center, not an answering service.
     </p>
     <p>
-      We're investors. We're not real estate agents, we don't operate a brokerage, and we don't list houses for other people. When you call, you talk to the person who actually writes the offer. The price we quote is the price we pay. We close on your timeline.
+      We started in {SITE.founded} with a single truck and a straightforward premise: most plumbing problems aren't mysterious. They're burst supply lines, dead water heaters, calcified drains, and slab leaks. Show up fast, diagnose correctly, price honestly, fix it right the first time.
     </p>
 
-    <h2>What we actually do</h2>
+    <h2>Mike — Master Plumber and Owner</h2>
     <p>
-      We buy single-family homes, townhouses, and small multi-family properties across Arizona — primarily Phoenix metro, Tucson, and the populated parts of the state in between. Most of our deals are in one of five buckets:
+      Mike holds an Arizona master plumber's license and has worked residential plumbing in the Phoenix market since the early 2000s. He started Coyote 24 in {SITE.founded} after spending years watching homeowners get hit with inflated emergency rates from franchise operations — $49 dispatch fees that became $900 invoices, or dispatch-and-ghost situations where the tech couldn't actually source the part.
+    </p>
+    <p>
+      Mike built Coyote 24 around the opposite model: upfront pricing, parts on the truck, real arrival windows, and a direct line to the owner when something goes wrong. When you call {SITE.phoneDisplay}, there's a good chance you're talking to him.
+    </p>
+
+    <h2>What we do</h2>
+    <p>
+      We handle six core emergency plumbing categories that account for most of what homeowners face in Arizona:
     </p>
     <ol>
-      <li><strong>Standard fast-cash sales</strong> — sellers who want speed and certainty over maximum price</li>
-      <li><strong>Pre-foreclosure situations</strong> — owners with active Notices of Trustee's Sale who need to close before the sale date to preserve equity</li>
-      <li><strong>Inherited property</strong> — heirs and executors who need to liquidate estate property</li>
-      <li><strong>Divorce sales</strong> — both parties want a clean exit from the marital home</li>
-      <li><strong>Distressed condition</strong> — houses that don't qualify for conventional financing, often involving fire damage, foundation issues, hoarder situations, or severe deferred maintenance</li>
+      <li><strong><a href="/services/burst-pipe/">Burst pipe emergencies</a></strong> — immediate water shutoff guidance, leak isolation, pipe repair or replacement</li>
+      <li><strong><a href="/services/water-heater/">Water heater repair and replacement</a></strong> — gas and electric, tank and tankless, same-day service where possible</li>
+      <li><strong><a href="/services/drain-clog/">Drain clog and sewer line clearing</a></strong> — camera inspection, mechanical snaking, hydro-jetting for grease and root intrusion</li>
+      <li><strong><a href="/services/leak-detection/">Slab leak detection</a></strong> — electronic detection to pinpoint the break before cutting concrete</li>
+      <li><strong><a href="/services/gas-line/">Gas line repair</a></strong> — certified AZ gas-line work, pressure testing, code-compliant repair</li>
+      <li><strong><a href="/services/garbage-disposal/">Garbage disposal repair and replacement</a></strong> — quick diagnosis on jams, motor failures, and flange leaks</li>
     </ol>
+
+    <h2>Why Arizona plumbing is different</h2>
+    <p>
+      Phoenix metro water hardness averages over 20 grains per gallon — among the highest in the United States. That calcium and magnesium load calcifies water heater elements, restricts supply lines, and creates sediment buildup in tanks that most homeowners don't notice until the unit fails. We see a lot of premature water heater failures in AZ that would have lasted five more years with a simple annual flush.
+    </p>
+    <p>
+      Caliche — the hard calcium carbonate layer found in Arizona soil — causes differential foundation movement that stresses supply and drain lines differently than freeze-thaw cycles do in northern climates. Slab leaks are more common here than in most of the country. We invested in electronic leak detection equipment specifically because sending someone through with a jackhammer before you know where the break is wastes the homeowner's money and their floor.
+    </p>
+    <p>
+      Monsoon season — typically July through September — brings rapid heavy rainfall to a drainage system that isn't designed for it. Backflow into floor drains, overwhelmed sewer laterals, and sudden clogs from debris intrusion are all common the morning after a storm cell hits. If you're calling us in August because your floor drain is bubbling, you're not alone.
+    </p>
 
     <h2>What we don't do</h2>
     <ul>
-      <li>We don't list houses or represent sellers in an agency capacity</li>
-      <li>We don't manufacture reasons to drop our offer after the walk-through</li>
-      <li>We don't farm leads out to other investors (the person who walks the property is the person who buys it)</li>
-      <li>We don't operate as a national franchise — we're a small AZ-based operation</li>
-      <li>We don't take houses we can't actually close on; if it's not a fit, we say so</li>
+      <li>We don't quote a dispatch fee on the phone and then inflate labor once we're in the house</li>
+      <li>We don't send techs without the parts to do the job — we stock the most common water heater units, fittings, and drain components on every truck</li>
+      <li>We don't start work before you approve the quote</li>
+      <li>We don't farm calls to subcontractors we've never vetted</li>
+      <li>We don't take jobs we can't complete — if a situation requires a specialty we don't have (commercial boilers, municipal main tap), we'll tell you and recommend who does</li>
     </ul>
 
-    <h2>Nate — Acquisitions Lead</h2>
+    <h2>Our licensing and credentials</h2>
     <p>
-      Hannah is a Phoenix native and the lead acquisitions contact. Six years of single-family investing in the Maricopa County market. Daughter of a carpenter — grew up on construction sites, which has helped her underwrite rehab costs realistically. Studied finance at Northern Arizona University before going full-time into real estate investing in 2019.
-    </p>
-    <p>
-      When you call (602) 555-0100, Hannah or one of two team members picks up. We don't have a phone tree. We don't route calls to a screening service. We answer Mon-Sat, 8am-8pm.
+      {SITE.brandName} is AZ ROC-licensed, bonded, and insured. Arizona's Registrar of Contractors (ROC) requires licensed contractors to maintain bonding and insurance, pass a trade exam, and maintain a complaint-free record to keep their license in good standing. You can verify our license at <strong>roc.az.gov</strong> — we'll give you our license number on the call. Hire any plumber without verifying their ROC status and you're taking on liability for unlicensed work on your home.
     </p>
 
-    <h2>Our investor identity, plainly stated</h2>
+    <h2>The cities we work</h2>
     <p>
-      Some "we buy houses" operators downplay that they're investors and try to position themselves as something more neutral. We don't. We're investors. We buy at below-market-value prices because that's the only way our business model works. In exchange, sellers get speed, certainty, no fees, no repairs, and a single point of contact who handles everything.
+      <strong>Phoenix metro</strong> — Phoenix proper, Mesa, Tempe, Scottsdale, Chandler, Gilbert, Glendale, Peoria, Surprise, Buckeye, Avondale, Goodyear, Queen Creek, Anthem, Fountain Hills, Litchfield Park, and Apache Junction. This is the bulk of our volume.
     </p>
     <p>
-      If maximum sale price is your top priority, list the house with an agent. If speed, certainty, and a simple transaction are your priorities, we're the right fit.
-    </p>
-
-    <h2>How we're different from the franchise operations</h2>
-    <p>
-      Most of the recognizable "we buy ugly houses" brands you've seen on billboards are franchise networks. Each location is independently owned, marketing is centralized, and lead quality varies widely. We're not a franchise. There's no parent company. Every dollar of marketing and every transaction goes through one operating entity in Phoenix.
+      <strong>Tucson and Pima County</strong> — Tucson proper and surrounding communities. We run jobs here regularly, not just on overflow.
     </p>
     <p>
-      Practical implications for you: more consistent quote process, more flexibility on closing terms, more accountability if anything goes wrong.
+      <strong>Central and northern AZ</strong> — Casa Grande, Flagstaff, Prescott, and the I-10 corridor between Phoenix and Tucson. Arrival times are longer — we're honest about that on the call.
+    </p>
+    <p>
+      <strong>Western AZ</strong> — Yuma, Kingman, Lake Havasu City, Bullhead City, and the Colorado River corridor. These run case-by-case depending on crew availability.
     </p>
 
-    <h2>The areas we work</h2>
+    <h2>Pricing, plainly stated</h2>
     <p>
-      <strong>Phoenix metro</strong> — Phoenix proper, Mesa, Tempe, Scottsdale, Chandler, Gilbert, Glendale, Peoria, Surprise, Buckeye, Avondale, Goodyear. This is the bulk of our volume.
+      We charge a flat dispatch fee and then time and materials, quoted before we start. Evening, weekend, and holiday calls carry a service premium — we tell you the rate structure when you call, before we dispatch. There are no after-the-fact surprise line items on our invoices. If the repair is going to run more than the initial estimate, we stop and tell you before we exceed it.
     </p>
     <p>
-      <strong>Tucson and Pima County</strong> — Tucson proper, Oro Valley, Marana, Sahuarita, Vail. Lower volume than Phoenix but a regular market for us.
-    </p>
-    <p>
-      <strong>Central and southern AZ</strong> — Casa Grande, Maricopa, Eloy, Yuma, Wellton, and the I-10 corridor in between. We work these markets case-by-case.
-    </p>
-    <p>
-      <strong>What we don't work</strong>: remote rural land without utilities, mobile homes on rented lots, tribal-land properties (different land tenure structure), properties under $50K (transaction costs don't pencil), properties above $1.5M (different economics).
+      We're not the cheapest plumber in Arizona. We're the one who shows up when they say they will, quotes a number that holds, and fixes the problem.
     </p>
 
     <h2>Ready to talk?</h2>
     <p>
-      Call (602) 555-0100. Five-minute conversation. Same-day number. No pressure to move forward.
+      Call {SITE.phoneDisplay}. If it's an emergency, say so in the first sentence — we'll prioritize your call and get an arrival window on the board immediately.
     </p>
   </section>
 </BaseLayout>

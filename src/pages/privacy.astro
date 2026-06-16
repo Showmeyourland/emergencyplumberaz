@@ -4,8 +4,8 @@ import { SITE } from '../config';
 const year = new Date().getFullYear();
 ---
 <BaseLayout
-  title="Privacy Policy | Cash Guy Nate"
-  description="Privacy policy for Cash Guy Nate. How we collect, use, and protect your information."
+  title={`Privacy Policy | ${SITE.brandName}`}
+  description={`Privacy policy for ${SITE.brandName}. How we collect, use, and protect your information.`}
   pageType="trust"
   crumbs={[{ label: "Home", href: "/" }, { label: "Privacy Policy" }]}
 >
@@ -14,83 +14,80 @@ const year = new Date().getFullYear();
     <p><em>Effective date: January 1, {year}. Last updated: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}.</em></p>
 
     <p>
-      {SITE.brandName} ("we," "us," "our") respects your privacy and is committed to handling your personal information responsibly. This Privacy Policy explains how we collect, use, share, and protect information when you interact with our website (azhomecashguy.com) or call our phone line.
+      {SITE.brandName} ("we," "us," "our") respects your privacy and handles your personal information responsibly. This Privacy Policy explains what we collect when you contact us or use our website ({SITE.domain}), how we use it, and your rights.
     </p>
 
     <h2>Information we collect</h2>
     <p>
-      <strong>Information you provide directly.</strong> When you call us or submit a contact form, we may collect your name, phone number, email address, property address, and the information you share about your property and situation.
+      <strong>Information you provide directly.</strong> When you call us, submit a contact form, or request service, we collect the information you share — typically your name, phone number, email address, service address, and a description of the plumbing problem you need resolved.
     </p>
     <p>
-      <strong>Information collected automatically.</strong> When you visit our website, we may collect technical information including IP address, browser type, device type, pages visited, referring URL, and time of visit. This data is collected via standard web logs and minimal analytics (Google Analytics 4 with IP anonymization).
+      <strong>Information collected automatically.</strong> When you visit our website, we collect standard technical data: IP address, browser type, device type, pages visited, referring URL, and time of visit. This is collected through server logs and analytics tools (Google Analytics 4 with IP anonymization enabled).
     </p>
     <p>
-      <strong>Phone call information.</strong> Inbound calls to our phone line may be recorded for quality and accuracy of offer documentation. By calling us, you consent to recording. If you do not consent, please state so at the start of the call.
+      <strong>Phone call information.</strong> Calls to our service line may be recorded for quality purposes and accuracy of job documentation. By calling us, you consent to recording. If you do not consent, let us know at the start of the call.
     </p>
 
     <h2>How we use information</h2>
-    <p>We use information you provide to:</p>
+    <p>We use the information you provide to:</p>
     <ul>
-      <li>Evaluate properties and provide cash offers</li>
-      <li>Schedule property visits and walk-throughs</li>
-      <li>Communicate about pending transactions</li>
-      <li>Comply with legal obligations (transaction records, IRS reporting, FinCEN requirements)</li>
-      <li>Improve our service quality and our website</li>
+      <li>Dispatch a plumber to your location and schedule service visits</li>
+      <li>Communicate with you about your job — arrival times, diagnosis, estimates, and invoices</li>
+      <li>Follow up after service to confirm the work resolved your issue</li>
+      <li>Maintain accurate service and warranty records</li>
+      <li>Comply with applicable legal and tax record-keeping obligations</li>
+      <li>Improve the quality of our service and our website</li>
     </ul>
+
+    <h2>We do not sell your information</h2>
+    <p>
+      {SITE.brandName} does not sell, rent, or trade your personal information to any third party. We do not share your contact or service information with marketing companies or lead aggregators.
+    </p>
 
     <h2>How we share information</h2>
-    <p>
-      <strong>We do not sell your information.</strong> We do not share lead data with other investors or marketing companies.
-    </p>
-    <p>We share information only with:</p>
+    <p>We share information only when necessary to deliver service or meet legal requirements:</p>
     <ul>
-      <li>Title companies, escrow agents, and attorneys involved in your specific transaction (with your knowledge)</li>
-      <li>Service providers who help us operate the business (web hosting, accounting, legal counsel) under confidentiality obligations</li>
-      <li>Government agencies when required by law (court orders, IRS, FinCEN, state tax authorities)</li>
+      <li><strong>Service providers.</strong> Software platforms we use for scheduling, invoicing, and payment processing receive only the data needed to perform those functions, under confidentiality obligations.</li>
+      <li><strong>Legal compliance.</strong> We disclose information when required by law — court orders, subpoenas, or requests from government agencies with proper authority.</li>
+      <li><strong>Business transfers.</strong> If {SITE.brandName} is sold or merged, customer records may transfer to the successor business, which will remain bound by this policy.</li>
     </ul>
 
-    <h2>Cookies and tracking</h2>
+    <h2>Cookies and analytics</h2>
     <p>
-      Our website uses minimal cookies necessary for basic site functionality. We use Google Analytics 4 to understand traffic patterns; IP addresses are anonymized. We do not use marketing cookies, retargeting pixels, or cross-site tracking. You can disable cookies in your browser settings without affecting basic site functionality.
-    </p>
-
-    <h2>California residents (CCPA)</h2>
-    <p>
-      California residents have additional rights under the California Consumer Privacy Act (CCPA):
-    </p>
-    <ul>
-      <li>Right to know what personal information we collect and how we use it</li>
-      <li>Right to request deletion of personal information we hold about you</li>
-      <li>Right to opt out of any sale of personal information (note: we do not sell personal information)</li>
-      <li>Right to non-discrimination for exercising these rights</li>
-    </ul>
-    <p>
-      To exercise these rights, contact us at the phone number on this site or via the contact page. We will respond within 45 days as required by CCPA.
+      Our website uses minimal cookies necessary for basic site functionality. Google Analytics 4 helps us understand overall traffic patterns; IP addresses are anonymized before storage. We do not use marketing cookies, retargeting pixels, or cross-site tracking. You can disable cookies in your browser settings without affecting your ability to use the site.
     </p>
 
     <h2>Data retention</h2>
     <p>
-      We retain contact and transaction information for as long as required by applicable law (typically 7 years for transaction records under IRS and AZ Department of Revenue rules). Non-transaction inquiry information is retained for 2 years and then deleted unless you request earlier deletion.
+      We retain service records (job details, invoices, warranty documentation) for seven years to meet standard business and tax record-keeping requirements. Contact inquiries that did not result in scheduled service are retained for two years and then deleted, unless you request earlier deletion.
     </p>
 
     <h2>Data security</h2>
     <p>
-      We use industry-standard security practices to protect personal information, including encrypted file storage, access controls on internal systems, and secure transmission (HTTPS) on our website. No method of transmission or storage is 100% secure; we do not guarantee absolute security.
+      We use industry-standard security practices: encrypted storage, access controls on internal systems, and HTTPS on our website. No storage or transmission method is 100% secure, and we cannot guarantee absolute security.
+    </p>
+
+    <h2>Your rights</h2>
+    <p>
+      You may contact us at any time to request access to, correction of, or deletion of the personal information we hold about you. We will respond within 30 days. Some information may be retained if required by law or for legitimate business purposes (e.g., an invoice you paid).
+    </p>
+    <p>
+      California residents have additional rights under the California Consumer Privacy Act (CCPA), including the right to know what information we hold, the right to request deletion, and the right to opt out of any sale of personal information (note: we do not sell personal information).
     </p>
 
     <h2>Children's privacy</h2>
     <p>
-      Our services are not directed to children under 13, and we do not knowingly collect information from children under 13. If we learn we have collected such information, we will delete it promptly.
+      Our services are intended for adults. We do not knowingly collect personal information from anyone under 13. If we learn we have done so, we will delete it promptly.
     </p>
 
     <h2>Changes to this policy</h2>
     <p>
-      We may update this Privacy Policy from time to time. Material changes will be posted with an updated "last updated" date. Continued use of the site after changes constitutes acceptance.
+      We may update this Privacy Policy from time to time. Material changes will be posted on this page with an updated effective date. Continued use of the site after changes constitutes acceptance.
     </p>
 
     <h2>Contact us</h2>
     <p>
-      For questions about this Privacy Policy or to exercise your privacy rights, call {SITE.phoneDisplay} or use the contact form on the <a href="/contact/">contact page</a>.
+      For questions about this Privacy Policy or to exercise your privacy rights, call {SITE.phoneDisplay} or use the contact form on our <a href="/contact/">contact page</a>.
     </p>
   </section>
 </BaseLayout>

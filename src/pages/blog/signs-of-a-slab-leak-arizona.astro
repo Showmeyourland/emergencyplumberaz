@@ -1,0 +1,259 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { SITE } from '../../config';
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Signs of a Slab Leak in Arizona (and What to Do)",
+  "datePublished": "2026-06-15T08:00:00-07:00",
+  "dateModified": "2026-06-15T08:00:00-07:00",
+  "author": { "@type": "Person", "name": "Mike", "url": `${SITE.baseUrl}/about/` },
+  "publisher": { "@id": `${SITE.baseUrl}/#org` },
+  "mainEntityOfPage": `${SITE.baseUrl}/blog/signs-of-a-slab-leak-arizona/`,
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What causes slab leaks in Arizona homes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The most common causes in Arizona are hard water corrosion, soil movement from clay expansion and contraction, poor original installation, and chemical reactions between copper pipe and the alkaline soil common across the Phoenix metro and Tucson basin. Homes built in the 1960s through 1990s with copper supply lines are the highest-risk group."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does slab leak repair cost in Arizona?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Detection alone typically runs $200–$500. Repair cost depends on the method: spot repair (open the slab) runs $1,500–$4,000 for a single leak; epoxy pipe lining runs $3,000–$8,000 depending on pipe length; full repipe (rerouting through the attic or walls) runs $4,000–$15,000 for a typical AZ home. After-hours emergency detection adds a service call premium. Get a written scope before any work starts."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will homeowners insurance cover a slab leak in Arizona?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most standard homeowners policies cover sudden and accidental water damage — meaning the damage the leak caused (flooring, drywall, mold remediation) — but not the pipe repair itself. Many policies exclude damage from slow leaks or long-term seepage. Read your policy declarations page carefully and document everything before you start cleanup."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I ignore a slab leak if it seems minor?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Even a slow slab leak will erode the soil under your foundation over time, which in AZ's clay-heavy ground can cause significant foundation shift. It also creates persistent moisture that breeds mold under your flooring and inside wall cavities. The longer a slab leak runs, the more damage it causes and the more expensive the total repair bill."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do plumbers find a slab leak without tearing up the floor?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Licensed plumbers use electronic leak detection equipment — acoustic listening devices and pressure testing — to pinpoint the leak location within a few inches before any concrete is cut. Thermal imaging is sometimes used as a secondary confirmation. This non-invasive detection step is worth paying for: it limits how much slab gets opened."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does slab leak repair take?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Detection takes 2–4 hours. A spot repair (cutting the slab, fixing the pipe, patching the concrete) typically takes 1–2 days. A full repipe or reroute takes 2–5 days depending on home size and pipe routing complexity. Water is usually shut off only during active work, not the entire project duration."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is a warm spot on the floor always a slab leak?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Warm or hot spots on a concrete floor are a strong indicator of a hot-water supply line leak under the slab — the leaking hot water heats the concrete above it. It is not a definitive diagnosis on its own, but it warrants an immediate pressure test and professional inspection. Do not ignore it."
+      }
+    }
+  ],
+};
+---
+<BaseLayout
+  title="Signs of a Slab Leak in Arizona (and What to Do) | Coyote 24 Plumbing"
+  description="Warm floors, high water bills, the sound of running water with nothing on — here's how to identify a slab leak in an AZ home and what to do next."
+  pageType="blog"
+  schema={[articleSchema, faqSchema]}
+  crumbs={[{ label: "Home", href: "/" }, { label: "Blog", href: "/blog/" }, { label: "Signs of a Slab Leak Arizona" }]}
+>
+  <article class="container container--narrow" style="padding-top: 2rem;">
+    <h1>Signs of a Slab Leak in Arizona (and What to Do)</h1>
+    <p style="color: #6a6a6a; font-size: 0.92rem;">By Mike · Master Plumber &amp; Owner · Published June 15, 2026 · 10-minute read</p>
+
+    <p style="font-size: 1.15rem; line-height: 1.6;">
+      A slab leak is a break or pinhole in a water supply or drain line running beneath your home's concrete foundation. In Arizona, they're more common than most homeowners expect — the combination of hard water, reactive soil, and copper pipe chemistry creates near-ideal conditions for them. Catching one early saves you tens of thousands of dollars. Missing it for six months can compromise your foundation.
+    </p>
+
+    <p>
+      This guide covers what to look for, why Arizona homes are especially vulnerable, and exactly what to do once you suspect you've got one.
+    </p>
+
+    <h2>The 7 warning signs of a slab leak</h2>
+
+    <h3>1. Your water bill spikes with no obvious cause</h3>
+    <p>
+      A suddenly higher water bill — $40, $80, $150 more than usual — with no change in household usage is one of the clearest early signals. A half-inch pinhole in a supply line can lose 250+ gallons per day. That shows up fast on a bill and does enormous damage slowly under your floor.
+    </p>
+    <p>
+      Check your meter: shut off every water fixture in the house, note the meter reading, wait 30 minutes, check again. If the meter moved, water is leaving the system somewhere. If it moved with everything off, you have a leak — and if it's not visible above ground, it may be below the slab.
+    </p>
+
+    <h3>2. Warm or hot spots on the floor</h3>
+    <p>
+      Walk barefoot across your tile or concrete floors. If you feel a localized warm or hot area — especially in a hallway, bathroom, or kitchen — that's a strong indicator of a hot-water supply line leak beneath the slab. The leaking hot water heats the concrete directly above it. In Arizona homes where tile is the dominant flooring, you can sometimes feel this before any other symptom appears.
+    </p>
+
+    <h3>3. The sound of running water when everything is off</h3>
+    <p>
+      Shut off every tap, the dishwasher, the washing machine, the ice maker. Stand in a quiet room and listen near the floor. A faint hissing, rushing, or dripping sound — especially near a wall or in a hallway — points to water moving underground. This is more audible in single-story slab-on-grade construction, which describes the majority of Phoenix metro housing stock built between 1950 and 2000.
+    </p>
+
+    <h3>4. Cracks in walls or flooring that weren't there before</h3>
+    <p>
+      A slab leak saturates the soil beneath the foundation. In Arizona's clay-heavy ground — particularly across the East Valley, South Phoenix, and the Tucson basin — wet soil expands, then contracts as it dries. That movement causes the slab to shift, which cracks drywall, floor tile, and door frames in characteristic patterns: diagonal cracks at window corners, tile grout lines cracking in lines, doors that no longer latch correctly.
+    </p>
+    <p>
+      Not every crack is a slab leak. AZ homes crack from heat and normal settling too. But new cracks appearing in multiple locations at once, combined with other warning signs, warrants immediate investigation.
+    </p>
+
+    <h3>5. Mold, mildew, or musty smell at floor level</h3>
+    <p>
+      Persistent moisture under a slab creates ideal mold conditions. If a room smells musty despite good ventilation, or if you find mold at the base of walls, baseboards, or under carpeting, a slab leak is one of the first things to rule out. Mold in AZ homes is not as prevalent as in humid climates — so when you find it, there's almost always a water source driving it.
+    </p>
+
+    <h3>6. Low water pressure</h3>
+    <p>
+      If your supply-line pressure has dropped noticeably — showers feel weaker, fill times are longer — water is escaping the system somewhere. Pressure loss paired with any of the other signs above points toward a supply-line slab leak rather than a pressure regulator issue or municipal supply problem.
+    </p>
+
+    <h3>7. Visible water pooling with no surface source</h3>
+    <p>
+      Water appearing at the base of an interior wall, seeping through tile grout, or forming a damp patch on your floor without any visible overhead source (no ceiling leak, no appliance) is often a slab leak working its way to the surface. By the time you see water above the slab, you've usually been losing water below it for some time.
+    </p>
+
+    <h2>Why Arizona homes are high-risk for slab leaks</h2>
+
+    <h3>Hard water and copper pipe chemistry</h3>
+    <p>
+      Phoenix metro tap water measures 200–300 parts per million total dissolved solids — classified as "very hard." Tucson water is similarly hard. Over years, hard water deposits mineral scale inside copper pipes, and the chemical interaction between the alkaline water and the copper creates pitting corrosion on the pipe exterior. The combination of interior scale and exterior corrosion eats through copper pipe walls, typically at fittings, bends, and any point where the pipe contacts abrasive concrete.
+    </p>
+    <p>
+      Homes built between roughly 1960 and 1995 with original copper supply lines are the highest-risk group. If your home is in this category and you've never had a plumbing inspection, that's worth scheduling proactively.
+    </p>
+
+    <h3>Expansive clay soil</h3>
+    <p>
+      Large portions of the Phoenix metro — particularly Glendale, Peoria, South Phoenix, and parts of Mesa — sit on expansive clay soil that swells when wet and shrinks when dry. Arizona's monsoon season (July through September) creates cyclical wet-dry cycles that move this soil significantly over years. That movement stresses pipes where they pass through or against the concrete slab, eventually causing fatigue cracks.
+    </p>
+
+    <h3>Temperature extremes</h3>
+    <p>
+      Phoenix summer ground temperatures can exceed 95°F. Soil temperature differentials stress pipe materials and accelerate the corrosion process. The combination of chemical, mechanical, and thermal stress makes Arizona genuinely harder on buried plumbing than most of the country.
+    </p>
+
+    <h2>What to do when you suspect a slab leak</h2>
+
+    <h3>Step 1: Confirm you have a leak</h3>
+    <p>
+      Run the meter test described above. Turn everything off, note the reading, come back in 30 minutes. Movement confirms a leak somewhere in the system. This is free and takes 30 minutes — do it before calling anyone.
+    </p>
+
+    <h3>Step 2: Call a licensed plumber for leak detection</h3>
+    <p>
+      Do not start pulling up flooring or cutting into your slab yourself. A licensed plumber with electronic leak detection equipment can pinpoint the break within a few inches using acoustic listening devices and pressure isolation — without opening anything. This step typically takes 2–4 hours and costs $200–$500. It is worth every dollar because it determines what repair method makes sense and exactly where the work needs to happen.
+    </p>
+
+    <h3>Step 3: Understand your repair options</h3>
+    <p>
+      Once the leak is located, your plumber should present you with clear options:
+    </p>
+    <ul>
+      <li><strong>Spot repair.</strong> Open the slab directly above the leak, fix or replace the damaged pipe section, patch the concrete. Best when you have an isolated single-leak situation. Cost: $1,500–$4,000 typical.</li>
+      <li><strong>Epoxy pipe lining.</strong> A liner is inserted through existing pipe and cured in place, sealing the interior. No slab opening required. Works on accessible pipe runs without tight bends. Cost: $3,000–$8,000 depending on pipe length.</li>
+      <li><strong>Reroute/repipe.</strong> Abandon the leaking pipe entirely and run new supply lines through the attic, walls, or exterior. Eliminates the problem permanently and avoids future slab work. Recommended when pipe is old, has multiple leaks, or when the layout makes slab access destructive. Cost: $4,000–$15,000 for a typical AZ home.</li>
+    </ul>
+    <p>
+      There is no universally correct answer. Your plumber should explain why they're recommending a specific method for your situation, not just quote you the cheapest number.
+    </p>
+
+    <h3>Step 4: Document everything for insurance</h3>
+    <p>
+      Before any repair or cleanup begins, photograph everything: the detection readings, any visible water damage, flooring condition, wall cracks. Your homeowners insurance may cover the resulting water damage (flooring, drywall, mold remediation) even if it doesn't cover the pipe repair itself. A claim that lacks before-photos is a harder claim to file.
+    </p>
+
+    <h3>Step 5: Address secondary damage</h3>
+    <p>
+      After the leak is repaired, the moisture damage still needs attention. Wet concrete under tile takes weeks to fully dry. If flooring was saturated, it typically needs to be pulled and the subfloor dried with commercial dehumidifiers before reinstalling. Any mold present requires remediation. This isn't the plumber's job — it's a separate remediation contractor — but it needs to happen or the moisture and mold continue.
+    </p>
+
+    <h2>How much does slab leak repair cost in Arizona?</h2>
+    <p>
+      Honest ranges based on what we see in the Phoenix and Tucson markets:
+    </p>
+    <table style="width:100%; border-collapse: collapse; margin: 1rem 0;">
+      <thead>
+        <tr style="background: #f0f4f8;">
+          <th style="text-align:left; padding: 0.6rem 0.8rem; border-bottom: 2px solid #d0d8e0;">Service</th>
+          <th style="text-align:left; padding: 0.6rem 0.8rem; border-bottom: 2px solid #d0d8e0;">Typical Range</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid #e8edf2;">Electronic leak detection</td>
+          <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid #e8edf2;">$200 – $500</td>
+        </tr>
+        <tr>
+          <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid #e8edf2;">Spot slab repair (single leak)</td>
+          <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid #e8edf2;">$1,500 – $4,000</td>
+        </tr>
+        <tr>
+          <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid #e8edf2;">Epoxy pipe lining</td>
+          <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid #e8edf2;">$3,000 – $8,000</td>
+        </tr>
+        <tr>
+          <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid #e8edf2;">Full repipe / reroute</td>
+          <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid #e8edf2;">$4,000 – $15,000</td>
+        </tr>
+        <tr>
+          <td style="padding: 0.6rem 0.8rem;">After-hours emergency surcharge</td>
+          <td style="padding: 0.6rem 0.8rem;">$150 – $400 added to above</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>
+      Prices vary with home size, pipe access, flooring type, and whether secondary damage (mold, flooring replacement) is included. Get a written scope of work with a line-item breakdown before authorizing any job above $500.
+    </p>
+
+    <h2>When to call us</h2>
+    <p>
+      If you're seeing two or more of the warning signs above, call us at <a href={`tel:${SITE.phone}`}>{SITE.phoneDisplay}</a>. We use electronic leak detection to locate the problem before opening anything, we explain your repair options clearly, and we give you a written quote before any work starts. We're ROC-licensed — verify at roc.az.gov.
+    </p>
+    <p>
+      Slab leaks get worse the longer they run. If you're on the fence, run the meter test tonight. If the meter moves with everything off, call us in the morning.
+    </p>
+
+    <h2 style="margin-top: 3rem;">Related</h2>
+    <ul>
+      <li><a href="/situations/leak-detection/">Slab Leak Detection — Service Page</a></li>
+      <li><a href="/situations/burst-pipe/">Burst Pipe Emergency — Service Page</a></li>
+      <li><a href="/blog/what-to-do-burst-pipe-before-plumber-arrives/">What to Do When a Pipe Bursts Before the Plumber Arrives</a></li>
+      <li><a href="/blog/emergency-plumber-cost-arizona/">Emergency Plumber Cost in Arizona — Honest Pricing Guide</a></li>
+    </ul>
+
+    <h2>Frequently asked questions</h2>
+    <div style="margin-top: 1rem;">
+      <p><strong>What causes slab leaks in Arizona homes?</strong><br/>The most common causes are hard water corrosion, clay soil movement, poor original installation, and chemical reactions between copper pipe and alkaline soil. Homes built 1960–1995 with original copper supply lines are highest-risk.</p>
+      <p><strong>How much does slab leak repair cost in Arizona?</strong><br/>Detection: $200–$500. Spot repair: $1,500–$4,000. Epoxy lining: $3,000–$8,000. Full repipe: $4,000–$15,000. Get a written scope before authorizing any work.</p>
+      <p><strong>Will homeowners insurance cover a slab leak?</strong><br/>Most policies cover resulting water damage (flooring, drywall, mold) but not the pipe repair itself. Document everything before cleanup starts.</p>
+      <p><strong>Can I ignore a slab leak if it seems minor?</strong><br/>No. Even a slow leak erodes foundation soil and creates mold. The longer it runs, the more expensive the total repair.</p>
+      <p><strong>How do plumbers find a slab leak without tearing up the floor?</strong><br/>Electronic acoustic detection and pressure testing locate the leak within a few inches before any concrete is cut.</p>
+    </div>
+  </article>
+</BaseLayout>

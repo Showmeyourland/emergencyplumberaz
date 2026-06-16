@@ -4,8 +4,8 @@ import { SITE } from '../config';
 const year = new Date().getFullYear();
 ---
 <BaseLayout
-  title="Terms of Service | Cash Guy Nate"
-  description="Terms of Service for Cash Guy Nate. Investor identity, transaction terms, FinCEN compliance, and arbitration."
+  title={`Terms of Service | ${SITE.brandName}`}
+  description={`Terms of service for ${SITE.brandName}. Service terms, pricing, licensing, and liability.`}
   pageType="trust"
   crumbs={[{ label: "Home", href: "/" }, { label: "Terms" }]}
 >
@@ -14,86 +14,79 @@ const year = new Date().getFullYear();
     <p><em>Effective date: January 1, {year}.</em></p>
 
     <p>
-      These Terms of Service ("Terms") govern your use of azhomecashguy.com and your interactions with {SITE.brandName} ("we," "us," "our"). By using the website or contacting us, you agree to these Terms.
+      These Terms of Service ("Terms") govern your use of {SITE.domain} and your interactions with {SITE.brandName} ("we," "us," "our"). By using this website or contacting us to request service, you agree to these Terms.
     </p>
 
-    <h2>1. Marketing service; investor identity</h2>
+    <h2>1. Website is informational only</h2>
     <p>
-      {SITE.brandName} is a real estate investor and operates this website as a marketing presence. We are not a licensed real estate broker, agent, or brokerage. We do not represent sellers in any agency capacity. We do not provide legal, financial, tax, or real estate advice. Information on this website is provided for general informational purposes and is not a substitute for professional advice tailored to your situation.
+      This website provides general information about plumbing services available in Arizona. Content on this site — including service descriptions, typical problem causes, and general guidance — is for informational purposes only. It is not a guarantee of service availability, response time, or outcome in any specific situation.
+    </p>
+    <p>
+      Nothing on this website constitutes professional advice tailored to your specific plumbing system or condition. A licensed plumber must assess your situation in person before any diagnosis or recommendation is final.
     </p>
 
-    <h2>2. No agency relationship</h2>
+    <h2>2. Estimates and pricing</h2>
     <p>
-      Contacting us, calling our phone line, or submitting information through this website does not create an agency relationship between {SITE.brandName} and you. We act solely as a principal buyer when we make offers to purchase property.
+      Any price range or estimate provided on this website, by phone, or in text prior to an on-site visit is a non-binding estimate based on typical job parameters. Actual pricing is confirmed by the technician after inspecting the work site, before any work begins. You are under no obligation to proceed, and we will not start work without your authorization.
+    </p>
+    <p>
+      Emergency and after-hours dispatch fees, when applicable, are disclosed to you before a technician is dispatched. Accepting dispatch constitutes agreement to those fees.
     </p>
 
-    <h2>3. Offers are non-binding until written agreement</h2>
+    <h2>3. Workmanship</h2>
     <p>
-      Any cash offer discussed by phone, email, or in any preliminary written form is a non-binding indication of interest. A binding agreement exists only when both parties sign a written purchase agreement that has been delivered to all parties.
+      {SITE.brandName} stands behind the work our plumbers perform. If a repair we completed fails due to workmanship within a reasonable period after service, contact us and we will return to evaluate and address it. Specific warranty terms are discussed at the time of service and may vary by job type.
+    </p>
+    <p>
+      Warranties cover our labor and apply only to the specific repair performed. They do not cover pre-existing conditions, unrelated failures, damage caused by third parties, or normal wear.
     </p>
 
-    <h2>4. Arizona transactions — A.R.S. § 44-5101 compliance</h2>
+    <h2>4. Licensing and insurance</h2>
     <p>
-      For Arizona properties, {SITE.brandName} complies with Arizona Revised Statutes § 44-5101. Where {SITE.brandName} acts as a wholesale buyer (purchasing with intent to assign), written disclosure is provided to sellers prior to signing the purchase agreement, and written disclosure is provided to assignees prior to signing any assignment agreement. These disclosures are transactional documents and not part of these website Terms.
+      {SITE.brandName} operates as an Arizona Registrar of Contractors (ROC) licensed and insured plumbing contractor. You can verify contractor license status independently at <a href="https://roc.az.gov" target="_blank" rel="noopener noreferrer">roc.az.gov</a>. We carry general liability insurance and workers' compensation coverage for all field technicians.
     </p>
 
-    <h2>5. Multi-state operations; state-specific disclaimers</h2>
+    <h2>5. No contractor-client relationship formed by website use</h2>
     <p>
-      <strong>Texas:</strong> {SITE.brandName} is not a licensed Texas real estate broker, sales agent, or brokerage as defined by Texas Real Estate Commission rules.
-    </p>
-    <p>
-      <strong>California:</strong> {SITE.brandName} is not a licensed California real estate agent, broker, or brokerage as defined by the California Department of Real Estate.
-    </p>
-    <p>
-      For transactions in any state, {SITE.brandName} operates only as a principal buyer.
+      Browsing this website, reading its content, or submitting a contact form does not create a contractor-client relationship between {SITE.brandName} and you. A service relationship is established only when we confirm a scheduled appointment or dispatch a technician.
     </p>
 
-    <h2>6. FinCEN beneficial ownership reporting</h2>
+    <h2>6. Third-party links</h2>
     <p>
-      All-cash residential real estate purchases conducted through limited liability companies, trusts, or similar entities may be subject to federal beneficial ownership reporting requirements under the Financial Crimes Enforcement Network (FinCEN) Residential Real Estate Geographic Targeting Order and the Corporate Transparency Act. {SITE.brandName} complies with applicable FinCEN reporting requirements. Sellers should consult with their own tax and legal advisors regarding the reporting implications of their specific transaction.
+      This site may contain links to third-party websites (manufacturers, product references, local resources). {SITE.brandName} has no control over those sites and is not responsible for their content, privacy practices, or accuracy.
     </p>
 
-    <h2>7. No warranty</h2>
+    <h2>7. Limitation of liability</h2>
     <p>
-      The website and any information provided through it are offered "as is" without warranties of any kind, either express or implied. {SITE.brandName} does not warrant that the website will be uninterrupted, error-free, or free of harmful components.
+      To the maximum extent permitted by applicable law, {SITE.brandName}'s total liability for any claim arising from your use of this website — not from actual plumbing services performed — is limited to $100. We are not liable for indirect, incidental, or consequential damages arising from your use of this website or reliance on its content.
+    </p>
+    <p>
+      Liability for services actually performed is governed by the service agreement and applicable Arizona law, not this website disclaimer.
     </p>
 
-    <h2>8. Limitation of liability</h2>
+    <h2>8. Indemnification</h2>
     <p>
-      To the maximum extent permitted by law, {SITE.brandName}'s total liability for any claim arising from your use of this website is limited to $100. {SITE.brandName} is not liable for indirect, incidental, consequential, special, or punitive damages.
+      You agree to indemnify and hold harmless {SITE.brandName}, its principals, employees, and affiliates from any claims arising out of your violation of these Terms or your misuse of this website.
     </p>
 
-    <h2>9. Indemnification</h2>
+    <h2>9. Governing law</h2>
     <p>
-      You agree to indemnify and hold harmless {SITE.brandName}, its principals, and affiliates from any claims arising out of your violation of these Terms, your violation of applicable law, or your use of this website.
+      These Terms are governed by the laws of the State of Arizona without regard to conflict-of-law principles. Any dispute arising from use of this website that is not otherwise resolved shall be heard exclusively in Maricopa County, Arizona.
     </p>
 
-    <h2>10. Dispute resolution; arbitration</h2>
+    <h2>10. Severability</h2>
     <p>
-      Any dispute arising out of these Terms or your use of this website shall be resolved by binding arbitration administered by the American Arbitration Association under its Consumer Arbitration Rules. Arbitration shall be conducted in Maricopa County, Arizona. Each party shall bear its own costs of arbitration, except as required by AAA rules. You agree to arbitrate disputes on an individual basis only and waive any right to class arbitration.
-    </p>
-    <p>
-      Notwithstanding the arbitration requirement, either party may bring an action in small claims court for disputes within that court's jurisdiction.
+      If any provision of these Terms is found unenforceable, the remaining provisions remain in full force and effect.
     </p>
 
-    <h2>11. Governing law</h2>
+    <h2>11. Changes to these Terms</h2>
     <p>
-      These Terms are governed by Arizona law without regard to conflict-of-law principles. Venue for any non-arbitrable dispute lies exclusively in Maricopa County, Arizona.
-    </p>
-
-    <h2>12. Severability</h2>
-    <p>
-      If any provision of these Terms is held to be unenforceable, the remaining provisions remain in full force and effect.
-    </p>
-
-    <h2>13. Changes</h2>
-    <p>
-      We may update these Terms from time to time. Material changes will be posted with an updated effective date.
+      We may update these Terms from time to time. Material changes will be posted on this page with an updated effective date. Continued use of the site after changes constitutes acceptance.
     </p>
 
     <h2>Contact</h2>
     <p>
-      For questions about these Terms, call {SITE.phoneDisplay} or use the contact page.
+      For questions about these Terms, call {SITE.phoneDisplay} or use our <a href="/contact/">contact page</a>.
     </p>
   </section>
 </BaseLayout>

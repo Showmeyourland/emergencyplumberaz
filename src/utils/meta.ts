@@ -10,12 +10,12 @@
  * Strategy:
  *   1. Take the first complete sentence of marketNote
  *   2. If first sentence > maxLen, truncate at the last word boundary + "..."
- *   3. Compose: "Cash offers on {City}, AZ homes. {sentence} Close in 7-21 days."
+ *   3. Compose: "24-hour emergency plumber in {City}, AZ. {sentence} Call (602) 555-0100."
  *   4. If composed string > 160, drop the closing clause.
  */
 export function buildCityMetaDescription(cityName: string, marketNote: string): string {
-  const opener = `Cash offers on ${cityName}, AZ homes.`;
-  const closer = ` Close in 7-21 days.`;
+  const opener = `24-hour emergency plumber in ${cityName}, AZ.`;
+  const closer = ` Call (602) 555-0100.`;
   const budgetFromComposed = 160 - opener.length - closer.length - 1; // -1 for joining space
 
   // Extract first sentence of marketNote

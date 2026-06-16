@@ -3,7 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { SITE } from '../config';
 ---
 <BaseLayout
-  title="Page Not Found | Cash Guy Nate"
+  title={`Page Not Found | ${SITE.brandName}`}
   description="The page you're looking for isn't here. Try the homepage or call us directly."
   pageType="trust"
 >
@@ -19,8 +19,8 @@ import { SITE } from '../config';
     <p style="margin-top: 2rem; color: #6a6a6a;">Common pages:</p>
     <ul style="list-style: none; padding: 0;">
       <li><a href="/how-it-works/">How It Works</a></li>
-      <li><a href="/situations/sell-fast-cash/">Sell My House Fast for Cash</a></li>
-      <li><a href="/phoenix/">We Buy Houses in Phoenix</a></li>
+      <li><a href="/services/burst-pipe/">Burst Pipe Emergency</a></li>
+      <li><a href="/phoenix/">Emergency Plumber in Phoenix</a></li>
       <li><a href="/blog/">Articles & Resources</a></li>
       <li><a href="/about/">About</a></li>
       <li><a href="/contact/">Contact</a></li>

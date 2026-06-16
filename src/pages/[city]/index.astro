@@ -17,13 +17,13 @@ const content = CITY_CONTENT[city.slug];
 const cta = rotateCTA(city.slug);
 
 const cityFaqsForSchema = content.cityFaqs.concat([
-  { q: "How fast can you actually close?", a: "Typically 7-21 days. The driver of timing is title work — clearing liens, satisfying HOA dues, getting lender payoffs. If you're flexible, we'll match your ideal close date." },
-  { q: "Do I pay any fees?", a: "No. We pay normal closing costs (title fees, recording, escrow). What you sign for at closing is what you walk out with, minus any existing liens or mortgages against the property." },
+  { q: "How fast can you get here?", a: "For true emergencies we target a fast response — most metro calls are reached within the hour, with longer drive times to outlying areas, which we tell you honestly when you call. If water is actively flowing, we coach you to shut the main while the truck is en route." },
+  { q: "Do you charge to come out?", a: "We charge a flat dispatch fee that we quote before the truck rolls — no surprises at the door. The repair itself is priced on a flat-rate schedule by job type, not an open-ended hourly clock, and we get your written approval on the price before any work begins." },
 ]);
 
 const cityPageSchema = {
   "@context": "https://schema.org",
-  "@type": "RealEstateBusiness",
+  "@type": "Plumber",
   "@id": `${SITE.baseUrl}/${city.slug}/#service`,
   "name": `${SITE.brandName} — ${city.name}, AZ`,
   "areaServed": { "@type": "City", "name": city.name, "containedInPlace": { "@type": "State", "name": "Arizona" } },
@@ -50,9 +50,19 @@ const breadcrumbSchema = {
 };
 
 const otherCities = SITE.cities.filter((c) => c.slug !== city.slug).slice(0, 8);
+
+// Plumbing sub-vertical card blurbs, keyed by Coyote's actual subVertical slugs
+const SUBVERTICAL_BLURBS = {
+  "burst-pipe": "Active leak or burst line — we stop the water and make a permanent repair.",
+  "water-heater": "No hot water or a leaking tank — repair or same-day replacement.",
+  "drain-clog": "Slow drains, backups, and sewer-line blockages cleared and camera-inspected.",
+  "leak-detection": "Slab leaks pinpointed with acoustic and electronic detection, then rerouted or repaired.",
+  "gas-line": "Gas leaks and gas-line repair handled with combustible-gas detection and safety testing.",
+  "garbage-disposal": "Jammed, leaking, or dead disposals repaired or replaced.",
+};
 ---
 <BaseLayout
-  title={`We Buy Houses ${city.name}, AZ — Cash Offers in 24 Hours | ${SITE.brandName}`}
+  title={`Emergency Plumber ${city.name}, AZ — 24-Hour Service | ${SITE.brandName}`}
   description={buildCityMetaDescription(city.name, content.marketNote)}
   pageType="city"
   schema={[cityPageSchema, faqSchema, breadcrumbSchema]}
@@ -64,38 +74,38 @@ const otherCities = SITE.cities.filter((c) => c.slug !== city.slug).slice(0, 8);
   <section class="hero">
     <div class="container">
       <span class="hero__kicker">{city.county} County · Pop. {city.pop}</span>
-      <h1>We Buy Houses {city.name}, Arizona — Cash Offers in 24 Hours</h1>
+      <h1>Emergency Plumber in {city.name}, Arizona — 24-Hour Service</h1>
       <p class="hero__sub">
-        Cash offers on {city.name} houses. No commissions, no repairs, no contingencies. Close in 7-21 days, or on your timeline.
+        Real plumbers, real trucks, real pricing. Burst pipes, water heaters, drain backups, slab leaks — we answer live and quote before we work. Serving {city.name} around the clock.
       </p>
       <a href={`tel:${SITE.phone}`} class="btn btn--large">{cta}</a>
     </div>
   </section>
 
   <section class="container container--narrow">
-    <span class="section-eyebrow">{city.name} cash buying</span>
-    <h2 style="margin-top:0;">{city.name} is one of our regular markets</h2>
+    <span class="section-eyebrow">{city.name} plumbing</span>
+    <h2 style="margin-top:0;">{city.name} is one of our regular service areas</h2>
     <p>{content.opener}</p>
-    <p><strong>Market context:</strong> {content.marketNote}</p>
+    <p><strong>Local context:</strong> {content.marketNote}</p>
   </section>
 
   {content.marketStats && (
     <section class="container">
       <div class="stat-row">
         <div class="stat-cell">
-          <span class="stat-cell__number" style="font-size: 1.5rem;">{content.marketStats.medianPrice}</span>
-          <p class="stat-cell__label">Median home price</p>
+          <span class="stat-cell__number" style="font-size: 1.35rem;">{content.marketStats.medianPrice}</span>
+          <p class="stat-cell__label">Local water / climate profile</p>
         </div>
         <div class="stat-cell">
-          <span class="stat-cell__number stat-cell__number--accent" style="font-size: 1.5rem;">{content.marketStats.avgDOM}</span>
-          <p class="stat-cell__label">Average days on market</p>
+          <span class="stat-cell__number stat-cell__number--accent" style="font-size: 1.35rem;">{content.marketStats.avgDOM}</span>
+          <p class="stat-cell__label">Typical emergency response</p>
         </div>
         <div class="stat-cell">
-          <span class="stat-cell__number" style="font-size: 1.5rem;">{content.marketStats.ourClosesPerYear}</span>
-          <p class="stat-cell__label">Our annual closes here</p>
+          <span class="stat-cell__number" style="font-size: 1.35rem;">{content.marketStats.ourClosesPerYear}</span>
+          <p class="stat-cell__label">Common construction</p>
         </div>
         <div class="stat-cell">
-          <span class="stat-cell__number stat-cell__number--accent" style="font-size: 1.5rem;">{content.marketStats.commonProperty.split(' ').slice(0,3).join(' ')}</span>
+          <span class="stat-cell__number stat-cell__number--accent" style="font-size: 1.35rem;">{content.marketStats.commonProperty.split(' ').slice(0,3).join(' ')}</span>
           <p class="stat-cell__label">{content.marketStats.commonProperty}</p>
         </div>
       </div>
@@ -104,15 +114,15 @@ const otherCities = SITE.cities.filter((c) => c.slug !== city.slug).slice(0, 8);
 
   <section class="container">
     <span class="section-eyebrow">Coverage</span>
-    <h2 style="margin-top:0;">Neighborhoods we work in {city.name}</h2>
-    <p>We've closed deals in most of {city.name}'s residential areas. The neighborhoods we see most often:</p>
+    <h2 style="margin-top:0;">Neighborhoods we serve in {city.name}</h2>
+    <p>We run calls across most of {city.name}'s residential areas. The neighborhoods we see most often:</p>
     <ul>
       {content.neighborhoods.map((n) => <li>{n}</li>)}
     </ul>
-    <p>If your area isn't listed, call anyway — odds are we work there too.</p>
+    <p>If your area isn't listed, call anyway — odds are we cover it too.</p>
     {content.commonZips && (
       <p style="font-size: 0.92rem; color: #6a7080; margin-top: 1rem;">
-        <strong>Zip codes we close in:</strong> {content.commonZips.join(", ")}
+        <strong>Zip codes we serve:</strong> {content.commonZips.join(", ")}
       </p>
     )}
   </section>
@@ -138,40 +148,34 @@ const otherCities = SITE.cities.filter((c) => c.slug !== city.slug).slice(0, 8);
   <section class="section--alt">
     <div class="container container--narrow">
       <span class="section-eyebrow">Recent jobs</span>
-      <h2 style="margin-top:0;">Real {city.name} deals we closed</h2>
+      <h2 style="margin-top:0;">Real {city.name} jobs we handled</h2>
       {content.caseStudies.map((cs) => (
         <div class="case-card">
           <p><strong>Situation:</strong> {cs.situation}</p>
-          <p><strong>What happened:</strong> {cs.outcome}</p>
+          <p><strong>What we did:</strong> {cs.outcome}</p>
         </div>
       ))}
       <p style="font-size: 0.88rem; color: #6a6a6a; margin-top: 1.2rem;">
-        Anonymized details. Identifying information changed; situations and outcomes are accurate to the deal pattern.
+        Anonymized details. Identifying information changed; situations and outcomes are accurate to the job pattern.
       </p>
     </div>
   </section>
 
   <section class="container">
-    <h2>Common situations</h2>
-    <p>The most common reasons {city.name} sellers call us:</p>
+    <h2>Plumbing services we provide in {city.name}</h2>
+    <p>The most common calls we run in {city.name}:</p>
     <div class="service-grid">
       {SITE.subVerticals.map((s) => (
         <a href={`/situations/${s.slug}/`} class="service-card">
-          <h3>{s.short}</h3>
-          <p>
-            {s.slug === "sell-fast-cash" && "Cash in your account, fast. Standard transaction."}
-            {s.slug === "foreclosure" && "Close before the trustee sale, protect your credit."}
-            {s.slug === "inherited" && "Probate, multiple heirs, deferred maintenance — we've done it."}
-            {s.slug === "divorce" && "Clean split, no agent commissions, fast cash to both parties."}
-            {s.slug === "as-is" && "Any condition. Fire, hoarder, foundation — call us anyway."}
-          </p>
+          <h3>{s.name}</h3>
+          <p>{SUBVERTICAL_BLURBS[s.slug] || `${s.name} — fast, licensed, flat-rate.`}</p>
         </a>
       ))}
     </div>
   </section>
 
   <section class="container container--narrow">
-    <h2>Questions from {city.name} sellers</h2>
+    <h2>Questions from {city.name} homeowners</h2>
     <div class="faq">
       {cityFaqsForSchema.map((f) => (
         <div class="faq__item">
@@ -181,12 +185,12 @@ const otherCities = SITE.cities.filter((c) => c.slug !== city.slug).slice(0, 8);
       ))}
     </div>
     <div class="inline-disclaimer">
-      <strong>Investor identity:</strong> {SITE.brandName} buys houses as a principal investor — not a broker or agent. Offers are typically below open-market list price in exchange for speed and certainty.
+      <strong>Licensing:</strong> {SITE.brandName} is an AZ ROC-licensed and bonded plumbing contractor. Verify our standing anytime at roc.az.gov. Flat-rate pricing is provided in writing before any work begins.
     </div>
   </section>
 
   <section class="container">
-    <h2>Other Arizona cities we work in</h2>
+    <h2>Other Arizona cities we serve</h2>
     <div class="city-grid">
       {otherCities.map((c) => (
         <a href={`/${c.slug}/`} class="city-tile">{c.name}</a>
@@ -196,8 +200,8 @@ const otherCities = SITE.cities.filter((c) => c.slug !== city.slug).slice(0, 8);
 
   <section class="cta-section">
     <div class="container container--narrow">
-      <h2>Ready for a {city.name} cash offer?</h2>
-      <p>Tell us about the property in a 5-minute call. We'll have a cash number to you the same day.</p>
+      <h2>Plumbing emergency in {city.name}?</h2>
+      <p>We answer live, dispatch fast, and quote before we work. Call now for 24-hour service.</p>
       <a href={`tel:${SITE.phone}`} class="btn btn--large">Call {SITE.phoneDisplay}</a>
     </div>
   </section>

@@ -1,0 +1,255 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { SITE } from '../../config';
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Tankless vs. Tank Water Heater in Arizona: The Full Comparison",
+  "datePublished": "2026-06-15T08:00:00-07:00",
+  "dateModified": "2026-06-15T08:00:00-07:00",
+  "author": { "@type": "Person", "name": "Mike", "url": `${SITE.baseUrl}/about/` },
+  "publisher": { "@id": `${SITE.baseUrl}/#org` },
+  "mainEntityOfPage": `${SITE.baseUrl}/blog/tankless-vs-tank-water-heater-arizona/`,
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is a tankless water heater worth it in Arizona?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For many Arizona homeowners, yes — but only with the maintenance commitment it requires. Tankless units are 20–30% more energy-efficient than tank heaters and last 15–20 years with annual descaling. Without descaling in Arizona's hard water (200–300 ppm), scale clogs the heat exchanger within a few years and the unit fails prematurely. If you'll maintain it, a gas tankless unit in AZ typically pays back its cost premium in 6–9 years through energy savings."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What size tankless water heater do I need for an Arizona home?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Size is determined by flow rate (gallons per minute) and required temperature rise. Arizona groundwater temperature is approximately 65–75°F year-round, which means the heater needs to raise water temperature by roughly 50°F to reach 120°F delivery temperature. A 2-bathroom home typically needs 7–9 GPM capacity; a 3-4 bathroom home needs 9–11 GPM. A licensed plumber should do a load calculation before you commit to a unit size."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I convert from a tank to a tankless water heater in Arizona?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, it's a straightforward conversion for most Phoenix metro and Tucson homes with natural gas service. The main variables are venting (tankless units use different venting than tank heaters — often direct-vent through the wall rather than a flue), gas line sizing (high-output tankless units need 3/4 or 1-inch gas supply vs. the 1/2-inch typical for tank heaters), and condensate drainage (condensing tankless units produce condensate that needs to drain). These are manageable installation changes but add to the labor cost."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How often does a tankless water heater need to be flushed in Arizona?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Annual descaling (flushing) is the minimum in Phoenix metro and Tucson, where water hardness runs 200–300 ppm. Some plumbers recommend every 6 months for households with unusually high hot water use. The process involves circulating a descaling solution through the heat exchanger using a flush kit — a plumber can do this in about 45 minutes. Cost: $100–$200 for the service call. Skipping this maintenance is the primary reason tankless units fail early in Arizona."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What brands of tankless water heaters are best for Arizona?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Rinnai, Navien, Rheem, and Bradford White all have strong track records in Arizona's conditions and have local service networks in the Phoenix and Tucson markets. Avoid off-brand units where local parts availability and service is uncertain. Your plumber's familiarity with the specific brand matters — a plumber who regularly services Rinnai units will diagnose and repair problems faster than one who rarely sees the brand."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does a tankless water heater need more maintenance than a tank in Arizona?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, meaningfully more. A tank heater needs annual pressure relief valve testing and periodic flushing. A tankless unit needs annual descaling of the heat exchanger, inlet filter cleaning, and error code monitoring. The tankless maintenance is more involved but the payoff is longer lifespan and lower operating cost. If you're not the type to schedule annual maintenance, a well-maintained tank heater is more reliable for your situation."
+      }
+    }
+  ],
+};
+---
+<BaseLayout
+  title="Tankless vs. Tank Water Heater in Arizona — Full 2026 Comparison | Coyote 24 Plumbing"
+  description="Tankless vs. tank water heaters for AZ homes: cost, lifespan, maintenance, and which makes sense for Phoenix or Tucson hard water conditions. Honest comparison."
+  pageType="blog"
+  schema={[articleSchema, faqSchema]}
+  crumbs={[{ label: "Home", href: "/" }, { label: "Blog", href: "/blog/" }, { label: "Tankless vs Tank Water Heater Arizona" }]}
+>
+  <article class="container container--narrow" style="padding-top: 2rem;">
+    <h1>Tankless vs. Tank Water Heater in Arizona: The Full Comparison</h1>
+    <p style="color: #6a6a6a; font-size: 0.92rem;">By Mike · Master Plumber &amp; Owner · Published June 15, 2026 · 12-minute read</p>
+
+    <p style="font-size: 1.15rem; line-height: 1.6;">
+      I get this question on almost every water heater call: "Should I go tankless this time?" The answer depends on your household size, your gas line, your maintenance habits, and your timeline in the home. I'll give you the honest comparison here so you can make that decision without being upsold in either direction.
+    </p>
+    <p>
+      Arizona's hard water changes this calculation significantly compared to other markets. What's true in Seattle or Atlanta isn't necessarily true in Phoenix.
+    </p>
+
+    <h2>How each technology works</h2>
+
+    <h3>Tank water heater</h3>
+    <p>
+      A storage tank heater maintains a reservoir of hot water — typically 30–80 gallons — at a set temperature (usually 120°F). A burner (gas) or element (electric) cycles on periodically to maintain that temperature. When you draw hot water, it comes from the tank; cold water enters to refill it. Simple, proven technology that most Arizona plumbers can repair with parts available same-day.
+    </p>
+
+    <h3>Tankless water heater</h3>
+    <p>
+      A tankless (on-demand) unit heats water as it flows through a heat exchanger — there's no storage reservoir. When you open a hot tap, cold water flows in, the burner fires, and water exits at temperature. Flow stops, burner shuts off. Because it only fires when water is demanded, there's no standby heat loss. The tradeoff: the heater must raise the incoming water temperature quickly, which requires a higher BTU burner than a tank heater — typically 120,000–200,000 BTU/hr for a whole-house gas unit, versus 36,000–50,000 BTU/hr for a tank.
+    </p>
+
+    <h2>Cost comparison for Arizona homes</h2>
+    <table style="width:100%; border-collapse: collapse; margin: 1rem 0;">
+      <thead>
+        <tr style="background: #f0f4f8;">
+          <th style="text-align:left; padding: 0.6rem 0.8rem; border-bottom: 2px solid #d0d8e0;">Factor</th>
+          <th style="text-align:left; padding: 0.6rem 0.8rem; border-bottom: 2px solid #d0d8e0;">Tank (Gas, 40-gal)</th>
+          <th style="text-align:left; padding: 0.6rem 0.8rem; border-bottom: 2px solid #d0d8e0;">Tankless (Gas)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid #e8edf2;">Unit cost (mid-grade)</td>
+          <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid #e8edf2;">$400 – $800</td>
+          <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid #e8edf2;">$700 – $1,500</td>
+        </tr>
+        <tr>
+          <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid #e8edf2;">Installation labor (standard swap)</td>
+          <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid #e8edf2;">$300 – $600</td>
+          <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid #e8edf2;">$500 – $1,200</td>
+        </tr>
+        <tr>
+          <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid #e8edf2;">Gas line upgrade (if needed)</td>
+          <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid #e8edf2;">Usually not needed</td>
+          <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid #e8edf2;">$300 – $1,000</td>
+        </tr>
+        <tr>
+          <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid #e8edf2;">Venting modification</td>
+          <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid #e8edf2;">Usually not needed</td>
+          <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid #e8edf2;">$200 – $600</td>
+        </tr>
+        <tr>
+          <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid #e8edf2;"><strong>Total installed (typical)</strong></td>
+          <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid #e8edf2;"><strong>$700 – $1,500</strong></td>
+          <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid #e8edf2;"><strong>$1,500 – $3,500</strong></td>
+        </tr>
+        <tr>
+          <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid #e8edf2;">Annual energy cost (estimated)</td>
+          <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid #e8edf2;">$350 – $500</td>
+          <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid #e8edf2;">$250 – $380</td>
+        </tr>
+        <tr>
+          <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid #e8edf2;">Annual maintenance cost (AZ)</td>
+          <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid #e8edf2;">$50 – $150 (flushing)</td>
+          <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid #e8edf2;">$100 – $200 (descaling)</td>
+        </tr>
+        <tr>
+          <td style="padding: 0.6rem 0.8rem;">Lifespan in AZ (with maintenance)</td>
+          <td style="padding: 0.6rem 0.8rem;">9 – 12 years</td>
+          <td style="padding: 0.6rem 0.8rem;">15 – 20 years</td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="font-size: 0.9rem; color: #6a6a6a;">
+      Energy costs are estimates for an average 3-bedroom home on natural gas in the Phoenix metro. Actual costs vary with household size, usage patterns, and APS/SRP/UNS rate schedules.
+    </p>
+
+    <h2>The 10-year total cost math</h2>
+    <p>
+      Let's run the numbers for a mid-range Phoenix home:
+    </p>
+    <p>
+      <strong>Tank heater over 10 years:</strong> $1,200 installed + $4,000 energy (10 yrs × $400 avg) + $1,000 maintenance (10 yrs × $100) = approximately $6,200. At year 10, it's likely due for replacement.
+    </p>
+    <p>
+      <strong>Tankless heater over 10 years:</strong> $2,500 installed + $3,150 energy (10 yrs × $315 avg) + $1,500 maintenance (10 yrs × $150) = approximately $7,150. At year 10, it has 5–10 more years of life remaining.
+    </p>
+    <p>
+      The tankless costs about $950 more at the 10-year mark. But at year 10, the tank heater needs replacement (another $1,200+) while the tankless keeps running. By year 12–15, the tankless comes out ahead on total cost — if maintained.
+    </p>
+    <p>
+      If you're staying in the home long-term, properly maintained tankless wins on 15-year economics. If you're selling in 5 years, tank wins on cash-out-of-pocket now.
+    </p>
+
+    <h2>The Arizona-specific hard water problem</h2>
+    <p>
+      This is the section most comparison guides skip. Arizona's 200–300 ppm water hardness dramatically affects both types of heater:
+    </p>
+    <ul>
+      <li><strong>Tank heater:</strong> Scale accumulates on the bottom, reduces efficiency, accelerates tank liner cracking. Without regular flushing, an AZ tank heater lasts 6–8 years instead of 10–12.</li>
+      <li><strong>Tankless heater:</strong> Scale builds inside the heat exchanger. Unchecked, it restricts flow, triggers error codes, and eventually requires heat exchanger replacement (a $400–$900 repair). Without annual descaling, a tankless unit in AZ fails in 5–7 years — faster than a neglected tank heater.</li>
+    </ul>
+    <p>
+      The bottom line: tankless earns its premium only with maintenance. If annual plumber visits aren't going to happen, a quality tank heater with a water softener is the more realistic choice.
+    </p>
+
+    <h2>Does a water softener change the equation?</h2>
+    <p>
+      Significantly. A salt-based water softener reduces hardness to near-zero, which means both tank and tankless heaters accumulate scale at a tiny fraction of the rate they would on raw AZ water. With softened water:
+    </p>
+    <ul>
+      <li>Tank heaters approach their 10–12 year rated lifespan</li>
+      <li>Tankless heaters require descaling every 2–3 years rather than annually</li>
+      <li>Both types use less energy because scale isn't insulating heating elements</li>
+    </ul>
+    <p>
+      A water softener costs $800–$2,500 installed depending on capacity. If you're making a long-term decision on a water heater, having us assess your water hardness and discuss softener options at the same time is worth the conversation.
+    </p>
+
+    <h2>Installation considerations in AZ homes</h2>
+
+    <h3>Gas line sizing</h3>
+    <p>
+      Most Phoenix metro and Tucson homes were built with 1/2-inch gas supply to the water heater location — sized for a tank heater. High-output tankless units (120,000–200,000 BTU) need 3/4-inch or 1-inch supply. If the existing gas line can't support the flow, it needs to be upsized — an additional $300–$1,000 depending on run length.
+    </p>
+
+    <h3>Venting</h3>
+    <p>
+      Traditional tank heaters use a B-vent or direct-vent flue. Most tankless units use direct-vent through an exterior wall (concentric pipe — intake and exhaust in the same fitting). If there's no suitable exterior wall near the heater location, venting can require creative routing. This is a manageable installation variable but affects labor cost.
+    </p>
+
+    <h3>Location and space</h3>
+    <p>
+      Tankless units are significantly smaller than tank heaters — typically 24" × 14" × 10" mounted on a wall, versus a 60" tall tank. In Arizona homes where the water heater is in a garage (common here), space is rarely the constraint. In townhomes or homes with a utility closet installation, the tankless size advantage matters more.
+    </p>
+
+    <h3>Electric tankless — the hidden challenge</h3>
+    <p>
+      Whole-house electric tankless units require significant electrical service — typically 150–200A dedicated to the heater alone. Most AZ homes have 200A total service, meaning an electric tankless may require a panel upgrade. Gas tankless avoids this issue entirely. If you have natural gas service (most Phoenix metro and Tucson homes do), gas tankless is almost always the right technology choice in Arizona.
+    </p>
+
+    <h2>Which situations favor tank and which favor tankless</h2>
+
+    <h3>Choose tank when:</h3>
+    <ul>
+      <li>Budget is the primary constraint — lower upfront cost, straightforward repair costs</li>
+      <li>Household has 5+ people with high simultaneous demand</li>
+      <li>You're unlikely to schedule annual maintenance visits</li>
+      <li>The gas line upgrade required for tankless would be expensive</li>
+      <li>You're planning to sell within 5 years</li>
+      <li>The installation location doesn't accommodate tankless venting well</li>
+    </ul>
+
+    <h3>Choose tankless when:</h3>
+    <ul>
+      <li>1–4 person household with typical hot water usage patterns</li>
+      <li>You'll commit to annual descaling (or schedule it with us as a recurring service)</li>
+      <li>Natural gas service is available and gas line can support the unit</li>
+      <li>You're staying in the home 10+ years</li>
+      <li>Space is a premium (utility closet, garage organization)</li>
+      <li>You want the energy efficiency over time</li>
+    </ul>
+
+    <h2>Get a real quote</h2>
+    <p>
+      Call <a href={`tel:${SITE.phone}`}>{SITE.phoneDisplay}</a> and tell us your home size, current heater type, and whether you have gas service. We'll assess whether your gas line and venting can support a tankless conversion without major upgrades, give you pricing on both options side by side, and give you a straight recommendation for your specific situation. We don't push tankless for commission — we install both, and the right choice varies.
+    </p>
+
+    <h2 style="margin-top: 3rem;">Related</h2>
+    <ul>
+      <li><a href="/situations/water-heater/">Water Heater Repair &amp; Replace — Service Page</a></li>
+      <li><a href="/blog/water-heater-lifespan-hard-water-az/">How AZ Hard Water Shortens Water Heater Life</a></li>
+      <li><a href="/blog/emergency-plumber-cost-arizona/">Emergency Plumber Cost in Arizona</a></li>
+    </ul>
+  </article>
+</BaseLayout>
