@@ -2,8 +2,8 @@
 // Swap this file to rebrand the same template.
 export const SITE = {
   // Identity
-  brandName: "Coyote 24 Plumbing",
-  shortName: "Coyote 24",
+  brandName: "AZ Emergency Plumbing Co.",
+  shortName: "AZ Emergency Plumbing",
   domain: "emergencyplumberaz.com",
   baseUrl: "https://emergencyplumberaz.com",
   founded: 2018,
@@ -18,7 +18,7 @@ export const SITE = {
   // SEO
   niche: "emergency-plumbing",
   schemaSubtype: "Plumber",
-  metaTitle: "Coyote 24 Plumbing — Emergency Plumbing",
+  metaTitle: "AZ Emergency Plumbing Co. — 24/7 Plumber in Arizona",
   metaDescription: "24-hour emergency plumbing in Arizona. Real plumbers, real trucks, real pricing.",
 
   // Compliance
@@ -85,7 +85,7 @@ export const SITE = {
   author: {
     name: "Mike",
     title: "Master Plumber & Owner",
-    bio: "TODO: write Coyote 24 Plumbing principal bio — 50 words, Phoenix-based, niche-relevant credentials.",
+    bio: "Mike is a Phoenix-based master plumber who started AZ Emergency Plumbing Co. after years watching homeowners get hit with inflated emergency invoices. He runs every job on upfront, flat-rate pricing with licensed techs across Arizona — no surprise fees, no call centers.",
   },
 
   // Social / OG

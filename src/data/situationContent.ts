@@ -20,8 +20,8 @@ export interface SituationContent {
 
 export const SITUATIONS: Record<string, SituationContent> = {
   "burst-pipe": {
-    metaTitle: "Burst Pipe Emergency Arizona | Coyote 24 Plumbing",
-    metaDescription: "Burst pipe in Arizona? Coyote 24 Plumbing dispatches licensed plumbers fast. Shutoff help, water damage triage, same-day repair. Call (602) 555-0100.",
+    metaTitle: "Burst Pipe Emergency Arizona | AZ Emergency Plumbing Co.",
+    metaDescription: "Burst pipe in Arizona? AZ Emergency Plumbing Co. dispatches licensed plumbers fast. Shutoff help, water damage triage, same-day repair. Call (602) 555-0100.",
     h1: "Burst Pipe Emergency in Arizona",
     intro: "A burst pipe is the fastest way to turn a normal Tuesday into a very expensive problem. Water pressure in a residential supply line runs 60-80 PSI — enough to push hundreds of gallons into your walls, floors, and ceilings in under an hour before you even notice. The damage doesn't stop when the burst happens; it stops when the water stops. If you're dealing with a burst pipe right now, the first step is finding your main shutoff valve and turning it off. Once the water is stopped, call us. We dispatch licensed AZ plumbers to diagnose the break, confirm there's no additional damage behind walls, and make the repair permanent — not a temporary patch that fails in six months. We quote before we work, and we don't charge dispatch fees to assess the situation.",
     whenToCall: [
@@ -112,7 +112,7 @@ export const SITUATIONS: Record<string, SituationContent> = {
   },
 
   "water-heater": {
-    metaTitle: "Water Heater Repair & Replace Arizona | Coyote 24 Plumbing",
+    metaTitle: "Water Heater Repair & Replace Arizona | AZ Emergency Plumbing Co.",
     metaDescription: "Water heater repair or replacement in Arizona. Tank, tankless, gas, electric — same-day service. Honest pricing, AZ ROC-licensed. Call (602) 555-0100.",
     h1: "Water Heater Repair & Replacement in Arizona",
     intro: "No hot water is a quality-of-life problem that usually announces itself at 6am before work or right before guests arrive. Most water heater failures in Arizona come down to one of three things: sediment buildup from our extremely hard water killing the heating element or burner efficiency, a failed T&P (temperature and pressure) relief valve, or simply a unit that's past its service life (10-12 years for a tank unit, 15-20 for tankless). Before you call anyone, check whether the pilot is lit on a gas unit and whether the circuit breaker tripped on an electric unit — those fix themselves. If it's neither, or if you have hot water but it runs out in minutes, or if the unit is leaking, call us. We carry the most common tank sizes and heating elements on the truck, so most repairs and many replacements happen same-day.",
@@ -200,8 +200,8 @@ export const SITUATIONS: Record<string, SituationContent> = {
   },
 
   "drain-clog": {
-    metaTitle: "Drain Clog & Sewer Line Arizona | Coyote 24 Plumbing",
-    metaDescription: "Clogged drain or backed-up sewer line in Arizona? Coyote 24 uses hydro-jetting and sewer cameras — not just a snake. Licensed plumbers. Call (602) 555-0100.",
+    metaTitle: "Drain Clog & Sewer Line Arizona | AZ Emergency Plumbing Co.",
+    metaDescription: "Clogged drain or backed-up sewer line in Arizona? AZ Emergency Plumbing Co. uses hydro-jetting and sewer cameras — not just a snake. Licensed plumbers. Call (602) 555-0100.",
     h1: "Drain Clog & Sewer Line Clearing in Arizona",
     intro: "A single slow drain is usually a fixture-level clog — hair, soap scum, grease at the trap or the first few feet of drain line. Multiple fixtures backing up simultaneously, or sewage coming up in your tub when you flush the toilet, is a main sewer line problem and requires different tools and a different approach. A basic cable snake clears the path; it doesn't clean the pipe. Grease, mineral scale, and root intrusion grow back — often within months — if the pipe isn't properly cleared. We carry sewer cameras to show you exactly what's causing the blockage, hydro-jetting equipment to clear it to the pipe wall, and locating equipment to pinpoint problem areas without guessing. You see what we see before we start cutting or jetting, and you get a written quote before we proceed.",
     whenToCall: [
@@ -288,7 +288,7 @@ export const SITUATIONS: Record<string, SituationContent> = {
   },
 
   "leak-detection": {
-    metaTitle: "Slab Leak Detection Arizona | Coyote 24 Plumbing",
+    metaTitle: "Slab Leak Detection Arizona | AZ Emergency Plumbing Co.",
     metaDescription: "Slab leak detection in Arizona. Acoustic and thermal equipment locates leaks under concrete without guessing. Licensed, upfront pricing. Call (602) 555-0100.",
     h1: "Slab Leak Detection in Arizona",
     intro: "The majority of Arizona homes are built on concrete slab foundations — no basement, no crawlspace, just a house sitting on poured concrete with the supply and drain lines running through or under it. When a pipe under or in that slab develops a leak, the water has nowhere obvious to go: it saturates the soil under the slab, wicks up through the concrete, and eventually shows up as warm spots on the floor, efflorescence on tile grout, soft spots in flooring, or unexplained water bill spikes. By the time you see visible evidence, the leak has often been running for weeks. We use acoustic listening equipment and thermal imaging cameras to locate slab leaks precisely — to within inches — so we're opening the minimum amount of concrete necessary to repair the actual leak, not hunting for it by opening long sections of slab. We quote the access and repair before we cut anything.",
@@ -380,7 +380,7 @@ export const SITUATIONS: Record<string, SituationContent> = {
   },
 
   "gas-line": {
-    metaTitle: "Gas Line Repair Arizona | Coyote 24 Plumbing | Licensed",
+    metaTitle: "Gas Line Repair Arizona | AZ Emergency Plumbing Co. | Licensed",
     metaDescription: "Gas line leak or repair in Arizona. AZ ROC-licensed, bonded, insured. Evacuate and call 911 first for active leaks. Then call us. (602) 555-0100.",
     h1: "Gas Line Repair in Arizona",
     intro: "If you smell gas in your home right now — that sulfur or rotten-egg smell added to natural gas so you can detect it — leave the building immediately. Don't flip light switches, don't use your phone inside the house, don't start the car in the garage. Once you're safely outside and away from the structure, call your gas utility (Southwest Gas in most of AZ: 877-860-6020) and then call 911. Let the gas company isolate the line before anyone enters the building. That's the protocol for an active gas leak — no exceptions. Once the line is isolated and the house has been ventilated and cleared, call us. We handle the repair work on residential and light commercial gas lines: locating leaks with electronic detection equipment, repairing or replacing faulty sections, installing gas lines to new appliances, and pulling the permits for code-required inspections.",
@@ -472,7 +472,7 @@ export const SITUATIONS: Record<string, SituationContent> = {
   },
 
   "garbage-disposal": {
-    metaTitle: "Garbage Disposal Repair & Replace Arizona | Coyote 24 Plumbing",
+    metaTitle: "Garbage Disposal Repair & Replace Arizona | AZ Emergency Plumbing Co.",
     metaDescription: "Garbage disposal repair or replacement in Arizona. Jammed, leaking, or dead? Same-day service, honest diagnosis, upfront pricing. Call (602) 555-0100.",
     h1: "Garbage Disposal Repair & Replacement in Arizona",
     intro: "Garbage disposals are the kitchen appliance that most homeowners try to fix themselves first — and often successfully, since a tripped thermal overload (the red reset button on the bottom of the unit) or a jam cleared with the hex key tool resolves maybe half of all 'dead disposal' calls. If you've already reset the breaker, pressed the reset button, and tried to free the jam manually and it still won't run, there's a mechanical or electrical failure that needs a plumber. If the disposal is leaking — at the sink flange, the discharge line, or the bottom of the unit — that's a job for us. If it's humming but not spinning, grinding but not clearing, or smells like burning rubber, we can diagnose and tell you whether repair makes sense or whether replacement is the better call at the unit's age and repair cost.",
